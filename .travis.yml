@@ -2,13 +2,10 @@ language: java
 
 jdk: openjdk11
 
-services:
-  - xvfb    
 
 before_install:
   - sudo apt update
   - sudo apt install openjfx
-  - chmod +x ./gradlew
   - java -jar extjar/javafx.base.jar
   
   - export DISPLAY=:99.0
