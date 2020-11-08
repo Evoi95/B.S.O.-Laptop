@@ -2,12 +2,28 @@ language: java
 
 jdk: openjdk11
 
-
+deploy:
+    
+    file:
+        - extjar/javafx.base.jar
+        - extjar/javafx.controls.jar
+        - extjar/javafx.fxml.jar
+        - extjar/javafx.graphics.jar
+        - extjar/javafx.media.jar
+        - extjar/javafx.swing.jar
+        - extjar/javafx.web.jar
+        - extjar/javafx-swt.jar
+        - extjar/mysql-connector-java-8.0.22.jar
+        - extjar/javafx.properties
+ 
 
 addons:
   sonarcloud:
     organization: "evoi95"
     token: "b6cbe4f702860b5e27a50764e0f1380eda19616a" # encrypted value of your token
+
+services:
+  - mysql
 
 script:
   - ant build
