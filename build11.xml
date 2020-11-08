@@ -7,15 +7,27 @@
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="../../eclipse/jee-2020-09/eclipse/"/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.8"/>
-    <property name="source" value="1.8"/>
-    <path id="JavaFX SDK.libraryclasspath">
-        <pathelement location="../../.p2/pool/plugins/org.eclipse.fx.ide.css.jfx8_3.5.0.201907240300.jar"/>
+    <property name="target" value="11"/>
+    <property name="source" value="11"/>
+    <path id="JavaFX11.userclasspath">
+        <pathelement location="../../../../Program Files/Java/jdk-11.0.9/lib/javafx-sdk-11.0.2/lib/javafx.base.jar"/>
+        <pathelement location="../../../../Program Files/Java/jdk-11.0.9/lib/javafx-sdk-11.0.2/lib/javafx.controls.jar"/>
+        <pathelement location="../../../../Program Files/Java/jdk-11.0.9/lib/javafx-sdk-11.0.2/lib/javafx.fxml.jar"/>
+        <pathelement location="../../../../Program Files/Java/jdk-11.0.9/lib/javafx-sdk-11.0.2/lib/javafx.graphics.jar"/>
+        <pathelement location="../../../../Program Files/Java/jdk-11.0.9/lib/javafx-sdk-11.0.2/lib/javafx.media.jar"/>
+        <pathelement location="../../../../Program Files/Java/jdk-11.0.9/lib/javafx-sdk-11.0.2/lib/javafx.swing.jar"/>
+        <pathelement location="../../../../Program Files/Java/jdk-11.0.9/lib/javafx-sdk-11.0.2/lib/javafx.web.jar"/>
+        <pathelement location="../../../../Program Files/Java/jdk-11.0.9/lib/javafx-sdk-11.0.2/lib/javafx-swt.jar"/>
     </path>
     <path id="B.S.O. Laptop.classpath">
         <pathelement location="bin"/>
-        <path refid="JavaFX SDK.libraryclasspath"/>
-        <pathelement location="../../Desktop/mysql-connector-java-8.0.22/mysql-connector-java-8.0.22.jar"/>
+        <pathelement location="../../../../Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.22.jar"/>
+        <path refid="JavaFX11.userclasspath"/>
+    </path>
+    <path id="run.Main (1).classpath">
+        <path refid="B.S.O. Laptop.classpath"/>
+        <pathelement location="../../../../Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.22.jar"/>
+        <path refid="JavaFX11.userclasspath"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -53,5 +65,10 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
+    </target>
+    <target name="Main (1)">
+        <java classname="database.Main" failonerror="true" fork="yes">
+            <classpath refid="run.Main (1).classpath"/>
+        </java>
     </target>
 </project>
