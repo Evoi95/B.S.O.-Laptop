@@ -6,8 +6,7 @@ jdk: openjdk11
 before_install:
   - sudo apt update
   - sudo apt install openjfx
-  - java -jar javafx.base.jar
-
+ 
   - export DISPLAY=:99.0
 
 install: true
