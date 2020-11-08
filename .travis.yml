@@ -2,19 +2,16 @@ language: java
 
 jdk: openjdk11
 
-deploy:
-    
-    file:
-        - extjar/javafx.base.jar
-        - extjar/javafx.controls.jar
-        - extjar/javafx.fxml.jar
-        - extjar/javafx.graphics.jar
-        - extjar/javafx.media.jar
-        - extjar/javafx.swing.jar
-        - extjar/javafx.web.jar
-        - extjar/javafx-swt.jar
-        - extjar/mysql-connector-java-8.0.22.jar
-        - extjar/javafx.properties
+services:
+  - xvfb    
+
+before_install:
+  - sudo apt update
+  - sudo apt install openjfx
+  - chmod +x ./gradlew
+  - export DISPLAY=:99.0
+
+install: true
  
 
 addons:
