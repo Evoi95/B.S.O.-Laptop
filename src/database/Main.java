@@ -1,4 +1,4 @@
-package database;
+/*package database;
 
 import java.sql.SQLException;
 
@@ -16,4 +16,4 @@ public class Main {
 		}
 	  }
 
-}
+}*/
