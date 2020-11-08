@@ -16,11 +16,8 @@ install: true
 addons:
   sonarcloud:
     organization: "evoi95"
-    token:
-      secure: "345aa28f0b7412d4276992231e3ebe48b940f8d3" # encrypted value of your token
+    token: "b6cbe4f702860b5e27a50764e0f1380eda19616a" # encrypted value of your token
 
-script: 
-  - ant build
 script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - ant build
   - sonar-scanner
