@@ -1,6 +1,6 @@
 language: java
 jre:
- - openjdk8
+ - oraclejdk8
 
 
 addons:
