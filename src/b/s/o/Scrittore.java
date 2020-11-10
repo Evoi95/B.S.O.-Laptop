@@ -1,5 +1,5 @@
 package b.s.o;
-
+import java.util.ArrayList;
 public class Scrittore {
 	
 	/*  Create table  if not exists scrittori
@@ -15,7 +15,7 @@ public class Scrittore {
       */
 	private String nome,cognome,email,user,pass,descrizione,listaPref,libriPubb;
 	//lista colleghi associati??
-
+	private ArrayList<Scrittore> coleghi=new ArrayList<Scrittore>();
 	private int idScrittore,dataN,editore;
 
 	public String getNome() {
