@@ -8,16 +8,28 @@ public class Config {
 	
 	public Config()
 	{
-		this.host="localhost";
-		this.user="root";
-		this.pwd="root";
-		this.database="ispw";
-		this.port="3306";
-		this.driver="com.mysql.cj.jdbc.Driver";
-		this.url="jdbc:mysql://localhost/sys?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+		host="localhost";
+		user="root";
+		pwd="root";
+		database="ispw";
+		port="3306";
+		driver="com.mysql.cj.jdbc.Driver";
+		url="jdbc:mysql://localhost/sys?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	}
 	
 	
+	public Config(String host, String user, String pwd, String database, String port, String driver, String url) {
+		super();
+		this.host = host;
+		this.user = user;
+		this.pwd = pwd;
+		this.database = database;
+		this.port = port;
+		this.driver = driver;
+		this.url = url;
+	}
+
+
 	public String getHost()
 	{
 		return this.host;
