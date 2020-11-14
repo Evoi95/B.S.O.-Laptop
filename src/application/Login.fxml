@@ -4,12 +4,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<Pane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerLogin">
+<Pane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BuondaryLogin">
    <children>
       <GridPane fx:id="grid" layoutX="14.0" layoutY="8.0" prefHeight="400.0" prefWidth="600.0">
         <columnConstraints>
@@ -28,10 +30,15 @@
             <Label fx:id="labelUser" text="Inserisci Username" textAlignment="CENTER" GridPane.rowIndex="1" />
             <Label fx:id="labelPwd" text="Inserisci password" textAlignment="CENTER" GridPane.rowIndex="2" />
             <PasswordField fx:id="pwdField" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button fx:id="buttonI" mnemonicParsing="false" text="Invia" GridPane.rowIndex="4" />
-            <Button fx:id="buttonA" mnemonicParsing="false" text="Annulla" textFill="#ff1a00" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button fx:id="buttonI" mnemonicParsing="false" onAction="#controlla" text="Invia" textFill="#2bff00" GridPane.rowIndex="4" />
+            <Button fx:id="buttonA" mnemonicParsing="false" onAction="#annulla" text="Annulla" textFill="#ff1a00" GridPane.columnIndex="2" GridPane.rowIndex="4" />
             <Label fx:id="labelB" text="Benvenuto nella schermata Login" textAlignment="CENTER" GridPane.columnIndex="1" />
             <TextField fx:id="textFieldusername" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <ImageView fx:id="image" fitHeight="74.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@../../../../Desktop/OIP.jpg" />
+               </image>
+            </ImageView>
          </children>
       </GridPane>
    </children>

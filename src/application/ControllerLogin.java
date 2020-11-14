@@ -1,33 +1,22 @@
 package application;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
-
 public class ControllerLogin {
-	@FXML
-	private Label labelUser,labelPwd,labelB;
-	@FXML 
-	private javafx.scene.layout.GridPane grid;
-	@FXML
-	private TextField textFieldusername;
-	@FXML
-	private PasswordField pwdField;
-	@FXML
-	private Button buttonI,buttonA;
-	@FXML
-	private Pane panel;
 	
-	// @FXML
-	  //  private void handleButtonAction(ActionEvent event) {
-	      //  label.setText("Hello World!");
-	    //}
-	@FXML
-	public void initialize()
+	boolean controlla(String u,String p,String user, String pwd)
 	{
-		System.out.println("CIAO");
+		boolean esito=false;
+		if(u.equals(user))
+		{
+			if(p.equals(pwd))
+			{
+				System.out.println("Accesso autorizzato ");
+				esito=true;
+			}
+		}
+		else {
+			System.out.println("Errore nelle credenziali");
+		}
+		return esito;
+		
 	}
 }
