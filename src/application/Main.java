@@ -19,6 +19,7 @@ public class Main extends Application {
 			 Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 
 		        Scene scene = new Scene(root);
+		        primaryStage.setTitle("Benvenuto nella schermata di login");
 
 		        primaryStage.setScene(scene);
 		        primaryStage.show();
