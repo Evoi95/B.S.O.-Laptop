@@ -1,6 +1,6 @@
 language: java
 
-jdk: openjdk11
+jdk: openjre8
 
 
 before_install:
