@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane fx:id="split" dividerPositions="0.10552763819095477" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="669.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <items>
+    <AnchorPane fx:id="ap1" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Label fx:id="header" alignment="CENTER" layoutX="-2.0" prefHeight="46.0" prefWidth="606.0" text="Ecco la schermata di riepilogo " textAlignment="CENTER" textFill="#1a00ff" />
+         </children></AnchorPane>
+    <AnchorPane fx:id="ap2" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Label fx:id="labelN" layoutX="74.0" layoutY="55.0" text="Nome libro" />
+            <Label fx:id="labelCosto" layoutX="74.0" layoutY="110.0" text="Costo libro" />
+            <Label fx:id="labelQ" layoutX="74.0" layoutY="165.0" text="Quantita" />
+            <Label fx:id="labelP" layoutX="74.0" layoutY="220.0" text="Prezzo" />
+            <Label fx:id="labelT" layoutX="74.0" layoutY="275.0" text="Totale acquisto" />
+            <Label fx:id="nome" layoutX="274.0" layoutY="55.0" text="LabelNome" />
+            <Label fx:id="costo" layoutX="274.0" layoutY="110.0" text="LabelCosto" />
+            <Label fx:id="prezzo" layoutX="275.0" layoutY="220.0" text="LabelPrezzo" />
+            <Label fx:id="totale" layoutX="275.0" layoutY="275.0" text="LabelTotale" />
+            <TextField fx:id="quantita" layoutX="274.0" layoutY="165.0" prefHeight="25.0" prefWidth="64.0" />
+            <Label fx:id="labelPag" layoutX="474.0" layoutY="55.0" text="Inserire metodo di pagamento" textFill="#0022ff" />
+            <RadioButton fx:id="buttonCC" layoutX="474.0" layoutY="110.0" mnemonicParsing="false" text="Carta Credito" />
+            <RadioButton fx:id="buttonCash" layoutX="474.0" layoutY="165.0" mnemonicParsing="false" text="Contanti" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
