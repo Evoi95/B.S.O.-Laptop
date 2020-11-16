@@ -52,29 +52,39 @@ public class BuondaryLogin implements Initializable {
 		System.out.println("Controllo button");
 		String u;
 		 String p;
+		 Boolean v;//validazone
 		u=textFieldusername.getText();
 		p=pwdField.getText();
 		
-		cL.controlla(u, p);
+		v=cL.controlla(u, p);
+		
+		//System.out.println("v vale :"+v);
+		if(v)
+		{			//System.out.println("v in if vale :"+v);
+
+			// carico seconda schermata
+
+			Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+
+	        Scene scene = new Scene(root);  	       
+
+	        Stage primaryStage = new Stage();
+			primaryStage.setScene(scene);
+	        primaryStage.show();
+
+			
+			
+
+		}
+		else {
+			return;
+		}
 		
 		
 		
 	
 		
-		// carico seconda schermata
-		Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
-
-        Scene scene = new Scene(root);       
-       
-
-        Stage primaryStage = new Stage();
-        primaryStage.setTitle("Ecco il riepilogo");
-		primaryStage.setScene(scene);
-        primaryStage.show();
-
-		
-		
-		
+				
 	}
 	@FXML
 	private void annulla()
