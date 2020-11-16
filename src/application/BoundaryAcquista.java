@@ -1,9 +1,14 @@
 package application;
-import java.awt.Label;
+
+import java.io.IOException;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import javafx.stage.Stage;
 
 public class BoundaryAcquista {
 	@FXML
@@ -14,6 +19,7 @@ public class BoundaryAcquista {
 	private AnchorPane ap2;
 	@FXML
 	private Label header;
+	
 	@FXML
 	private Label labelN;
 	@FXML
@@ -42,12 +48,32 @@ public class BoundaryAcquista {
 	private RadioButton buttonCash;
 	
 	@FXML
-	private void pagaCC() {
+	private void pagaCC() throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("pagamentoCC.fxml"));
+
+        Scene scene = new Scene(root);       
+       
+
+        Stage primaryStage = new Stage();
+		primaryStage.setScene(scene);
+        primaryStage.show();
+        buttonCash.setDisable(true);
+
 		
 	}
 	@FXML
-	private void pagaCash()
+	private void pagaCash() throws IOException
 	{
+		Parent root = FXMLLoader.load(getClass().getResource("pagamentoContrassegno.fxml"));
+
+        Scene scene = new Scene(root);       
+       
+
+        Stage primaryStage = new Stage();
+		primaryStage.setScene(scene);
+        primaryStage.show();
+        buttonCC.setDisable(true);
+
 		
 	}
 	@FXML 

@@ -1,8 +1,14 @@
 package application;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import javafx.stage.Stage;
 
 public class BuondaryCompravendita {
 	@FXML
@@ -34,7 +40,21 @@ public class BuondaryCompravendita {
 		
 	}
 	@FXML
-	private void procedi() {
+	private void procedi() throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("acquista.fxml"));
+
+        Scene scene = new Scene(root);       
+       
+
+        Stage primaryStage = new Stage();
+		primaryStage.setScene(scene);
+        primaryStage.show();
+
+		
+	}
+	@FXML
+	private void vediLista()
+	{
 		
 	}
 

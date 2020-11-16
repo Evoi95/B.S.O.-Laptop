@@ -1,16 +1,21 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class BuondaryLogin implements Initializable {
 	@FXML
@@ -29,10 +34,8 @@ public class BuondaryLogin implements Initializable {
 	private ImageView image;
 	private Controller cL;
 	
-	// @FXML
-	  //  private void handleButtonAction(ActionEvent event) {
-	      //  label.setText("Hello World!");
-	    //}
+	//private Stage stage;
+	
 	
 
 	@Override
@@ -41,8 +44,9 @@ public class BuondaryLogin implements Initializable {
 		cL=new Controller();
 		
 	}
+	
 	@FXML
-	private void controlla()
+	private void controlla() throws IOException
 	{
 		
 		System.out.println("Controllo button");
@@ -52,6 +56,25 @@ public class BuondaryLogin implements Initializable {
 		p=pwdField.getText();
 		
 		cL.controlla(u, p);
+		
+		
+		
+	
+		
+		// carico seconda schermata
+		Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+
+        Scene scene = new Scene(root);       
+       
+
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Ecco il riepilogo");
+		primaryStage.setScene(scene);
+        primaryStage.show();
+
+		
+		
+		
 	}
 	@FXML
 	private void annulla()

@@ -7,19 +7,18 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BuondaryCompravendita">
    <children>
       <Label fx:id="header" layoutX="263.0" layoutY="38.0" text="Benvenuto" />
       <TableView fx:id="table" layoutX="34.0" layoutY="83.0" prefHeight="200.0" prefWidth="200.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="col1" prefWidth="75.0" text="C1" />
+          <TableColumn fx:id="col2" prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-      <Button fx:id="buttonL" layoutX="373.0" layoutY="83.0" mnemonicParsing="false" text="Lista libri" />
+      <Button fx:id="buttonL" layoutX="373.0" layoutY="83.0" mnemonicParsing="false" onAction="#vediLista" text="Lista libri" />
       <TextField fx:id="entryText" layoutX="373.0" layoutY="183.0" prefHeight="25.0" prefWidth="135.0" />
-      <Button fx:id="buttonV" layoutX="553.0" layoutY="183.0" mnemonicParsing="false" text="Verifica Disponibilita" />
-      <Button layoutX="373.0" layoutY="258.0" mnemonicParsing="false" text="Acquista" />
+      <Button fx:id="buttonV" layoutX="553.0" layoutY="183.0" mnemonicParsing="false" onAction="#verifica" text="Verifica Disponibilita" />
+      <Button fx:id="buttonA" layoutX="373.0" layoutY="258.0" mnemonicParsing="false" onAction="#procedi" text="Acquista" />
    </children>
 </Pane>

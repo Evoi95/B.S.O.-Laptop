@@ -6,11 +6,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<SplitPane fx:id="split" dividerPositions="0.10552763819095477" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="669.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane fx:id="split" dividerPositions="0.10552763819095477" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="669.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BoundaryAcquista">
   <items>
     <AnchorPane fx:id="ap1" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
-            <Label fx:id="header" alignment="CENTER" layoutX="-2.0" prefHeight="46.0" prefWidth="606.0" text="Ecco la schermata di riepilogo " textAlignment="CENTER" textFill="#1a00ff" />
+            <Label fx:id="header" alignment="CENTER" layoutX="-3.0" layoutY="-5.0" prefHeight="39.0" prefWidth="669.0" text="Benvenuto nella schermata di riepilogo" textAlignment="CENTER" />
          </children></AnchorPane>
     <AnchorPane fx:id="ap2" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
@@ -25,8 +25,8 @@
             <Label fx:id="totale" layoutX="275.0" layoutY="275.0" text="LabelTotale" />
             <TextField fx:id="quantita" layoutX="274.0" layoutY="165.0" prefHeight="25.0" prefWidth="64.0" />
             <Label fx:id="labelPag" layoutX="474.0" layoutY="55.0" text="Inserire metodo di pagamento" textFill="#0022ff" />
-            <RadioButton fx:id="buttonCC" layoutX="474.0" layoutY="110.0" mnemonicParsing="false" onMouseClicked="#pagaCc" text="Carta Credito" />
-            <RadioButton fx:id="buttonCash" layoutX="474.0" layoutY="165.0" mnemonicParsing="false" onMouseClicked="#pagaCash" text="Contanti" />
+            <RadioButton fx:id="buttonCC" layoutX="474.0" layoutY="110.0" mnemonicParsing="false" onAction="#pagaCC" text="Carta Credito" />
+            <RadioButton fx:id="buttonCash" layoutX="474.0" layoutY="165.0" mnemonicParsing="false" onAction="#pagaCash" text="Contanti" />
          </children></AnchorPane>
   </items>
 </SplitPane>

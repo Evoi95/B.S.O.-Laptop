@@ -24,12 +24,12 @@ public class BoundaryDownload {
 	@FXML
 	private void scarica()
 	{
-		
+		System.out.println("Libro correttamente scricato");
 	}
 	@FXML
 	private void pulisci()
 	{
-		
+		System.out.println("Te possino caricatte");
 	}
 	
 
