@@ -6,6 +6,8 @@ import javafx.scene.layout.*;
 
 public class BoundaryLogin {
 	@FXML
+	private Pane panel; 
+	@FXML
 	private GridPane grid;
 	@FXML
 	private Label labelB;
