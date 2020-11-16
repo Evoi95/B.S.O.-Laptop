@@ -24,12 +24,20 @@ public class BoundaryDownload {
 	@FXML
 	private void scarica()
 	{
-		System.out.println("Libro correttamente scricato");
+		Alert a=new Alert(Alert.AlertType.CONFIRMATION);
+		a.setTitle("Download ");
+		a.setContentText("Libro scaricato con successo");
+		a.setHeaderText(null);
+		a.showAndWait();
 	}
 	@FXML
 	private void pulisci()
 	{
-		System.out.println("Te possino caricatte");
+		Alert a=new Alert(Alert.AlertType.WARNING);
+		a.setTitle("Annulla ordine");
+		a.setContentText("Stai annullando l'ordine");
+		a.setHeaderText(null);
+		a.showAndWait();
 	}
 	
 
