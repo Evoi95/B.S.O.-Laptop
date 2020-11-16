@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
 <Pane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane layoutX="1.0" layoutY="2.0" prefHeight="400.0" prefWidth="600.0">
@@ -34,12 +33,12 @@
             <Label fx:id="labelC" prefHeight="72.0" prefWidth="217.0" text="Cognome" GridPane.rowIndex="3" />
             <Label fx:id="labelVP" prefHeight="81.0" prefWidth="222.0" text="Via/piazza" GridPane.rowIndex="4" />
             <Label fx:id="labelCom" prefHeight="110.0" prefWidth="242.0" text="Eventuali comunicazioni" GridPane.rowIndex="5" />
-            <TextField fx:id="nomeTf" prefHeight="96.0" prefWidth="242.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="nomeTF" prefHeight="96.0" prefWidth="242.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <TextField fx:id="cognomeTF" prefHeight="91.0" prefWidth="217.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <TextField fx:id="viaTF" prefHeight="76.0" prefWidth="212.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
             <TextArea fx:id="eventualiArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Button fx:id="buttonI" mnemonicParsing="false" prefHeight="95.0" prefWidth="229.0" text="Conferma" textFill="#2bff00" GridPane.rowIndex="7" />
-            <Button fx:id="buttonA" mnemonicParsing="false" prefHeight="110.0" prefWidth="256.0" text="Annulla" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Button fx:id="buttonI" mnemonicParsing="false" onAction="#procediCash" prefHeight="71.0" prefWidth="203.0" text="Conferma" textFill="#2bff00" GridPane.rowIndex="7" />
+            <Button fx:id="buttonA" mnemonicParsing="false" onAction="#annullaCash" prefHeight="110.0" prefWidth="256.0" text="Annulla" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="7" />
          </children>
       </GridPane>
    </children>

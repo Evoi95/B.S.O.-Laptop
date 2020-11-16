@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
 <Pane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane fx:id="grid" layoutX="1.0" layoutY="-1.0" prefHeight="400.0" prefWidth="600.0">
@@ -37,8 +36,8 @@
             <Label fx:id="cartaC" prefHeight="79.0" prefWidth="228.0" text="Codice carta " GridPane.rowIndex="4" />
             <Label fx:id="labelS" prefHeight="74.0" prefWidth="215.0" text="Data Scadenza" GridPane.rowIndex="5" />
             <TextField fx:id="scadTF" prefHeight="95.0" prefWidth="220.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Button fx:id="buttonI" layoutX="10.0" layoutY="50.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="219.0" text="Invia" textFill="#00ff11" GridPane.rowIndex="7" />
-            <Button fx:id="buttonA" mnemonicParsing="false" prefHeight="83.0" prefWidth="222.0" text="Annulla" textFill="#f20400" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Button fx:id="buttonI" layoutX="10.0" layoutY="50.0" mnemonicParsing="false" onAction="#procediCC" prefHeight="85.0" prefWidth="219.0" text="Invia" textFill="#00ff11" GridPane.rowIndex="7" />
+            <Button fx:id="buttonA" mnemonicParsing="false" onAction="#annullaCC" prefHeight="83.0" prefWidth="222.0" text="Annulla" textFill="#f20400" GridPane.columnIndex="2" GridPane.rowIndex="7" />
          </children>
       </GridPane>
    </children>

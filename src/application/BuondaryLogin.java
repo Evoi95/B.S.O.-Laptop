@@ -27,7 +27,7 @@ public class BuondaryLogin implements Initializable {
 	private Pane panel;
 	@FXML
 	private ImageView image;
-	private ControllerLogin cL;
+	private Controller cL;
 	
 	// @FXML
 	  //  private void handleButtonAction(ActionEvent event) {
@@ -38,7 +38,7 @@ public class BuondaryLogin implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		cL=new ControllerLogin();
+		cL=new Controller();
 		
 	}
 	@FXML
@@ -51,11 +51,11 @@ public class BuondaryLogin implements Initializable {
 		u=textFieldusername.getText();
 		p=pwdField.getText();
 		
-		cL.controlla(u, p,"user","pwd");
+		cL.controlla(u, p);
 	}
 	@FXML
 	private void annulla()
 	{
-textFieldusername.setText("");
-pwdField.setText("");}
-}
+		textFieldusername.setText("");
+		pwdField.setText("");}
+	}

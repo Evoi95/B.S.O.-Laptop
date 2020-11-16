@@ -1,13 +1,13 @@
 package application;
 
-public class ControllerLogin {
+public class Controller {
 	
-	boolean controlla(String u,String p,String user, String pwd)
+	boolean controlla(String u,String p)
 	{
 		boolean esito=false;
-		if(u.equals(user))
+		if(u.equals("admin"))
 		{
-			if(p.equals(pwd))
+			if(p.equals("admin"))
 			{
 				System.out.println("Accesso autorizzato ");
 				esito=true;
