@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 
+import b.s.o.Libro;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,11 +17,11 @@ public class BuondaryCompravendita {
 	@FXML
 	private Label header;
 	@FXML
-	private TableView table;
+	private TableView<Libro> table;
 	@FXML
-	private TableColumn col1;
+	private TableColumn<Libro,String> col1=new TableColumn<>("Titolo");
 	@FXML
-	private TableColumn col2;
+	private TableColumn<Libro,String> col2=new TableColumn<>("Autore");
 	/*
 	 * TODO
 	 * sistemare altre righe tabella dal db
