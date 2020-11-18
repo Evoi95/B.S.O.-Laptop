@@ -19,9 +19,29 @@ public class BuondaryCompravendita {
 	@FXML
 	private TableView<Libro> table;
 	@FXML
-	private TableColumn<Libro,String> col1=new TableColumn<>("Titolo");
+	private TableColumn<Libro,String> titolo=new TableColumn<>("Titolo");
 	@FXML
-	private TableColumn<Libro,String> col2=new TableColumn<>("Autore");
+	private TableColumn<Libro,String> autore=new TableColumn<>("Autore");
+	@FXML
+	private TableColumn<Libro,String> lingua=new TableColumn<>("Lingua");
+	@FXML
+	private TableColumn<Libro,String> categoria=new TableColumn<>("Categoria");
+	@FXML
+	private TableColumn<Libro,String> isbn=new TableColumn<>("CodiceIsbn");
+	@FXML
+	private TableColumn<Libro,String> editore=new TableColumn<>("Editore");
+	@FXML
+	private TableColumn<Libro,String> desc=new TableColumn<>("Descrizione");
+	@FXML
+	private TableColumn<Libro,Integer> pagine=new TableColumn<>("Pagine");
+	@FXML
+	private TableColumn<Libro,Integer> acquisti=new TableColumn<>("Acquisti");
+	@FXML
+	private TableColumn<Libro,Integer> data=new TableColumn<>("DataPubb");
+	@FXML
+	private TableColumn<Libro,Float> prezzo=new TableColumn<>("Prezzo");
+	@FXML
+	private TableColumn<Libro,Boolean> disponibilita=new TableColumn<>("Disponibilita");
 	/*
 	 * TODO
 	 * sistemare altre righe tabella dal db
