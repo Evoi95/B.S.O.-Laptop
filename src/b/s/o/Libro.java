@@ -1,10 +1,11 @@
 package b.s.o;
-import java.awt.*;
+
+import javafx.scene.image.Image;
 public class Libro {
-	private String titolo,autore,lingua,categoria,codiceIsbn,editore,descrizione,dataPub,numPag,numAcq,prezzo;
-	private Image foto;
-	private boolean disponibilita;
+	private String  titolo,autore,lingua,categoria,codiceIsbn,editore,descrizione,numPag,numAcq,dataPubb,prezzo;
 	
+	private Image foto;
+	private Boolean disponibilita;
 	public String getTitolo() {
 		return this.titolo;
 	}
@@ -54,16 +55,16 @@ public class Libro {
 		this.numPag = numPag;
 	}
 	public String getNumAcq() {
-		return this.numAcq;
+		return numAcq;
 	}
 	public void setNumAcq(String numAcq) {
 		this.numAcq = numAcq;
 	}
 	public String getDataPub() {
-		return this.dataPub;
+		return this.dataPubb;
 	}
 	public void setDataPub(String dataPub) {
-		this.dataPub = dataPub;
+		this.dataPubb = dataPub;
 	}
 	public String getPrezzo() {
 		return this.prezzo;
@@ -77,16 +78,16 @@ public class Libro {
 	public void setFoto(Image foto) {
 		this.foto = foto;
 	}
-	public boolean isDisponibilita() {
+	public Boolean getDisponibilita() {
 		return this.disponibilita;
 	}
-	public void setDisponibilita(boolean disponibilita) {
+	public void setDisponibilita(Boolean disponibilita) {
 		this.disponibilita = disponibilita;
 	}
 	public Libro(String titolo, String autore, String lingua, String categoria, String codiceIsbn, String editore,
-			String descrizione, String dataPub, String numPag, String numAcq, String prezzo, Image foto,
-			boolean disponibilita) {
-	//	super();
+			String descrizione, String numPag, String numAcq, String dataPub, String prezzo, Image foto,
+			Boolean disponibilita) {
+		//super();
 		this.titolo = titolo;
 		this.autore = autore;
 		this.lingua = lingua;
@@ -94,14 +95,13 @@ public class Libro {
 		this.codiceIsbn = codiceIsbn;
 		this.editore = editore;
 		this.descrizione = descrizione;
-		this.dataPub = dataPub;
 		this.numPag = numPag;
 		this.numAcq = numAcq;
+		this.dataPubb= dataPub;
 		this.prezzo = prezzo;
 		this.foto = foto;
 		this.disponibilita = disponibilita;
 	}
 	
 	
-
 }

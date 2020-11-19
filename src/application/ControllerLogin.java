@@ -1,7 +1,7 @@
 package application;
 
 
-public class Controller {
+public class ControllerLogin {
 	
 
 	

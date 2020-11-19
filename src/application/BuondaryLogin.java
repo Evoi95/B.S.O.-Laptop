@@ -33,7 +33,7 @@ public class BuondaryLogin implements Initializable {
 	private Pane panel;
 	@FXML
 	private ImageView image;
-	private Controller cL;
+	private ControllerLogin cL;
 	
 	//private Stage stage;
 	
@@ -42,7 +42,7 @@ public class BuondaryLogin implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		cL=new Controller();
+		cL=new ControllerLogin();
 		
 	}
 	

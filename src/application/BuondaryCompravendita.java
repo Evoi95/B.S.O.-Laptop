@@ -3,6 +3,8 @@ package application;
 import java.io.IOException;
 
 import b.s.o.Libro;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,31 +20,31 @@ public class BuondaryCompravendita {
 	@FXML
 	private Label header;
 	@FXML
-	private TableView<Libro> table;
+	private TableView<Libro> table=new TableView<Libro>();
 	@FXML
-	private TableColumn<Libro,String> titolo=new TableColumn<>("Titolo");
+	private TableColumn<Libro,SimpleStringProperty> titolo=new TableColumn<>("Titolo");
 	@FXML
-	private TableColumn<Libro,String> autore=new TableColumn<>("Autore");
+	private TableColumn<Libro,SimpleStringProperty> autore=new TableColumn<>("Autore");
 	@FXML
-	private TableColumn<Libro,String> lingua=new TableColumn<>("Lingua");
+	private TableColumn<Libro,SimpleStringProperty> lingua=new TableColumn<>("Lingua");
 	@FXML
-	private TableColumn<Libro,String> categoria=new TableColumn<>("Categoria");
+	private TableColumn<Libro,SimpleStringProperty> categoria=new TableColumn<>("Categoria");
 	@FXML
-	private TableColumn<Libro,String> isbn=new TableColumn<>("CodiceIsbn");
+	private TableColumn<Libro,SimpleStringProperty> isbn=new TableColumn<>("CodiceIsbn");
 	@FXML
-	private TableColumn<Libro,String> editore=new TableColumn<>("Editore");
+	private TableColumn<Libro,SimpleStringProperty> editore=new TableColumn<>("Editore");
 	@FXML
-	private TableColumn<Libro,String> desc=new TableColumn<>("Descrizione");
+	private TableColumn<Libro,SimpleStringProperty> desc=new TableColumn<>("Descrizione");
 	@FXML
-	private TableColumn<Libro,String> pagine=new TableColumn<>("Pagine");
+	private TableColumn<Libro,SimpleStringProperty> pagine=new TableColumn<>("Pagine");
 	@FXML
-	private TableColumn<Libro,String> acquisti=new TableColumn<>("Acquisti");
+	private TableColumn<Libro,SimpleStringProperty> acquisti=new TableColumn<>("Acquisti");
 	@FXML
-	private TableColumn<Libro,String> data=new TableColumn<>("DataPubb");
+	private TableColumn<Libro,SimpleStringProperty> data=new TableColumn<>("DataPubb");
 	@FXML
-	private TableColumn<Libro,String> prezzo=new TableColumn<>("Prezzo");
+	private TableColumn<Libro,SimpleStringProperty> prezzo=new TableColumn<>("Prezzo");
 	@FXML
-	private TableColumn<Libro,Boolean> disponibilita=new TableColumn<>("Disponibilita");
+	private TableColumn<Libro,SimpleBooleanProperty> disponibilita=new TableColumn<>("Disponibilita");
 	/*
 	 * TODO
 	 * sistemare altre righe tabella dal db
@@ -89,30 +91,13 @@ public class BuondaryCompravendita {
 	    desc.setCellValueFactory(new PropertyValueFactory<>("Descrizione"));
 	    pagine.setCellValueFactory(new PropertyValueFactory<>("Pagine"));
 	    acquisti.setCellValueFactory(new PropertyValueFactory<>("Acquisti"));
-	    data.setCellValueFactory(new PropertyValueFactory<>("DataPubb"));
+	    data.setCellValueFactory(new PropertyValueFactory<>("DataPubblicazione"));
 	    prezzo.setCellValueFactory(new PropertyValueFactory<>("Prezzo"));
 	    disponibilita.setCellValueFactory(new PropertyValueFactory<>("Disponibilita"));
 	    
-	   /* table.getColumns().add(titolo);
-	    table.getColumns().add(autore);
-	    table.getColumns().add(lingua);
-	    table.getColumns().add(categoria);
-	    table.getColumns().add(isbn);
-	    table.getColumns().add(editore);
-	    table.getColumns().add(desc);
-	    table.getColumns().add(pagine);
-	    table.getColumns().add(acquisti);
-	    table.getColumns().add(data);
-	    table.getColumns().add(prezzo);
-	    table.getColumns().add(disponibilita);
-	    */
-	    
-	//    Libro l=new Libro("pippo","pluto","it","fantasy","8004163529","paperino","fanstasy ambientato a cani gatti",300,50,2018514,(float) 25.65,null,true);
-	    
-	   // table.getColumns().add(data);
+	  
+	    table.getItems().add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","fanstasy","100","50","5-5-2020","74",null, true));
 
-	   // table.getItems().add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","fanstasy ","2018514","50.00","300.00","25.65",null,true));
-	    
 
 	}
 	
