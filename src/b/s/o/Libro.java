@@ -1,9 +1,7 @@
 package b.s.o;
 import java.awt.*;
 public class Libro {
-	private String titolo,autore,lingua,categoria,codiceIsbn,editore,descrizione;
-	private int numPag,numAcq,dataPub;
-	private float prezzo;
+	private String titolo,autore,lingua,categoria,codiceIsbn,editore,descrizione,dataPub,numPag,numAcq,prezzo;
 	private Image foto;
 	private boolean disponibilita;
 	
@@ -49,28 +47,28 @@ public class Libro {
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-	public int getNumPag() {
+	public String getNumPag() {
 		return this.numPag;
 	}
-	public void setNumPag(int numPag) {
+	public void setNumPag(String numPag) {
 		this.numPag = numPag;
 	}
-	public int getNumAcq() {
+	public String getNumAcq() {
 		return this.numAcq;
 	}
-	public void setNumAcq(int numAcq) {
+	public void setNumAcq(String numAcq) {
 		this.numAcq = numAcq;
 	}
-	public int getDataPub() {
+	public String getDataPub() {
 		return this.dataPub;
 	}
-	public void setDataPub(int dataPub) {
+	public void setDataPub(String dataPub) {
 		this.dataPub = dataPub;
 	}
-	public float getPrezzo() {
+	public String getPrezzo() {
 		return this.prezzo;
 	}
-	public void setPrezzo(float prezzo) {
+	public void setPrezzo(String prezzo) {
 		this.prezzo = prezzo;
 	}
 	public Image getFoto() {
@@ -86,7 +84,9 @@ public class Libro {
 		this.disponibilita = disponibilita;
 	}
 	public Libro(String titolo, String autore, String lingua, String categoria, String codiceIsbn, String editore,
-			String descrizione, int numPag, int numAcq, int dataPub, float prezzo, Image foto, boolean disponibilita) {
+			String descrizione, String dataPub, String numPag, String numAcq, String prezzo, Image foto,
+			boolean disponibilita) {
+	//	super();
 		this.titolo = titolo;
 		this.autore = autore;
 		this.lingua = lingua;
@@ -94,17 +94,14 @@ public class Libro {
 		this.codiceIsbn = codiceIsbn;
 		this.editore = editore;
 		this.descrizione = descrizione;
+		this.dataPub = dataPub;
 		this.numPag = numPag;
 		this.numAcq = numAcq;
-		this.dataPub = dataPub;
 		this.prezzo = prezzo;
 		this.foto = foto;
 		this.disponibilita = disponibilita;
-		
-		/*
-		 * Factory per generare utente
-		 */
 	}
+	
 	
 
 }

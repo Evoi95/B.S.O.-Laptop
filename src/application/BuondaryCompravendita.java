@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -33,13 +34,13 @@ public class BuondaryCompravendita {
 	@FXML
 	private TableColumn<Libro,String> desc=new TableColumn<>("Descrizione");
 	@FXML
-	private TableColumn<Libro,Integer> pagine=new TableColumn<>("Pagine");
+	private TableColumn<Libro,String> pagine=new TableColumn<>("Pagine");
 	@FXML
-	private TableColumn<Libro,Integer> acquisti=new TableColumn<>("Acquisti");
+	private TableColumn<Libro,String> acquisti=new TableColumn<>("Acquisti");
 	@FXML
-	private TableColumn<Libro,Integer> data=new TableColumn<>("DataPubb");
+	private TableColumn<Libro,String> data=new TableColumn<>("DataPubb");
 	@FXML
-	private TableColumn<Libro,Float> prezzo=new TableColumn<>("Prezzo");
+	private TableColumn<Libro,String> prezzo=new TableColumn<>("Prezzo");
 	@FXML
 	private TableColumn<Libro,Boolean> disponibilita=new TableColumn<>("Disponibilita");
 	/*
@@ -76,7 +77,44 @@ public class BuondaryCompravendita {
 	@FXML
 	private void vediLista()
 	{
-		
+	   
+	    System.out.println("Vedi lista");
+	    
+	    titolo.setCellValueFactory(new PropertyValueFactory<>("Titolo"));
+	    autore.setCellValueFactory(new PropertyValueFactory<>("Autore"));
+	    lingua.setCellValueFactory(new PropertyValueFactory<>("Lingua"));
+	    categoria.setCellValueFactory(new PropertyValueFactory<>("Categoria"));
+	    isbn.setCellValueFactory(new PropertyValueFactory<>("CodiceIsbn"));
+	    editore.setCellValueFactory(new PropertyValueFactory<>("Editore"));
+	    desc.setCellValueFactory(new PropertyValueFactory<>("Descrizione"));
+	    pagine.setCellValueFactory(new PropertyValueFactory<>("Pagine"));
+	    acquisti.setCellValueFactory(new PropertyValueFactory<>("Acquisti"));
+	    data.setCellValueFactory(new PropertyValueFactory<>("DataPubb"));
+	    prezzo.setCellValueFactory(new PropertyValueFactory<>("Prezzo"));
+	    disponibilita.setCellValueFactory(new PropertyValueFactory<>("Disponibilita"));
+	    
+	   /* table.getColumns().add(titolo);
+	    table.getColumns().add(autore);
+	    table.getColumns().add(lingua);
+	    table.getColumns().add(categoria);
+	    table.getColumns().add(isbn);
+	    table.getColumns().add(editore);
+	    table.getColumns().add(desc);
+	    table.getColumns().add(pagine);
+	    table.getColumns().add(acquisti);
+	    table.getColumns().add(data);
+	    table.getColumns().add(prezzo);
+	    table.getColumns().add(disponibilita);
+	    */
+	    
+	//    Libro l=new Libro("pippo","pluto","it","fantasy","8004163529","paperino","fanstasy ambientato a cani gatti",300,50,2018514,(float) 25.65,null,true);
+	    
+	   // table.getColumns().add(data);
+
+	   // table.getItems().add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","fanstasy ","2018514","50.00","300.00","25.65",null,true));
+	    
+
 	}
+	
 
 }

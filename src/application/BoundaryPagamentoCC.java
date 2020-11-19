@@ -11,7 +11,11 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 
+
 public class BoundaryPagamentoCC {
+	
+	//private   Stage primaryStage;
+
 	@FXML
 	private Pane panel;
 	@FXML
@@ -46,7 +50,7 @@ public class BoundaryPagamentoCC {
         Scene scene = new Scene(root);       
        
 
-        Stage primaryStage = new Stage();
+         Stage primaryStage = new Stage();
 		primaryStage.setScene(scene);
         primaryStage.show();
        // buttonCC.setDisable(true);
@@ -55,7 +59,7 @@ public class BoundaryPagamentoCC {
 	@FXML
 	private void annullaCC()
 	{
-		
+	//	this.primaryStage.close();
 	}
 	
 
