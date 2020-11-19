@@ -101,6 +101,8 @@ public class BuondaryCompravendita {
 	    data.setCellValueFactory(new PropertyValueFactory<>("DataPubblicazione"));
 	    prezzo.setCellValueFactory(new PropertyValueFactory<>("Prezzo"));
 	    disponibilita.setCellValueFactory(new PropertyValueFactory<>("Disponibilita"));
+	    copie.setCellValueFactory(new PropertyValueFactory<>("CopieRimanenti"));
+
 	    
 	   CCV.catalogo();
 	   // table.getItems().add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","fanstasy","100","50","5-5-2020","74",0, null, true,15));
