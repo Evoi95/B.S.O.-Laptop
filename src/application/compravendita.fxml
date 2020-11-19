@@ -7,10 +7,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="1045.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BuondaryCompravendita">
+<Pane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="1154.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BuondaryCompravendita">
    <children>
       <Label fx:id="header" layoutX="263.0" layoutY="38.0" prefHeight="17.0" prefWidth="173.0" text="Benvenuto... ecco la lista" />
-      <TableView fx:id="table" layoutX="34.0" layoutY="83.0" prefHeight="228.0" prefWidth="996.0">
+      <TableView fx:id="table" layoutX="34.0" layoutY="83.0" prefHeight="228.0" prefWidth="1099.0">
         <columns>
           <TableColumn fx:id="titolo" prefWidth="75.0" text="Titolo" />
           <TableColumn fx:id="autore" prefWidth="75.0" text="Autore" />
@@ -24,6 +24,7 @@
             <TableColumn fx:id="data" prefWidth="134.0" text="DataPubblicazione" />
             <TableColumn fx:id="prezzo" prefWidth="68.0" text="Prezzo" />
             <TableColumn fx:id="disponibilita" prefWidth="118.0" text="Disponibilita" />
+            <TableColumn fx:id="copie" prefWidth="103.0" text="CopieRimanenti" />
         </columns>
       </TableView>
       <Button fx:id="buttonL" layoutX="45.0" layoutY="335.0" mnemonicParsing="false" onAction="#vediLista" text="Lista libri" />

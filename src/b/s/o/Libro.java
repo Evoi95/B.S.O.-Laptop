@@ -94,7 +94,7 @@ public class Libro {
 	}
 	public Libro(String titolo, String autore, String lingua, String categoria, String codiceIsbn, String editore,
 			String descrizione, String numPag, String numAcq, String dataPubb, String prezzo, int copieRimanenti,
-			Image foto, Boolean disponibilita) {
+			Image foto, Boolean disponibilita,int copie) {
 	//	super();
 		this.titolo = titolo;
 		this.autore = autore;
@@ -110,6 +110,7 @@ public class Libro {
 		this.copieRimanenti = copieRimanenti;
 		this.foto = foto;
 		this.disponibilita = disponibilita;
+		this.copieRimanenti=copie;
 	}
 	
 	

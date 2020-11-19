@@ -45,6 +45,8 @@ public class BuondaryCompravendita {
 	private TableColumn<Libro,SimpleStringProperty> prezzo=new TableColumn<>("Prezzo");
 	@FXML
 	private TableColumn<Libro,SimpleBooleanProperty> disponibilita=new TableColumn<>("Disponibilita");
+	@FXML
+	private TableColumn<Libro,Integer> copie=new TableColumn<>("CopieRimanenti");
 	/*
 	 * TODO
 	 * sistemare altre righe tabella dal db
@@ -100,8 +102,8 @@ public class BuondaryCompravendita {
 	    prezzo.setCellValueFactory(new PropertyValueFactory<>("Prezzo"));
 	    disponibilita.setCellValueFactory(new PropertyValueFactory<>("Disponibilita"));
 	    
-	    CCV.catalogo();
-	    //table.getItems().add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","fanstasy","100","50","5-5-2020","74",null, true));
+	   CCV.catalogo();
+	   // table.getItems().add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","fanstasy","100","50","5-5-2020","74",0, null, true,15));
 
 
 	}
