@@ -66,7 +66,7 @@ public class BuondaryCompravendita {
 	private boolean verifica()
 	{
 		return false;
-		//verifico se libro è presente
+		//verifico se libro e presente
 		//String libro=entryText.getText();
 		//return CCV.disponibilitaLibro( libro);
 	}
