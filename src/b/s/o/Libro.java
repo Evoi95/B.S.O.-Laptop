@@ -2,9 +2,8 @@ package b.s.o;
 
 import javafx.scene.image.Image;
 public class Libro {
-	private String  titolo,autore,lingua,categoria,codiceIsbn,editore,descrizione,numPag,numAcq,dataPubb,prezzo;
-	private int copieRimanenti;
-	
+	private String  titolo,autore,lingua,categoria,codiceIsbn,editore,descrizione,dataPubb;
+	private int copieRimanenti,	numPag,numAcq,prezzo;	
 	private Image foto;
 	private Boolean disponibilita;
 	public String getTitolo() {
@@ -49,28 +48,34 @@ public class Libro {
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-	public String getNumPag() {
-		return this.numPag;
-	}
-	public void setNumPag(String numPag) {
-		this.numPag = numPag;
-	}
-	public String getNumAcq() {
-		return numAcq;
-	}
-	public void setNumAcq(String numAcq) {
-		this.numAcq = numAcq;
-	}
-	public String getDataPub() {
+	public String getDataPubb() {
 		return this.dataPubb;
 	}
-	public void setDataPub(String dataPub) {
-		this.dataPubb = dataPub;
+	public void setDataPubb(String dataPubb) {
+		this.dataPubb = dataPubb;
 	}
-	public String getPrezzo() {
+	public int getCopieRimanenti() {
+		return this.copieRimanenti;
+	}
+	public void setCopieRimanenti(int copieRimanenti) {
+		this.copieRimanenti = copieRimanenti;
+	}
+	public int getNumPag() {
+		return this.numPag;
+	}
+	public void setNumPag(int numPag) {
+		this.numPag = numPag;
+	}
+	public int getNumAcq() {
+		return this.numAcq;
+	}
+	public void setNumAcq(int numAcq) {
+		this.numAcq = numAcq;
+	}
+	public int getPrezzo() {
 		return this.prezzo;
 	}
-	public void setPrezzo(String prezzo) {
+	public void setPrezzo(int prezzo) {
 		this.prezzo = prezzo;
 	}
 	public Image getFoto() {
@@ -82,19 +87,9 @@ public class Libro {
 	public Boolean getDisponibilita() {
 		return this.disponibilita;
 	}
-	public void setDisponibilita(Boolean disponibilita) {
-		this.disponibilita = disponibilita;
-	}
-	
-	public int getCopieRimanenti() {
-		return this.copieRimanenti;
-	}
-	public void setCopieRimanenti(int copieRimanenti) {
-		this.copieRimanenti = copieRimanenti;
-	}
 	public Libro(String titolo, String autore, String lingua, String categoria, String codiceIsbn, String editore,
-			String descrizione, String numPag, String numAcq, String dataPubb, String prezzo, int copieRimanenti,
-			Image foto, Boolean disponibilita,int copie) {
+			String descrizione, String dataPubb, int copieRimanenti, int numPag, int numAcq, int prezzo, Image foto,
+			Boolean disponibilita) {
 	//	super();
 		this.titolo = titolo;
 		this.autore = autore;
@@ -103,14 +98,16 @@ public class Libro {
 		this.codiceIsbn = codiceIsbn;
 		this.editore = editore;
 		this.descrizione = descrizione;
+		this.dataPubb = dataPubb;
+		this.copieRimanenti = copieRimanenti;
 		this.numPag = numPag;
 		this.numAcq = numAcq;
-		this.dataPubb = dataPubb;
 		this.prezzo = prezzo;
-		this.copieRimanenti = copieRimanenti;
 		this.foto = foto;
 		this.disponibilita = disponibilita;
-		this.copieRimanenti=copie;
+	}
+	public void setDisponibilita(Boolean disponibilita) {
+		this.disponibilita = disponibilita;
 	}
 	
 	

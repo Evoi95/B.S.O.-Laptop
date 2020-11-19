@@ -9,7 +9,7 @@
 
 <Pane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="1154.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BuondaryCompravendita">
    <children>
-      <Label fx:id="header" layoutX="263.0" layoutY="38.0" prefHeight="17.0" prefWidth="173.0" text="Benvenuto... ecco la lista" />
+      <Label fx:id="header" layoutX="263.0" layoutY="38.0" prefHeight="17.0" prefWidth="326.0" text="Benvenuto... ecco la lista dei lipri nel nostro catalogo..." textAlignment="CENTER" />
       <TableView fx:id="table" layoutX="34.0" layoutY="83.0" prefHeight="228.0" prefWidth="1099.0">
         <columns>
           <TableColumn fx:id="titolo" prefWidth="75.0" text="Titolo" />
@@ -19,10 +19,10 @@
             <TableColumn fx:id="isbn" prefWidth="75.0" text="CodiceIsbn" />
             <TableColumn fx:id="editore" prefWidth="75.0" text="Editore" />
             <TableColumn fx:id="desc" prefWidth="75.0" text="Descrizione" />
-            <TableColumn fx:id="pagine" prefWidth="75.0" text="Pagine" />
-            <TableColumn fx:id="acquisti" prefWidth="75.0" text="Acquisti" />
-            <TableColumn fx:id="data" prefWidth="134.0" text="DataPubblicazione" />
             <TableColumn fx:id="prezzo" prefWidth="68.0" text="Prezzo" />
+            <TableColumn fx:id="data" prefWidth="134.0" text="DataPubblicazione" />
+            <TableColumn fx:id="nrPagine" prefWidth="75.0" text="PagineLibro" />
+            <TableColumn fx:id="nrAcquisti" prefWidth="75.0" text="Acquistati" />
             <TableColumn fx:id="disponibilita" prefWidth="118.0" text="Disponibilita" />
             <TableColumn fx:id="copie" prefWidth="103.0" text="CopieRimanenti" />
         </columns>

@@ -1,12 +1,16 @@
 package application;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import b.s.o.Libro;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -14,13 +18,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-public class BuondaryCompravendita {
+public class BuondaryCompravendita implements Initializable{
 	@FXML
 	private Pane panel;
 	@FXML
 	private Label header;
 	@FXML
-	private TableView<Libro> table=new TableView<Libro>();
+	private TableView<Libro> table;
 	@FXML
 	private TableColumn<Libro,SimpleStringProperty> titolo=new TableColumn<>("Titolo");
 	@FXML
@@ -36,17 +40,17 @@ public class BuondaryCompravendita {
 	@FXML
 	private TableColumn<Libro,SimpleStringProperty> desc=new TableColumn<>("Descrizione");
 	@FXML
-	private TableColumn<Libro,SimpleStringProperty> pagine=new TableColumn<>("Pagine");
+	private TableColumn<Libro,SimpleIntegerProperty> nrPagine=new TableColumn<>("PagineLibro");
 	@FXML
-	private TableColumn<Libro,SimpleStringProperty> acquisti=new TableColumn<>("Acquisti");
+	private TableColumn<Libro,SimpleIntegerProperty> nrAcquisti=new TableColumn<>("Acquistati");
 	@FXML
 	private TableColumn<Libro,SimpleStringProperty> data=new TableColumn<>("DataPubb");
 	@FXML
-	private TableColumn<Libro,SimpleStringProperty> prezzo=new TableColumn<>("Prezzo");
+	private TableColumn<Libro,SimpleIntegerProperty> prezzo=new TableColumn<>("Prezzo");
 	@FXML
 	private TableColumn<Libro,SimpleBooleanProperty> disponibilita=new TableColumn<>("Disponibilita");
 	@FXML
-	private TableColumn<Libro,Integer> copie=new TableColumn<>("CopieRimanenti");
+	private TableColumn<Libro,SimpleIntegerProperty> copie=new TableColumn<>("CopieRimanenti");
 	/*
 	 * TODO
 	 * sistemare altre righe tabella dal db
@@ -89,24 +93,12 @@ public class BuondaryCompravendita {
 	   
 	    System.out.println("Vedi lista");
 	    
-	    titolo.setCellValueFactory(new PropertyValueFactory<>("Titolo"));
-	    autore.setCellValueFactory(new PropertyValueFactory<>("Autore"));
-	    lingua.setCellValueFactory(new PropertyValueFactory<>("Lingua"));
-	    categoria.setCellValueFactory(new PropertyValueFactory<>("Categoria"));
-	    isbn.setCellValueFactory(new PropertyValueFactory<>("CodiceIsbn"));
-	    editore.setCellValueFactory(new PropertyValueFactory<>("Editore"));
-	    desc.setCellValueFactory(new PropertyValueFactory<>("Descrizione"));
-	    pagine.setCellValueFactory(new PropertyValueFactory<>("Pagine"));
-	    acquisti.setCellValueFactory(new PropertyValueFactory<>("Acquisti"));
-	    data.setCellValueFactory(new PropertyValueFactory<>("DataPubblicazione"));
-	    prezzo.setCellValueFactory(new PropertyValueFactory<>("Prezzo"));
-	    disponibilita.setCellValueFactory(new PropertyValueFactory<>("Disponibilita"));
-	    copie.setCellValueFactory(new PropertyValueFactory<>("CopieRimanenti"));
+	    
 
 	    
-	   CCV.catalogo();
-	   // table.getItems().add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","fanstasy","100","50","5-5-2020","74",0, null, true,15));
+	    table.setItems(CCV.getLibri());
 
+	   
 
 	}
 	
@@ -114,6 +106,26 @@ public class BuondaryCompravendita {
 	{
 		CCV=new ControllerCompravendita();
 	}
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		titolo.setCellValueFactory(new PropertyValueFactory<>("Titolo"));
+	    autore.setCellValueFactory(new PropertyValueFactory<>("Autore"));
+	    lingua.setCellValueFactory(new PropertyValueFactory<>("Lingua"));
+	    categoria.setCellValueFactory(new PropertyValueFactory<>("Categoria"));
+	    isbn.setCellValueFactory(new PropertyValueFactory<>("CodiceIsbn"));
+	    editore.setCellValueFactory(new PropertyValueFactory<>("Editore"));
+	    desc.setCellValueFactory(new PropertyValueFactory<>("Descrizione"));
+	    copie.setCellValueFactory(new PropertyValueFactory<>("CopieRimanenti"));
+	    nrPagine.setCellValueFactory(new PropertyValueFactory<>("numPag"));
+	    nrAcquisti.setCellValueFactory(new PropertyValueFactory<>("numAcq"));
+	    data.setCellValueFactory(new PropertyValueFactory<>("DataPubb"));
+	    prezzo.setCellValueFactory(new PropertyValueFactory<>("Prezzo"));
+	    disponibilita.setCellValueFactory(new PropertyValueFactory<>("Disponibilita"));
+	    
+		
+	}
+	
 	
 
 }
