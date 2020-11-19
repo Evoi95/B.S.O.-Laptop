@@ -21,23 +21,22 @@ public class BoundaryDownload {
 	@FXML
 	private Button buttonA;
 	
+	private ControllerDownload CD;
+	
 	@FXML
 	private void scarica()
 	{
-		Alert a=new Alert(Alert.AlertType.CONFIRMATION);
-		a.setTitle("Download ");
-		a.setContentText("Libro scaricato con successo");
-		a.setHeaderText(null);
-		a.showAndWait();
+		CD.scaricaLibro();
 	}
 	@FXML
 	private void pulisci()
 	{
-		Alert a=new Alert(Alert.AlertType.WARNING);
-		a.setTitle("Annulla ordine");
-		a.setContentText("Stai annullando l'ordine");
-		a.setHeaderText(null);
-		a.showAndWait();
+		CD.annullaOrdine();
+	}
+	
+	public BoundaryDownload()
+	{
+		CD=new ControllerDownload();
 	}
 	
 

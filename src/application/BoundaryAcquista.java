@@ -46,6 +46,10 @@ public class BoundaryAcquista {
 	private RadioButton buttonCC;
 	@FXML
 	private RadioButton buttonCash;
+	@FXML
+	private Button calcola;
+	
+	private ControllerAcquista CA;
 	
 	@FXML
 	private void pagaCC() throws IOException {
@@ -86,6 +90,19 @@ public class BoundaryAcquista {
 		totale.setText("");
 	}
 	
+	@FXML
+	//prendere importo in query
+	private void importo()
+	{
+		
+		CA.totale();
+		//settare in label import 
+		//quantita * prezzo
+	}
+	public BoundaryAcquista()
+	{
+		CA=new ControllerAcquista();
+	}
 	
 	
 	

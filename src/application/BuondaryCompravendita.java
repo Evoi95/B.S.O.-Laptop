@@ -58,10 +58,15 @@ public class BuondaryCompravendita {
 	@FXML
 	private Button buttonA;
 	
+	private ControllerCompravendita CCV;
+	
 	@FXML
-	private void verifica()
+	private boolean verifica()
 	{
-		
+		return false;
+		//verifico se libro è presente
+		//String libro=entryText.getText();
+		//return CCV.disponibilitaLibro( libro);
 	}
 	@FXML
 	private void procedi() throws IOException {
@@ -95,10 +100,15 @@ public class BuondaryCompravendita {
 	    prezzo.setCellValueFactory(new PropertyValueFactory<>("Prezzo"));
 	    disponibilita.setCellValueFactory(new PropertyValueFactory<>("Disponibilita"));
 	    
-	  
-	    table.getItems().add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","fanstasy","100","50","5-5-2020","74",null, true));
+	    CCV.catalogo();
+	    //table.getItems().add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","fanstasy","100","50","5-5-2020","74",null, true));
 
 
+	}
+	
+	public BuondaryCompravendita()
+	{
+		CCV=new ControllerCompravendita();
 	}
 	
 

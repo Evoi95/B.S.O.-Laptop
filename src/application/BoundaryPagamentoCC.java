@@ -42,9 +42,14 @@ public class BoundaryPagamentoCC {
 	private Button buttonI;
 	@FXML
 	private Button buttonA;
+	
+	private ControllerPagamentoCC CPCC;
 	@FXML
 	private void procediCC() throws IOException
 	{
+		
+		CPCC.controllaPag(/* codice,dataScad*/);
+		
 		Parent root = FXMLLoader.load(getClass().getResource("download.fxml"));
 
         Scene scene = new Scene(root);       
@@ -61,6 +66,9 @@ public class BoundaryPagamentoCC {
 	{
 	//	this.primaryStage.close();
 	}
-	
+	public BoundaryPagamentoCC()
+	{
+		CPCC=new ControllerPagamentoCC();
+	}
 
 }

@@ -37,9 +37,12 @@ public class BoundaryPagamentoCash {
 	private Button buttonI;
 	@FXML 
 	private Button buttonA;	
+	
+	private ControllerPagamentoCash CPC;
 	@FXML
 	private void procediCash() throws IOException
 	{
+		CPC.controlla();
 		Parent root = FXMLLoader.load(getClass().getResource("download.fxml"));
 
         Scene scene = new Scene(root);       
@@ -57,6 +60,10 @@ public class BoundaryPagamentoCash {
 		
 	}
 	
+	public BoundaryPagamentoCash()
+	{
+		CPC=new ControllerPagamentoCash();
+	}
 	
 	
 	
