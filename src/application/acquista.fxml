@@ -29,6 +29,7 @@
             <RadioButton fx:id="buttonCC" layoutX="474.0" layoutY="110.0" mnemonicParsing="false" onAction="#pagaCC" text="Carta Credito" />
             <RadioButton fx:id="buttonCash" layoutX="474.0" layoutY="165.0" mnemonicParsing="false" onAction="#pagaCash" text="Contanti" />
             <Button fx:id="calcola" layoutX="474.0" layoutY="275.0" mnemonicParsing="false" onAction="#importo" text="Totale" />
+            <Button fx:id="link" layoutX="566.0" layoutY="275.0" mnemonicParsing="false" onAction="#indietro" text="Indietro" />
          </children></AnchorPane>
   </items>
 </SplitPane>

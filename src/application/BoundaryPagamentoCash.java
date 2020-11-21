@@ -43,6 +43,19 @@ public class BoundaryPagamentoCash {
 	private void procediCash() throws IOException
 	{
 		CPC.controlla();
+		Stage stage;
+		Parent root;
+		stage=(Stage)buttonI.getScene().getWindow();
+		root=FXMLLoader.load(getClass().getResource("download.fxml"));
+		
+
+		
+		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		
+	        Scene scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
+		/*
 		Parent root = FXMLLoader.load(getClass().getResource("download.fxml"));
 
         Scene scene = new Scene(root);       
@@ -52,12 +65,25 @@ public class BoundaryPagamentoCash {
 		primaryStage.setScene(scene);
         primaryStage.show();
         //buttonCC.setDisable(true);
+         * 
+         */
 
 	}
 	@FXML
-	private void annullaCash()
+	private void annullaCash() throws IOException
 	{
+		Stage stage;
+		Parent root;
+		stage=(Stage)buttonA.getScene().getWindow();
+		root=FXMLLoader.load(getClass().getResource("acquista.fxml"));
 		
+
+		
+		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		
+	        Scene scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
 	}
 	
 	public BoundaryPagamentoCash()
