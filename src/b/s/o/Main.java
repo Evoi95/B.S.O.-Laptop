@@ -27,6 +27,8 @@ public class Main extends Application {
 
 public static void main(String[] args) {
 	// TODO Auto-generated method stub
+	LibroSingleton Ls = LibroSingleton.getIstance();
+	Ls.getLibro();
 	launch(args);
 }
 }
