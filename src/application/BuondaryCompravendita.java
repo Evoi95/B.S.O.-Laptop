@@ -115,7 +115,9 @@ public class BuondaryCompravendita implements Initializable{
 	    
 
 	    
-	    table.setItems(CCV.getLibri());
+	   table.setItems(CCV.getLibri());
+	    
+	   // CCV.getLibro();
 
 	   
 

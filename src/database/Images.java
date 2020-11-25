@@ -1,8 +1,10 @@
 package database;
 
-import java.awt.Image;
+
 import java.io.File;
 import java.util.List;
+
+import javafx.scene.image.Image;
 
 public class Images {
 	private List<File> image;

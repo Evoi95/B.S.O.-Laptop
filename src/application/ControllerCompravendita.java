@@ -1,6 +1,6 @@
 package application;
 
-import b.s.o.LibroSingleton;
+import factoryBook.Factory;
 import factoryBook.Libro;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -32,6 +32,12 @@ public class ControllerCompravendita {
 		return catalogo;
 		
 	}
+	
+	
+	//System.out.println(l);
+	
+	
+	
 	//LibroSingleton lS=LibroSingleton.getIstance();
 //	lS.getLibro();	
 	
