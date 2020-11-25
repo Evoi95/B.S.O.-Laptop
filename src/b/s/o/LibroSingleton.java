@@ -2,7 +2,7 @@ package b.s.o;
 
 public class LibroSingleton {
 	
-	private static LibroSingleton instance=new LibroSingleton();
+	private static LibroSingleton instance =new LibroSingleton();
 	
 	private LibroSingleton()
 	{
