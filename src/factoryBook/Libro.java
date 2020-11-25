@@ -1,4 +1,4 @@
-package b.s.o;
+package factoryBook;
 
 import javafx.scene.image.Image;
 public class Libro {

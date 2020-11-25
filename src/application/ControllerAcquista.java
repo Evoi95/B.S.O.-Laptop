@@ -1,6 +1,5 @@
 package application;
 
-import b.s.o.LibroSingleton;
 
 public class ControllerAcquista {
 	
@@ -8,7 +7,6 @@ public class ControllerAcquista {
 	{
 		//calcolo qui il toatale
 	}
-	LibroSingleton lS=LibroSingleton.getIstance();
 	
-	//lS.getLibro();
+	
 }
