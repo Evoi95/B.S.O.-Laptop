@@ -63,14 +63,6 @@ public class ControllerCompravendita {
 	
 	
 	
-	//System.out.println(l);
 	
-	
-	
-	//LibroSingleton lS=LibroSingleton.getIstance();
-//	lS.getLibro();	
-	
-	//LibroSingleton lS=LibroSingleton.getIstance();
-//	lS.getLibro();	
 
 }
