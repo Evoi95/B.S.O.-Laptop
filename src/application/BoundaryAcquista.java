@@ -18,8 +18,7 @@ public class BoundaryAcquista {
 	@FXML
 	private AnchorPane ap2;
 	@FXML
-	private Label header;
-	
+	private Label header;	
 	@FXML
 	private Label labelN;
 	@FXML
@@ -48,11 +47,28 @@ public class BoundaryAcquista {
 	private RadioButton buttonCash;
 	@FXML
 	private Button calcola;
+	@FXML
+	private Button link;
+	
 	
 	private ControllerAcquista CA;
 	
+	
 	@FXML
 	private void pagaCC() throws IOException {
+		Stage stage;
+		Parent root;
+		stage=(Stage)buttonCC.getScene().getWindow();
+		root=FXMLLoader.load(getClass().getResource("pagamentoCC.fxml"));
+		
+
+		
+		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		
+	        Scene scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
+		/*
 		Parent root = FXMLLoader.load(getClass().getResource("pagamentoCC.fxml"));
 
         Scene scene = new Scene(root);       
@@ -62,12 +78,26 @@ public class BoundaryAcquista {
 		primaryStage.setScene(scene);
         primaryStage.show();
         buttonCash.setDisable(true);
+        */
 
 		
 	}
 	@FXML
 	private void pagaCash() throws IOException
 	{
+		Stage stage;
+		Parent root;
+		stage=(Stage)buttonCash.getScene().getWindow();
+		root=FXMLLoader.load(getClass().getResource("pagamentoContrassegno.fxml"));
+		
+
+		
+		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		
+	        Scene scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
+		/*
 		Parent root = FXMLLoader.load(getClass().getResource("pagamentoContrassegno.fxml"));
 
         Scene scene = new Scene(root);       
@@ -77,6 +107,7 @@ public class BoundaryAcquista {
 		primaryStage.setScene(scene);
         primaryStage.show();
         buttonCC.setDisable(true);
+        */
 
 		
 	}
@@ -102,6 +133,30 @@ public class BoundaryAcquista {
 	public BoundaryAcquista()
 	{
 		CA=new ControllerAcquista();
+	}
+	@FXML
+	private void indietro() throws IOException
+	{
+		
+		Stage stage;
+		Parent root;
+		stage=(Stage)link.getScene().getWindow();
+		root=FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		
+
+		
+		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		
+	        Scene scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
+	        
+	       // primaryStage.setTitle("Benvenuto nella schermata di login");	
+	       // primaryStage.setScene(newScene);
+	       // primaryStage.show();
+
+		
+		
 	}
 	
 	

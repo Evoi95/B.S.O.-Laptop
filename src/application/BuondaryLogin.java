@@ -63,16 +63,29 @@ public class BuondaryLogin implements Initializable {
 		if(v)
 		{			//System.out.println("v in if vale :"+v);
 
+			
+			Stage stage;
+			Parent root;
+			stage=(Stage)buttonI.getScene().getWindow();
+			root=FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+			
+
+			
+			// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+			
+		        Scene scene = new Scene(root);
+		        stage.setScene(scene);
+		        stage.show();
 			// carico seconda schermata
 
-			Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+			/*Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 
 	        Scene scene = new Scene(root);  	       
 
 	        Stage primaryStage = new Stage();
 			primaryStage.setScene(scene);
 	        primaryStage.show();
-
+*/
 			
 			
 

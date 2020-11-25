@@ -66,6 +66,7 @@ public class BuondaryCompravendita implements Initializable{
 	
 	private ControllerCompravendita CCV;
 	
+	
 	@FXML
 	private boolean verifica()
 	{
@@ -76,6 +77,21 @@ public class BuondaryCompravendita implements Initializable{
 	}
 	@FXML
 	private void procedi() throws IOException {
+		
+		Stage stage;
+		Parent root;
+		stage=(Stage)buttonA.getScene().getWindow();
+		root=FXMLLoader.load(getClass().getResource("acquista.fxml"));
+		
+
+		
+		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		
+	        Scene scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
+		
+		/*
 		Parent root = FXMLLoader.load(getClass().getResource("acquista.fxml"));
 
         Scene scene = new Scene(root);       
@@ -84,7 +100,10 @@ public class BuondaryCompravendita implements Initializable{
         Stage primaryStage = new Stage();
 		primaryStage.setScene(scene);
         primaryStage.show();
+        */
 
+        
+        
 		
 	}
 	@FXML
