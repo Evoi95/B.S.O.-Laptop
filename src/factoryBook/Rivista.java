@@ -22,10 +22,20 @@ enum TipiRivista {
 }
 public class Rivista implements Raccolta  {
 	
-	private String  titolo,autore,lingua,editore,descrizione,dataPubb;
+	private String tipologia,titolo,autore,lingua,editore,descrizione,dataPubb;
+	
+
 	private int numPag,prezzo;	
 	private Image foto;
 	private Boolean disponibilita;
+	
+	public String getTipologia() {
+		return this.tipologia;
+	}
+
+	public void setTipologia(String tipologia) {
+		this.tipologia = tipologia;
+	}
 
 	public String getTitolo() {
 		return this.titolo;
@@ -103,9 +113,11 @@ public class Rivista implements Raccolta  {
 		return this.disponibilita;
 	}
 
-	public Rivista(String titolo, String autore, String lingua, String editore, String descrizione, String dataPubb,
+	public Rivista(String tipologia,String titolo, String autore, String lingua, String editore, String descrizione, String dataPubb,
 			int numPag, int prezzo, Image foto, Boolean disponibilita) {
 		//super();
+		this.tipologia=tipologia;
+
 		this.titolo = titolo;
 		this.autore = autore;
 		this.lingua = lingua;
@@ -118,10 +130,7 @@ public class Rivista implements Raccolta  {
 		this.disponibilita = disponibilita;
 	}
 
-	public Rivista() {
-		// TODO Auto-generated constructor stub
-	}
-
+	
 	public void setDisponibilita(Boolean disponibilita) {
 		this.disponibilita = disponibilita;
 	}

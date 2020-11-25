@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import factoryBook.Libro;
+import factoryBook.Raccolta;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -24,33 +25,33 @@ public class BuondaryCompravendita implements Initializable{
 	@FXML
 	private Label header;
 	@FXML
-	private TableView<Libro> table;
+	private TableView<Raccolta> table;
 	@FXML
-	private TableColumn<Libro,SimpleStringProperty> titolo=new TableColumn<>("Titolo");
+	private TableColumn<Raccolta,SimpleStringProperty> titolo=new TableColumn<>("Titolo");
 	@FXML
-	private TableColumn<Libro,SimpleStringProperty> autore=new TableColumn<>("Autore");
+	private TableColumn<Raccolta,SimpleStringProperty> autore=new TableColumn<>("Autore");
 	@FXML
-	private TableColumn<Libro,SimpleStringProperty> lingua=new TableColumn<>("Lingua");
+	private TableColumn<Raccolta,SimpleStringProperty> lingua=new TableColumn<>("Lingua");
 	@FXML
-	private TableColumn<Libro,SimpleStringProperty> categoria=new TableColumn<>("Categoria");
+	private TableColumn<Raccolta,SimpleStringProperty> categoria=new TableColumn<>("Categoria");
 	@FXML
-	private TableColumn<Libro,SimpleStringProperty> isbn=new TableColumn<>("CodiceIsbn");
+	private TableColumn<Raccolta,SimpleStringProperty> isbn=new TableColumn<>("CodiceIsbn");
 	@FXML
-	private TableColumn<Libro,SimpleStringProperty> editore=new TableColumn<>("Editore");
+	private TableColumn<Raccolta,SimpleStringProperty> editore=new TableColumn<>("Editore");
 	@FXML
-	private TableColumn<Libro,SimpleStringProperty> desc=new TableColumn<>("Descrizione");
+	private TableColumn<Raccolta,SimpleStringProperty> desc=new TableColumn<>("Descrizione");
 	@FXML
-	private TableColumn<Libro,SimpleIntegerProperty> nrPagine=new TableColumn<>("PagineLibro");
+	private TableColumn<Raccolta,SimpleIntegerProperty> nrPagine=new TableColumn<>("PagineLibro");
 	@FXML
-	private TableColumn<Libro,SimpleIntegerProperty> nrAcquisti=new TableColumn<>("Acquistati");
+	private TableColumn<Raccolta,SimpleIntegerProperty> nrAcquisti=new TableColumn<>("Acquistati");
 	@FXML
-	private TableColumn<Libro,SimpleStringProperty> data=new TableColumn<>("DataPubb");
+	private TableColumn<Raccolta,SimpleStringProperty> data=new TableColumn<>("DataPubb");
 	@FXML
-	private TableColumn<Libro,SimpleIntegerProperty> prezzo=new TableColumn<>("Prezzo");
+	private TableColumn<Raccolta,SimpleIntegerProperty> prezzo=new TableColumn<>("Prezzo");
 	@FXML
-	private TableColumn<Libro,SimpleBooleanProperty> disponibilita=new TableColumn<>("Disponibilita");
+	private TableColumn<Raccolta,SimpleBooleanProperty> disponibilita=new TableColumn<>("Disponibilita");
 	@FXML
-	private TableColumn<Libro,SimpleIntegerProperty> copie=new TableColumn<>("CopieRimanenti");
+	private TableColumn<Raccolta,SimpleIntegerProperty> copie=new TableColumn<>("CopieRimanenti");
 	/*
 	 * TODO
 	 * sistemare altre righe tabella dal db
@@ -63,6 +64,11 @@ public class BuondaryCompravendita implements Initializable{
 	private Button buttonV;
 	@FXML
 	private Button buttonA;
+	@FXML
+	private Button buttonR;
+	@FXML
+	private Button buttonG;
+	
 	
 	private ControllerCompravendita CCV;
 	
@@ -107,21 +113,24 @@ public class BuondaryCompravendita implements Initializable{
 		
 	}
 	@FXML
-	private void vediLista()
+	private void vediListaLibri()
 	{
 	   
-	    System.out.println("Vedi lista");
-	    
-	    
-
-	    
-	   table.setItems(CCV.getLibri());
-	    
-	   // CCV.getLibro();
-
 	   
-
+	 	   table.setItems(CCV.getLibri());   
+	 
 	}
+	@FXML
+	private void vediListaRiviste()
+	{
+		table.setItems(CCV.getRiviste());
+	}
+	 @FXML
+	 private void vediListaGiornali()
+	 {
+			table.setItems(CCV.getGiornali());
+
+	 }
 	
 	public BuondaryCompravendita()
 	{

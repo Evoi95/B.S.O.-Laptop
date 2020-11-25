@@ -4,7 +4,15 @@ import javafx.scene.image.Image;
 
 public class Giornale implements Raccolta {
 	
-	private String  titolo,lingua,editore,dataPubb;
+	private String  tipologia,titolo,lingua,editore,dataPubb;
+	public String getTipologia() {
+		return this.tipologia;
+	}
+
+	public void setTipologia(String tipologia) {
+		this.tipologia = tipologia;
+	}
+
 	private int copieRimanenti,prezzo;	
 	private Image foto;
 	private Boolean disponibilita; 
@@ -91,9 +99,11 @@ public class Giornale implements Raccolta {
 		
 	}
 
-	public Giornale(String titolo, String lingua, String editore, String dataPubb, int copieRimanenti, int prezzo,
+	public Giornale(String tipologia,String titolo, String lingua, String editore, String dataPubb, int copieRimanenti, int prezzo,
 			Image foto, Boolean disponibilita) {
 		//super();
+		this.tipologia=tipologia;
+
 		this.titolo = titolo;
 		this.lingua = lingua;
 		this.editore = editore;
@@ -104,8 +114,5 @@ public class Giornale implements Raccolta {
 		this.disponibilita = disponibilita;
 	}
 
-	public Giornale() {
-		// TODO Auto-generated constructor stub
-	}
-
+	
 }

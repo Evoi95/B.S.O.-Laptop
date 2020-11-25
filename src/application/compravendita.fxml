@@ -10,7 +10,7 @@
 <Pane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="1154.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BuondaryCompravendita">
    <children>
       <Label fx:id="header" layoutX="263.0" layoutY="38.0" prefHeight="17.0" prefWidth="326.0" text="Benvenuto... ecco la lista dei lipri nel nostro catalogo..." textAlignment="CENTER" />
-      <TableView fx:id="table" layoutX="34.0" layoutY="83.0" prefHeight="228.0" prefWidth="1099.0">
+      <TableView fx:id="table" layoutX="35.0" layoutY="83.0" prefHeight="234.0" prefWidth="1098.0">
         <columns>
           <TableColumn fx:id="titolo" prefWidth="75.0" text="Titolo" />
           <TableColumn fx:id="autore" prefWidth="75.0" text="Autore" />
@@ -27,9 +27,11 @@
             <TableColumn fx:id="copie" prefWidth="103.0" text="CopieRimanenti" />
         </columns>
       </TableView>
-      <Button fx:id="buttonL" layoutX="45.0" layoutY="335.0" mnemonicParsing="false" onAction="#vediLista" text="Lista libri" />
+      <Button fx:id="buttonL" layoutX="45.0" layoutY="335.0" mnemonicParsing="false" onAction="#vediListaLibri" text="Lista libri" />
       <TextField fx:id="entryText" layoutX="337.0" layoutY="335.0" prefHeight="25.0" prefWidth="135.0" />
       <Button fx:id="buttonV" layoutX="178.0" layoutY="335.0" mnemonicParsing="false" onAction="#verifica" text="Verifica Disponibilita" />
       <Button fx:id="buttonA" layoutX="595.0" layoutY="335.0" mnemonicParsing="false" onAction="#procedi" text="Acquista" />
+      <Button fx:id="buttonR" layoutX="45.0" layoutY="385.0" mnemonicParsing="false" onAction="#vediListaRiviste" text="Lista riviste" />
+      <Button fx:id="buttonG" layoutX="45.0" layoutY="435.0" mnemonicParsing="false" onAction="#vediListaGiornali" text="Lista giornali" />
    </children>
 </Pane>
