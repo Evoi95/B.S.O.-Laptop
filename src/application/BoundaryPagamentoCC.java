@@ -43,6 +43,12 @@ public class BoundaryPagamentoCC {
 	@FXML
 	private Button buttonA;
 	
+	@FXML
+	private Label labelCiv;
+	
+	@FXML
+	private PasswordField codiceTFCiv;
+	
 	private ControllerPagamentoCC CPCC;
 	@FXML
 	private void procediCC() throws IOException
