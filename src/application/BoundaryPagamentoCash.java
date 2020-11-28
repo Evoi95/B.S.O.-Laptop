@@ -86,7 +86,7 @@ public class BoundaryPagamentoCash {
 	        stage.show();
 	}
 	
-	public BoundaryPagamentoCash()
+	public BoundaryPagamentoCash() throws Exception
 	{
 		CPC=new ControllerPagamentoCash();
 	}

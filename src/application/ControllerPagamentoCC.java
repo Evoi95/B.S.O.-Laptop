@@ -1,6 +1,10 @@
 package application;
 
+import singletonPagamento.SingletonPagamento;
+
 public class ControllerPagamentoCC {
+	
+	//private SingletonPagamento sP;
 
 	
 
@@ -8,6 +12,11 @@ public class ControllerPagamentoCC {
 		return false;
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public ControllerPagamentoCC() throws Exception
+	{
+		SingletonPagamento.getInstance().decidiPagemento(0);
 	}
 
 }

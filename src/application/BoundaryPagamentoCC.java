@@ -100,9 +100,10 @@ public class BoundaryPagamentoCC {
 	        stage.show();
 	//	this.primaryStage.close();
 	}
-	public BoundaryPagamentoCC()
+	public BoundaryPagamentoCC() throws Exception
 	{
 		CPCC=new ControllerPagamentoCC();
+	
 	}
 
 }
