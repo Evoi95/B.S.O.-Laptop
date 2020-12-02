@@ -87,7 +87,7 @@ public class BuondaryCompravendita implements Initializable{
 		Parent root;
 		stage=(Stage)buttonA.getScene().getWindow();
 		root=FXMLLoader.load(getClass().getResource("acquista.fxml"));
-		
+		stage.setTitle("Benvenuto nella schermata del catalogo libri ");
 
 		
 		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));

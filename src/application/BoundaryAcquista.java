@@ -60,7 +60,7 @@ public class BoundaryAcquista {
 		Parent root;
 		stage=(Stage)buttonCC.getScene().getWindow();
 		root=FXMLLoader.load(getClass().getResource("pagamentoCC.fxml"));
-		
+		stage.setTitle("Benvenuto nella schermata dell'acquisto");
 
 		
 		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));

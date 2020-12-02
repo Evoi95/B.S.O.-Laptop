@@ -62,7 +62,7 @@ public class BoundaryPagamentoCC {
 		stage=(Stage)buttonI.getScene().getWindow();
 		root=FXMLLoader.load(getClass().getResource("download.fxml"));
 		
-
+		stage.setTitle("Benvenuto nella schermata per pagare contrassegno");
 		
 		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 		
