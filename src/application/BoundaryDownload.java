@@ -43,7 +43,7 @@ public class BoundaryDownload {
 		root=FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 		
 
-		
+		//stage.setTitle("Schermata download");
 		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 		
 	        Scene scene = new Scene(root);
