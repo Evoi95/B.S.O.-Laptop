@@ -6,10 +6,8 @@ import java.sql.SQLException;
 
 import database.ConnToDb;
 import factoryBook.Factory;
-import factoryBook.Giornale;
-import factoryBook.Libro;
+
 import factoryBook.Raccolta;
-import factoryBook.Rivista;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -50,7 +48,15 @@ public class ControllerCompravendita {
 
             while(rs.next())
             {
-        		catalogo.add(new Libro(rs.getString(1),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getDate(8),rs.getString(9),rs.getInt(10),rs.getString(11),rs.getInt(12),rs.getFloat(13),rs.getInt(14),rs.getBinaryStream(15)));
+               // System.out.println("res :"+rs);
+
+        		try {
+					catalogo.add(f.createLibro("libro",rs.getString(1),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getDate(8),rs.getString(9),rs.getInt(10),rs.getString(11),rs.getInt(12),rs.getFloat(13),rs.getInt(14),rs.getBinaryStream(15)));
+					//rs=rs.next();
+        		} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
             }
 		
@@ -61,7 +67,7 @@ public class ControllerCompravendita {
 		
 	}
 	
-	public ObservableList<Raccolta> getRiviste()
+/*	public ObservableList<Raccolta> getRiviste()
 	{
 		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
 		catalogo.add((Rivista) f.createRivista("rivista", "rivista1","dddd","it","paperino","sport","6/9/2020",20,50,null,true));
@@ -78,7 +84,7 @@ public class ControllerCompravendita {
 		return catalogo;
 		
 	}
-	
+*/	
 	
 	
 	

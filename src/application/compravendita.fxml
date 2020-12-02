@@ -13,16 +13,16 @@
       <TableView fx:id="table" layoutX="33.0" layoutY="86.0" prefHeight="234.0" prefWidth="1247.0">
         <columns>
           <TableColumn fx:id="titolo" prefWidth="75.0" text="Titolo" />
-          <TableColumn fx:id="numPag" prefWidth="99.0" text="Numero pagine" />
-            <TableColumn fx:id="isbn" prefWidth="65.0" text="CodiceIsbn" />
-            <TableColumn fx:id="editore" prefWidth="61.0" text="Editore" />
+          <TableColumn fx:id="numPag" prefWidth="99.0" text="NumeroPagine" />
+            <TableColumn fx:id="isbn" prefWidth="88.0" text="CodiceIsbn" />
+            <TableColumn fx:id="editore" prefWidth="38.0" text="Editore" />
             <TableColumn fx:id="autore" prefWidth="75.0" text="Autore" />
             <TableColumn fx:id="lingua" prefWidth="75.0" text="Lingua" />
             <TableColumn fx:id="categoria" prefWidth="75.0" text="Categoria" />
             <TableColumn fx:id="data" prefWidth="134.0" text="DataPubblicazione" />
             <TableColumn fx:id="recensione" prefWidth="75.0" text="Recensione" />
-            <TableColumn fx:id="nrCopie" prefWidth="75.0" text="Copie Vendute" />
-            <TableColumn fx:id="desc" prefWidth="75.0" text="Descrizione" />
+            <TableColumn fx:id="nrCopie" prefWidth="94.0" text="Copie Vendute" />
+            <TableColumn fx:id="desc" prefWidth="56.0" text="Descrizione" />
             <TableColumn fx:id="disponibilita" prefWidth="118.0" text="Disponibilita" />
             <TableColumn fx:id="prezzo" prefWidth="68.0" text="Prezzo" />
             <TableColumn fx:id="copie" prefWidth="103.0" text="CopieRimanenti" />
