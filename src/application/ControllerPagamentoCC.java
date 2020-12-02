@@ -19,4 +19,11 @@ public class ControllerPagamentoCC {
 		SingletonPagamento.getInstance().decidiPagemento(0);
 	}
 
+	public void aggiungiCartaDB() {
+		// TODO Auto-generated method stub
+		//Store carta in db
+		//riuso funzione tasto invio senza salvare
+		
+	}
+
 }

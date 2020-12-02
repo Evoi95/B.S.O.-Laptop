@@ -33,6 +33,7 @@ public class SingletonPagamento {
 		case -1:
 		{
 			System.out.println(" errore nel pagamento");
+			
 			break;
 
 		}

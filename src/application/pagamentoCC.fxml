@@ -38,10 +38,11 @@
             <Label fx:id="cartaC" prefHeight="79.0" prefWidth="228.0" text="Codice carta " GridPane.rowIndex="4" />
             <Label fx:id="labelS" prefHeight="74.0" prefWidth="215.0" text="Data Scadenza" GridPane.rowIndex="5" />
             <TextField fx:id="scadTF" prefHeight="95.0" prefWidth="220.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Button fx:id="buttonI" layoutX="10.0" layoutY="50.0" mnemonicParsing="false" onAction="#procediCC" prefHeight="85.0" prefWidth="219.0" text="Invia" textFill="#00ff11" GridPane.rowIndex="8" />
+            <Button fx:id="buttonI" layoutX="10.0" layoutY="50.0" mnemonicParsing="false" onAction="#procediCC" prefHeight="85.0" prefWidth="219.0" text="Invia (dati non salvati)" textFill="#00ff11" GridPane.rowIndex="8" />
             <Button fx:id="buttonA" mnemonicParsing="false" onAction="#annullaCC" prefHeight="83.0" prefWidth="222.0" text="Annulla" textFill="#f20400" GridPane.columnIndex="2" GridPane.rowIndex="8" />
             <Label fx:id="labelCiv" text="Inserire codice" GridPane.rowIndex="6" />
             <PasswordField fx:id="codiceTFCiv" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Button fx:id="buttonReg" mnemonicParsing="false" onAction="#registraCC" prefHeight="88.0" prefWidth="247.0" text="Registra carta credito e paga" textFill="#1100ff" GridPane.columnIndex="1" GridPane.rowIndex="8" />
          </children>
       </GridPane>
    </children>

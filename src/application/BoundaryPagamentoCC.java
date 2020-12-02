@@ -45,6 +45,8 @@ public class BoundaryPagamentoCC {
 	
 	@FXML
 	private Label labelCiv;
+	@FXML
+	private Button buttonReg;
 	
 	@FXML
 	private PasswordField codiceTFCiv;
@@ -104,6 +106,11 @@ public class BoundaryPagamentoCC {
 	{
 		CPCC=new ControllerPagamentoCC();
 	
+	}
+	@FXML
+	public void registraCC()
+	{
+		CPCC.aggiungiCartaDB();
 	}
 
 }
