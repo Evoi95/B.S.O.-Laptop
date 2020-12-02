@@ -48,7 +48,7 @@ public class BoundaryPagamentoCash {
 		stage=(Stage)buttonI.getScene().getWindow();
 		root=FXMLLoader.load(getClass().getResource("download.fxml"));
 		
-		stage.setTitle("Benvenuto nella schermata del pagamento con contanti");
+		stage.setTitle("Benvenuto nella schermata del download");
 
 
 		
@@ -78,7 +78,8 @@ public class BoundaryPagamentoCash {
 		Parent root;
 		stage=(Stage)buttonA.getScene().getWindow();
 		root=FXMLLoader.load(getClass().getResource("acquista.fxml"));
-		
+		stage.setTitle("benvenuto nella schermata del riepilogo ordine");
+
 
 		
 		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));

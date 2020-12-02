@@ -68,6 +68,8 @@ public class BuondaryLogin implements Initializable {
 			Parent root;
 			stage=(Stage)buttonI.getScene().getWindow();
 			root=FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+			stage.setTitle("Benvenuto nella schermata del catalogo libri ");
+
 			
 
 			
