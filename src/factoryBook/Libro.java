@@ -1,123 +1,47 @@
 package factoryBook;
 
+import java.io.InputStream;
+import java.sql.Date;
+
+import javax.imageio.stream.FileImageInputStream;
+import javax.xml.crypto.Data;
+
 import javafx.scene.image.Image;
 public class Libro implements Raccolta {
-	private String  tipologia,titolo,autore,lingua,categoria,codiceIsbn,editore,descrizione,dataPubb;
 	
-	private int copieRimanenti,	numPag,numAcq,prezzo;	
-	private Image foto;
-	private Boolean disponibilita;
-	public String getTipologia() {
-		return this.tipologia;
-	}
-	public void setTipologia(String tipologia) {
-		this.tipologia = tipologia;
-	}
-	public String getTitolo() {
-		return this.titolo;
-	}
-	public void setTitolo(String titolo) {
+	private String titolo;
+	private int numPag;
+	private String codIsbn,editore,autore,lingua,categoria;
+	private Date dataPubb;
+	private String recensione;
+	private int nrCopie;
+	private String desc;
+	private int disponibilita;
+	private float prezzo;
+	private int copieRim;
+	private InputStream Img;
+	
+	public Libro(String titolo, int numPag, String codIsbn, String editore, String autore, String lingua,
+			String categoria, Date dataPubb, String recensione, int nrCopie, String desc, int disponibilita,
+			float prezzo, int copieRim, InputStream img) {
+		//super();
 		this.titolo = titolo;
-	}
-	public String getAutore() {
-		return this.autore;
-	}
-	public void setAutore(String autore) {
-		this.autore = autore;
-	}
-	public String getLingua() {
-		return this.lingua;
-	}
-	public void setLingua(String lingua) {
-		this.lingua = lingua;
-	}
-	public String getCategoria() {
-		return this.categoria;
-	}
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
-	public String getCodiceIsbn() {
-		return this.codiceIsbn;
-	}
-	public void setCodiceIsbn(String codiceIsbn) {
-		this.codiceIsbn = codiceIsbn;
-	}
-	public String getEditore() {
-		return this.editore;
-	}
-	public void setEditore(String editore) {
-		this.editore = editore;
-	}
-	public String getDescrizione() {
-		return this.descrizione;
-	}
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
-	}
-	public String getDataPubb() {
-		return this.dataPubb;
-	}
-	public void setDataPubb(String dataPubb) {
-		this.dataPubb = dataPubb;
-	}
-	public int getCopieRimanenti() {
-		return this.copieRimanenti;
-	}
-	public void setCopieRimanenti(int copieRimanenti) {
-		this.copieRimanenti = copieRimanenti;
-	}
-	public int getNumPag() {
-		return this.numPag;
-	}
-	public void setNumPag(int numPag) {
 		this.numPag = numPag;
-	}
-	public int getNumAcq() {
-		return this.numAcq;
-	}
-	public void setNumAcq(int numAcq) {
-		this.numAcq = numAcq;
-	}
-	public int getPrezzo() {
-		return this.prezzo;
-	}
-	public void setPrezzo(int prezzo) {
-		this.prezzo = prezzo;
-	}
-	public Image getFoto() {
-		return this.foto;
-	}
-	public void setFoto(Image foto) {
-		this.foto = foto;
-	}
-	public Boolean getDisponibilita() {
-		return this.disponibilita;
-	}
-	public Libro(String tipologia,String titolo, String autore, String lingua, String categoria, String codiceIsbn, String editore,
-			String descrizione, String dataPubb, int copieRimanenti, int numPag, int numAcq, int prezzo, Image foto,
-			Boolean disponibilita) {
-	//	super();
-		this.tipologia=tipologia;
-		this.titolo = titolo;
+		this.codIsbn = codIsbn;
+		this.editore = editore;
 		this.autore = autore;
 		this.lingua = lingua;
 		this.categoria = categoria;
-		this.codiceIsbn = codiceIsbn;
-		this.editore = editore;
-		this.descrizione = descrizione;
 		this.dataPubb = dataPubb;
-		this.copieRimanenti = copieRimanenti;
-		this.numPag = numPag;
-		this.numAcq = numAcq;
-		this.prezzo = prezzo;
-		this.foto = foto;
+		this.recensione = recensione;
+		this.nrCopie = nrCopie;
+		this.desc = desc;
 		this.disponibilita = disponibilita;
+		this.prezzo = prezzo;
+		this.copieRim = copieRim;
+		this.Img = img;
 	}
 	
-	public void setDisponibilita(Boolean disponibilita) {
-		this.disponibilita = disponibilita;
-	}
 	@Override
 	public void compra() {
 		// TODO Auto-generated method stub

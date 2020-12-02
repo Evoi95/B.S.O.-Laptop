@@ -2,10 +2,12 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import factoryBook.Raccolta;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
@@ -15,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -28,29 +31,33 @@ public class BuondaryCompravendita implements Initializable{
 	@FXML
 	private TableColumn<Raccolta,SimpleStringProperty> titolo=new TableColumn<>("Titolo");
 	@FXML
-	private TableColumn<Raccolta,SimpleStringProperty> autore=new TableColumn<>("Autore");
+	private TableColumn<Raccolta,SimpleIntegerProperty> numPag=new TableColumn<>("NumPag");
+	@FXML
+	private TableColumn<Raccolta,SimpleStringProperty> codIsbn=new TableColumn<>("CodiceIsbn");
+	@FXML
+	private TableColumn<Raccolta,SimpleStringProperty> editore=new TableColumn<>("Autore");	
+	@FXML
+	private TableColumn<Raccolta,SimpleStringProperty> autore=new TableColumn<>("Editore");
 	@FXML
 	private TableColumn<Raccolta,SimpleStringProperty> lingua=new TableColumn<>("Lingua");
 	@FXML
 	private TableColumn<Raccolta,SimpleStringProperty> categoria=new TableColumn<>("Categoria");
+	@FXML	
+	private TableColumn<Raccolta,SimpleStringProperty> dataPubb=new TableColumn<>("DataPubb");
 	@FXML
-	private TableColumn<Raccolta,SimpleStringProperty> isbn=new TableColumn<>("CodiceIsbn");
+	private TableColumn<Raccolta,SimpleStringProperty> recensione=new TableColumn<>("Recensione");
 	@FXML
-	private TableColumn<Raccolta,SimpleStringProperty> editore=new TableColumn<>("Editore");
+	private TableColumn<Raccolta,SimpleIntegerProperty> nrCopie=new TableColumn<>("Acquistati");
+	@FXML	
+	TableColumn<Raccolta,SimpleStringProperty> desc=new TableColumn<>("Descrizione");
 	@FXML
-	private TableColumn<Raccolta,SimpleStringProperty> desc=new TableColumn<>("Descrizione");
+	private TableColumn<Raccolta,SimpleIntegerProperty> disponibilita=new TableColumn<>("Disponibilita");
+	@FXML	
+	private TableColumn<Raccolta,SimpleFloatProperty> prezzo=new TableColumn<>("Prezzo");
 	@FXML
-	private TableColumn<Raccolta,SimpleIntegerProperty> nrPagine=new TableColumn<>("PagineLibro");
+	private TableColumn<Raccolta,SimpleIntegerProperty> copieRim=new TableColumn<>("CopieRimanenti");
 	@FXML
-	private TableColumn<Raccolta,SimpleIntegerProperty> nrAcquisti=new TableColumn<>("Acquistati");
-	@FXML
-	private TableColumn<Raccolta,SimpleStringProperty> data=new TableColumn<>("DataPubb");
-	@FXML
-	private TableColumn<Raccolta,SimpleIntegerProperty> prezzo=new TableColumn<>("Prezzo");
-	@FXML
-	private TableColumn<Raccolta,SimpleBooleanProperty> disponibilita=new TableColumn<>("Disponibilita");
-	@FXML
-	private TableColumn<Raccolta,SimpleIntegerProperty> copie=new TableColumn<>("CopieRimanenti");
+	private TableColumn<Raccolta,Image>img=new TableColumn<>("Image");
 	/*
 	 * TODO
 	 * sistemare altre righe tabella dal db
@@ -113,7 +120,7 @@ public class BuondaryCompravendita implements Initializable{
 		
 	}
 	@FXML
-	private void vediListaLibri()
+	private void vediListaLibri() throws SQLException
 	{
 	   
 	   
@@ -140,20 +147,25 @@ public class BuondaryCompravendita implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		titolo.setCellValueFactory(new PropertyValueFactory<>("Titolo"));
+	    numPag.setCellValueFactory(new PropertyValueFactory<>("NumeroPagine"));
+	    codIsbn.setCellValueFactory(new PropertyValueFactory<>("CodiceIsbn"));
+	    editore.setCellValueFactory(new PropertyValueFactory<>("Editore"));
 	    autore.setCellValueFactory(new PropertyValueFactory<>("Autore"));
 	    lingua.setCellValueFactory(new PropertyValueFactory<>("Lingua"));
 	    categoria.setCellValueFactory(new PropertyValueFactory<>("Categoria"));
-	    isbn.setCellValueFactory(new PropertyValueFactory<>("CodiceIsbn"));
-	    editore.setCellValueFactory(new PropertyValueFactory<>("Editore"));
+	    dataPubb.setCellValueFactory(new PropertyValueFactory<>("DataPubblicazione"));
+	    recensione.setCellValueFactory(new PropertyValueFactory<>("Recensione"));
+	    nrCopie.setCellValueFactory(new PropertyValueFactory<>("CopieVendute"));
+
 	    desc.setCellValueFactory(new PropertyValueFactory<>("Descrizione"));
-	    copie.setCellValueFactory(new PropertyValueFactory<>("CopieRimanenti"));
-	    nrPagine.setCellValueFactory(new PropertyValueFactory<>("numPag"));
-	    nrAcquisti.setCellValueFactory(new PropertyValueFactory<>("numAcq"));
-	    data.setCellValueFactory(new PropertyValueFactory<>("DataPubb"));
-	    prezzo.setCellValueFactory(new PropertyValueFactory<>("Prezzo"));
 	    disponibilita.setCellValueFactory(new PropertyValueFactory<>("Disponibilita"));
+	    prezzo.setCellValueFactory(new PropertyValueFactory<>("Prezzo"));
+	    copieRim.setCellValueFactory(new PropertyValueFactory<>("CopieRimanenti"));
 	    
-		
+	    img.setCellValueFactory(new PropertyValueFactory<>("Images"));
+
+	    
+
 	}
 	
 	

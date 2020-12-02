@@ -10,7 +10,7 @@ public class Factory {
 		
 		switch(tipologia)
 		{
-		case "libro": return new Libro(tipologia,titolo,autore,lingua,categoria,codiceIsbn,editore,descrizione,dataPubb,copieRimanenti,numPag,numAcq,prezzo,foto, disponibilita); 
+		//case "libro": return new Libro(tipologia,titolo,autore,lingua,categoria,codiceIsbn,editore,descrizione,dataPubb,copieRimanenti,numPag,numAcq,prezzo,foto, disponibilita); 
 		
 		case "giornale" :return new Giornale(tipologia,titolo,lingua,editore,dataPubb,copieRimanenti,prezzo,foto,disponibilita);
 		
@@ -23,11 +23,11 @@ public class Factory {
 		
 
 	}
-	
-	public Raccolta createLibro(String  tipologia, String titolo, String autore,String lingua,String categoria,String codiceIsbn,String editore,String descrizione, String dataPubb,int copieRimanenti,int 	numPag, int numAcq,int prezzo,Image foto, Boolean disponibilita)
+/*	public Raccolta createLibro(String  tipologia, String titolo, String autore,String lingua,String categoria,String codiceIsbn,String editore,String descrizione, String dataPubb,int copieRimanenti,int 	numPag, int numAcq,int prezzo,Image foto, Boolean disponibilita)
 	{
 		return new Libro(tipologia,titolo,autore,lingua,categoria,codiceIsbn,editore,descrizione,dataPubb,copieRimanenti,numPag,numAcq,prezzo,foto, disponibilita);
 	}
+	*/
 	
 	public Raccolta createRivista( String tipologia,String titolo,String autore, String lingua,String editore,String descrizione,String dataPubb,int numPag,int prezzo, Image foto, Boolean disponibilita)
 	{

@@ -70,17 +70,17 @@ public class ConnToDb
 		return false;
 	}
 	
-	/*public static  boolean GeneralConnection()
+	public static Connection generalConnection()
 	{
 
 		try
 		{
+			String serverURL_2 = "jdbc:mysql://localhost/ispw?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 			Class.forName(c.getDriver());
 			System.out.print("Tentativo di conessione al server..........\n");
-			conn = DriverManager.getConnection(c.getUrl(), c.getUser(),c.getPwd());
-			System.out.print("Connesso initial..........\n");
-			return true;
-
+			conn = DriverManager.getConnection(serverURL_2, c.getUser(),c.getPwd());
+			System.out.print("Connesso standard..........\n");
+			return conn;
 		} 
 		catch (SQLException e1)
 		{
@@ -92,9 +92,9 @@ public class ConnToDb
 			e2.printStackTrace();
 			System.err.println("ERRORE ");
 		}
-		return false;			
+		return null;			
 			
-	}*/
+	}
 
 
 }

@@ -1,9 +1,10 @@
 package application;
 	
 
-import b.s.o.LibroSingleton;
-import factoryBook.Factory;
-import factoryBook.Libro;
+import java.io.FileNotFoundException;
+import java.sql.SQLException;
+
+import database.CreateDefaultDB;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -34,6 +35,18 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		
+		try {
+			CreateDefaultDB.createDefaultDB();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		
 		launch(args);
