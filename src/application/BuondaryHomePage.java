@@ -98,8 +98,24 @@ public class BuondaryHomePage {
 		
 	}
 	@FXML
-	private void login() {
+	private void login() throws IOException {
 		// specificare controller ogico
+		Stage stage;
+		Parent root;
+		stage=(Stage)buttonL.getScene().getWindow();
+		root=FXMLLoader.load(getClass().getResource("Login.fxml"));
+		stage.setTitle("Benvenuto nella schermata del login");
+		
+		
+
+		
+		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		
+	        Scene scene = new Scene(root);
+	        stage.setScene(scene);
+	        
+	        stage.show();
+		
 		
 	}
 
