@@ -100,12 +100,12 @@ public class CreateDefaultDB
 						+ "      riepilogo text,"
 						+ "      idUtente int);";
 				st.executeUpdate(query);
-				
 				System.out.println("Creata tabella Pagamento");
+				
 				query=	"Create table if not exists RIVISTA "
 						+ "	( titolo VARCHAR(200),tipologia Varchar(60),"
 						+ "	autore varchar(200), lingua varchar(10),"
-						+ "	 editore varchar(200) ,"
+						+ "	editore varchar(200) ,"
 						+ "	Descrizione text, dataPubblicazione date,"
 						+ " disp int,"
 						+ "	prezzo float,"
