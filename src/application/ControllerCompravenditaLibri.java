@@ -11,7 +11,7 @@ import factoryBook.Raccolta;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class ControllerCompravendita {
+public class ControllerCompravenditaLibri {
 	private Factory f;
 
 	
@@ -26,7 +26,7 @@ public class ControllerCompravendita {
 		//return state;
 	//}
 
-	public ControllerCompravendita()
+	public ControllerCompravenditaLibri()
 	{
 		f=new Factory();
 	}

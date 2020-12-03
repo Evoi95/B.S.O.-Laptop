@@ -20,7 +20,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-public class BuondaryCompravendita implements Initializable{
+public class BuondaryCompravenditaLibri implements Initializable{
 	@FXML
 	private Pane panel;
 	@FXML
@@ -72,7 +72,7 @@ public class BuondaryCompravendita implements Initializable{
 	
 	
 	
-	private ControllerCompravendita CCV;
+	private ControllerCompravenditaLibri CCV;
 	
 	
 	@FXML
@@ -124,9 +124,9 @@ public class BuondaryCompravendita implements Initializable{
 	 
 	}
 	
-	public BuondaryCompravendita()
+	public BuondaryCompravenditaLibri()
 	{
-		CCV=new ControllerCompravendita();
+		CCV=new ControllerCompravenditaLibri();
 	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

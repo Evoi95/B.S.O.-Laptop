@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="878.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BuondaryCompravenditaRiviste">
+   <children>
+      <TableView layoutX="14.0" layoutY="97.0" prefHeight="263.0" prefWidth="827.0">
+        <columns>
+          <TableColumn fx:id="tipologia" prefWidth="75.0" text="Tipologia" />
+          <TableColumn fx:id="titolo" prefWidth="75.0" text="Titolo" />
+            <TableColumn fx:id="autore" prefWidth="75.0" text="Autore" />
+            <TableColumn fx:id="lngua" prefWidth="75.0" text="Lingua" />
+            <TableColumn fx:id="editore" prefWidth="75.0" text="Editore" />
+            <TableColumn fx:id="descrizione" prefWidth="75.0" text="Descrizione" />
+            <TableColumn fx:id="dataPubb" prefWidth="75.0" text="DataPubblicazione" />
+            <TableColumn fx:id="pagine" prefWidth="75.0" text="NumeroPagine" />
+            <TableColumn fx:id="prezzo" prefWidth="75.0" text="Prezzo" />
+            <TableColumn fx:id="foto" prefWidth="75.0" text="Foto" />
+            <TableColumn fx:id="disponibilita" prefWidth="75.0" text="Disponibilita" />
+        </columns>
+      </TableView>
+      <Label fx:id="header" layoutX="405.0" layoutY="36.0" text="Ecco la lista delle riviste presenti" textAlignment="CENTER" textFill="#41a9ab" />
+      <Button fx:id="buttonL" layoutX="59.0" layoutY="419.0" mnemonicParsing="false" onAction="#getLibri" text="ListaLibri" />
+   </children>
+</Pane>

@@ -38,14 +38,44 @@ public class BuondaryHomePage {
 	//private ControllerHomePageLibri cHPL;
 	
 	@FXML
-	private void getListaGiornali()
+	private void getListaGiornali() throws IOException
 	{
 		//stampa schermata giornali -> tabella;
+		Stage stage;
+		Parent root;
+		stage=(Stage)buttonL.getScene().getWindow();
+		root=FXMLLoader.load(getClass().getResource("compravenditaGiornali.fxml"));
+		stage.setTitle("Benvenuto nella schermata del riepilogo dei giornali");
+		
+		
+
+		
+		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		
+	        Scene scene = new Scene(root);
+	        stage.setScene(scene);
+	        
+	        stage.show();
 	}
 	@FXML
-	private void getListaRiviste()
+	private void getListaRiviste() throws IOException
 	{
 		//stampa schermata riviste -> tabella;
+		Stage stage;
+		Parent root;
+		stage=(Stage)buttonL.getScene().getWindow();
+		root=FXMLLoader.load(getClass().getResource("compravenditaRivista.fxml"));
+		stage.setTitle("Benvenuto nella schermata del riepilogo delle riviste");
+		
+		
+
+		
+		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		
+	        Scene scene = new Scene(root);
+	        stage.setScene(scene);
+	        
+	        stage.show();
 	}
 	@FXML
 	private void getListaLibri() throws IOException
@@ -53,7 +83,7 @@ public class BuondaryHomePage {
 		Stage stage;
 		Parent root;
 		stage=(Stage)buttonL.getScene().getWindow();
-		root=FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		root=FXMLLoader.load(getClass().getResource("compravenditaLibri.fxml"));
 		stage.setTitle("Benvenuto nella schermata del riepilogo dei libri");
 		
 		
