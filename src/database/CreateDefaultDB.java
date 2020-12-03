@@ -122,34 +122,14 @@ public class CreateDefaultDB
 						+ " copiRim int, "
 						+ "	disp int,"
 						+ "	prezzo float,"
-						+ "	copieRimanenti int,img longblob,"
+						+ "	img longblob,"
 						+ "id int primary key not null auto_increment);";
 				st.executeUpdate(query);
 				System.out.println("Creata tabella GIORNALE");
 				
 				System.out.println("Tabelle create!");
-				// ibnserisco dei libri per il db
-				qInsert="INSERT INTO `ispw`.`libro`"
-						+ "(`titolo`,"
-						+ "`numeroPagine`,"
-						+ "`Cod_isbn`,"
-						+ "`editore`,"
-						+ "`autore`,"
-						+ "`lingua`,"
-						+ "`categoria`,"
-						+ "`dataPubblicazione`,"
-						+ "`recensione`,"
-						+ "`copieVendute`,"
-						+ "`breveDescrizione`,"
-						+ "`disp`,"
-						+ "`prezzo`,"
-						+ "`copieRimanenti`,"
-						+ "`img`)"
-						+ "  "
-						+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
-				prepQ = ConnToDb.conn.prepareStatement(qInsert);
+				// inserisco dei libri per il db
 
-						
 				qInsert="INSERT INTO `ispw`.`libro`"
 						+ "(`titolo`,"
 						+ "`numeroPagine`,"
