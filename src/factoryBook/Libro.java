@@ -1,122 +1,133 @@
 package factoryBook;
 
-import javafx.scene.image.Image;
+import java.io.InputStream;
+import java.sql.Date;
+
+
 public class Libro implements Raccolta {
-	private String  tipologia,titolo,autore,lingua,categoria,codiceIsbn,editore,descrizione,dataPubb;
 	
-	private int copieRimanenti,	numPag,numAcq,prezzo;	
-	private Image foto;
-	private Boolean disponibilita;
-	public String getTipologia() {
-		return this.tipologia;
-	}
-	public void setTipologia(String tipologia) {
-		this.tipologia = tipologia;
-	}
+	private String titolo;
+	private int numPag;
+	private String codIsbn,editore,autore,lingua,categoria;
+	private Date dataPubb;
+	private String recensione;
+	private int nrCopie;
+	private String desc;
+	private int disponibilita;
+	private float prezzo;
+	private int copieRim;
+	private InputStream Img;
+	
+	
 	public String getTitolo() {
 		return this.titolo;
-	}
-	public void setTitolo(String titolo) {
-		this.titolo = titolo;
-	}
-	public String getAutore() {
-		return this.autore;
-	}
-	public void setAutore(String autore) {
-		this.autore = autore;
-	}
-	public String getLingua() {
-		return this.lingua;
-	}
-	public void setLingua(String lingua) {
-		this.lingua = lingua;
-	}
-	public String getCategoria() {
-		return this.categoria;
-	}
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
-	public String getCodiceIsbn() {
-		return this.codiceIsbn;
-	}
-	public void setCodiceIsbn(String codiceIsbn) {
-		this.codiceIsbn = codiceIsbn;
-	}
-	public String getEditore() {
-		return this.editore;
-	}
-	public void setEditore(String editore) {
-		this.editore = editore;
-	}
-	public String getDescrizione() {
-		return this.descrizione;
-	}
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
-	}
-	public String getDataPubb() {
-		return this.dataPubb;
-	}
-	public void setDataPubb(String dataPubb) {
-		this.dataPubb = dataPubb;
-	}
-	public int getCopieRimanenti() {
-		return this.copieRimanenti;
-	}
-	public void setCopieRimanenti(int copieRimanenti) {
-		this.copieRimanenti = copieRimanenti;
 	}
 	public int getNumPag() {
 		return this.numPag;
 	}
+	public String getCodIsbn() {
+		return this.codIsbn;
+	}
+	public String getEditore() {
+		return this.editore;
+	}
+	public String getAutore() {
+		return this.autore;
+	}
+	public String getLingua() {
+		return this.lingua;
+	}
+	public String getCategoria() {
+		return this.categoria;
+	}
+	public Date getDataPubb() {
+		return this.dataPubb;
+	}
+	public String getRecensione() {
+		return this.recensione;
+	}
+	public int getNrCopie() {
+		return this.nrCopie;
+	}
+	public String getDesc() {
+		return this.desc;
+	}
+	public int getDisponibilita() {
+		return this.disponibilita;
+	}
+	public float getPrezzo() {
+		return this.prezzo;
+	}
+	public int getCopieRim() {
+		return this.copieRim;
+	}
+	public InputStream getImg() {
+		return this.Img;
+	}
+	public void setTitolo(String titolo) {
+		this.titolo = titolo;
+	}
 	public void setNumPag(int numPag) {
 		this.numPag = numPag;
 	}
-	public int getNumAcq() {
-		return this.numAcq;
+	public void setCodIsbn(String codIsbn) {
+		this.codIsbn = codIsbn;
 	}
-	public void setNumAcq(int numAcq) {
-		this.numAcq = numAcq;
+	public void setEditore(String editore) {
+		this.editore = editore;
 	}
-	public int getPrezzo() {
-		return this.prezzo;
+	public void setAutore(String autore) {
+		this.autore = autore;
 	}
-	public void setPrezzo(int prezzo) {
+	public void setLingua(String lingua) {
+		this.lingua = lingua;
+	}
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+	public void setDataPubb(Date dataPubb) {
+		this.dataPubb = dataPubb;
+	}
+	public void setRecensione(String recensione) {
+		this.recensione = recensione;
+	}
+	public void setNrCopie(int nrCopie) {
+		this.nrCopie = nrCopie;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+	public void setDisponibilita(int disponibilita) {
+		this.disponibilita = disponibilita;
+	}
+	public void setPrezzo(float prezzo) {
 		this.prezzo = prezzo;
 	}
-	public Image getFoto() {
-		return this.foto;
+	public void setCopieRim(int copieRim) {
+		this.copieRim = copieRim;
 	}
-	public void setFoto(Image foto) {
-		this.foto = foto;
+	public void setImg(InputStream img) {
+		this.Img = img;
 	}
-	public Boolean getDisponibilita() {
-		return this.disponibilita;
-	}
-	public Libro(String tipologia,String titolo, String autore, String lingua, String categoria, String codiceIsbn, String editore,
-			String descrizione, String dataPubb, int copieRimanenti, int numPag, int numAcq, int prezzo, Image foto,
-			Boolean disponibilita) {
-	//	super();
-		this.tipologia=tipologia;
+	public Libro(String titolo, int numPag, String codIsbn, String editore, String autore, String lingua,
+			String categoria, Date dataPubb, String recensione, int nrCopie, String desc, int disponibilita,
+			float prezzo, int copieRim, InputStream img) {
+		//super();
 		this.titolo = titolo;
+		this.numPag = numPag;
+		this.codIsbn = codIsbn;
+		this.editore = editore;
 		this.autore = autore;
 		this.lingua = lingua;
 		this.categoria = categoria;
-		this.codiceIsbn = codiceIsbn;
-		this.editore = editore;
-		this.descrizione = descrizione;
 		this.dataPubb = dataPubb;
-		this.copieRimanenti = copieRimanenti;
-		this.numPag = numPag;
-		this.numAcq = numAcq;
+		this.recensione = recensione;
+		this.nrCopie = nrCopie;
+		this.desc = desc;
+		this.disponibilita = disponibilita;
 		this.prezzo = prezzo;
-		this.foto = foto;
-		this.disponibilita = disponibilita;
-	}
-	
-	public void setDisponibilita(Boolean disponibilita) {
-		this.disponibilita = disponibilita;
+		this.copieRim = copieRim;
+		this.Img = img;
 	}
 	@Override
 	public void compra() {
