@@ -95,10 +95,6 @@ public class ConnToDb
 		return null;			
 			
 	}
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> branch 'main' of https://github.com/Evoi95/B.S.O.-Laptop.git
 
 }
