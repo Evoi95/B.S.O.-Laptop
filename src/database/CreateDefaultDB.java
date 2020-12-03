@@ -173,7 +173,7 @@ public class CreateDefaultDB
 				prepQ.setString(6,"Italiano");
 				prepQ.setString(7,"FumettiEManga");
 				//ps.setDate(2, new java.sql.Date(endDate.getTime());
-				prepQ.setDate(8, java.sql.Date.valueOf("22020-11-12"));  // date
+				prepQ.setDate(8, java.sql.Date.valueOf("2020-11-12"));  // date
 				prepQ.setString(9,"100"); // recensione
 				prepQ.setInt(10, 2000); // copie vendute
 				prepQ.setString(11, "ciao"); // breve drescizione
