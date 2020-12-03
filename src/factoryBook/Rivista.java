@@ -28,7 +28,6 @@ public class Rivista implements Raccolta  {
 	
 	private String titolo,tipologia,autore,lingua,editore,descrizione;
 	private Date dataPubb;
-	private int numPag;
 	private float prezzo;
 	private Boolean disponibilita;
 	private Image foto;
@@ -89,14 +88,6 @@ public class Rivista implements Raccolta  {
 		this.dataPubb = dataPubb;
 	}
 
-	public int getNumPag() {
-		return numPag;
-	}
-
-	public void setNumPag(int numPag) {
-		this.numPag = numPag;
-	}
-
 	public float getPrezzo() {
 		return prezzo;
 	}
@@ -148,7 +139,6 @@ public class Rivista implements Raccolta  {
 		this.editore = editore;
 		this.descrizione = descrizione;
 		this.dataPubb = dataPubb;
-		this.numPag = numPag;
 		this.prezzo = prezzo;
 		this.disponibilita = disponibilita;
 		this.foto = foto;
