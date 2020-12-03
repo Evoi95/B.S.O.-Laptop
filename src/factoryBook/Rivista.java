@@ -1,5 +1,7 @@
 package factoryBook;
 
+import java.sql.Date;
+import java.io.InputStream;
 import javafx.scene.image.Image;
 
 
@@ -22,31 +24,32 @@ enum TipiRivista {
 }
 public class Rivista implements Raccolta  {
 	
-	private String tipologia,titolo,autore,lingua,editore,descrizione,dataPubb;
 	
-
-	private int numPag,prezzo;	
-	private Image foto;
+	
+	private String titolo,tipologia,autore,lingua,editore,descrizione;
+	private Date dataPubb;
+	private float prezzo;
 	private Boolean disponibilita;
+	private Image foto;
 	
-	public String getTipologia() {
-		return this.tipologia;
-	}
-
-	public void setTipologia(String tipologia) {
-		this.tipologia = tipologia;
-	}
-
 	public String getTitolo() {
-		return this.titolo;
+		return titolo;
 	}
 
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
 	}
 
+	public String getTipologia() {
+		return tipologia;
+	}
+
+	public void setTipologia(String tipologia) {
+		this.tipologia = tipologia;
+	}
+
 	public String getAutore() {
-		return this.autore;
+		return autore;
 	}
 
 	public void setAutore(String autore) {
@@ -54,7 +57,7 @@ public class Rivista implements Raccolta  {
 	}
 
 	public String getLingua() {
-		return this.lingua;
+		return lingua;
 	}
 
 	public void setLingua(String lingua) {
@@ -62,7 +65,7 @@ public class Rivista implements Raccolta  {
 	}
 
 	public String getEditore() {
-		return this.editore;
+		return editore;
 	}
 
 	public void setEditore(String editore) {
@@ -70,69 +73,43 @@ public class Rivista implements Raccolta  {
 	}
 
 	public String getDescrizione() {
-		return this.descrizione;
+		return descrizione;
 	}
 
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
 
-	public String getDataPubb() {
-		return this.dataPubb;
+	public Date getDataPubb() {
+		return dataPubb;
 	}
 
-	public void setDataPubb(String dataPubb) {
+	public void setDataPubb(Date dataPubb) {
 		this.dataPubb = dataPubb;
 	}
 
-	public int getNumPag() {
-		return this.numPag;
+	public float getPrezzo() {
+		return prezzo;
 	}
 
-	public void setNumPag(int numPag) {
-		this.numPag = numPag;
-	}
-
-	public int getPrezzo() {
-		return this.prezzo;
-	}
-
-	public void setPrezzo(int prezzo) {
+	public void setPrezzo(float prezzo) {
 		this.prezzo = prezzo;
 	}
 
+	public Boolean getDisponibilita() {
+		return disponibilita;
+	}
+
+	public void setDisponibilita(Boolean disponibilita) {
+		this.disponibilita = disponibilita;
+	}
+
 	public Image getFoto() {
-		return this.foto;
+		return foto;
 	}
 
 	public void setFoto(Image foto) {
 		this.foto = foto;
-	}
-
-	public Boolean getDisponibilita() {
-		return this.disponibilita;
-	}
-
-	public Rivista(String tipologia,String titolo, String autore, String lingua, String editore, String descrizione, String dataPubb,
-			int numPag, int prezzo, Image foto, Boolean disponibilita) {
-		//super();
-		this.tipologia=tipologia;
-
-		this.titolo = titolo;
-		this.autore = autore;
-		this.lingua = lingua;
-		this.editore = editore;
-		this.descrizione = descrizione;
-		this.dataPubb = dataPubb;
-		this.numPag = numPag;
-		this.prezzo = prezzo;
-		this.foto = foto;
-		this.disponibilita = disponibilita;
-	}
-
-	
-	public void setDisponibilita(Boolean disponibilita) {
-		this.disponibilita = disponibilita;
 	}
 
 	@Override
@@ -153,4 +130,19 @@ public class Rivista implements Raccolta  {
 		
 	}
 
+	public Rivista(String titolo, String tipologia, String autore, String lingua, String editore, String descrizione,
+			Date dataPubb, float prezzo, Boolean disponibilita, Image foto) {
+		this.titolo = titolo;
+		this.tipologia = tipologia;
+		this.autore = autore;
+		this.lingua = lingua;
+		this.editore = editore;
+		this.descrizione = descrizione;
+		this.dataPubb = dataPubb;
+		this.prezzo = prezzo;
+		this.disponibilita = disponibilita;
+		this.foto = foto;
+	}
+	
+	
 }

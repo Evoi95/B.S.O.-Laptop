@@ -101,30 +101,35 @@ public class CreateDefaultDB
 						+ "      idUtente int);";
 				st.executeUpdate(query);
 				System.out.println("Creata tabella Pagamento");
-
+				
+				query=	"Create table if not exists RIVISTA "
+						+ "	( titolo VARCHAR(200),tipologia Varchar(60),"
+						+ "	autore varchar(200), lingua varchar(10),"
+						+ "	editore varchar(200) ,"
+						+ "	Descrizione text, dataPubblicazione date,"
+						+ " disp int,"
+						+ "	prezzo float,"
+						+ "	copieRimanenti int,img longblob,"
+						+ "id int primary key not null auto_increment);";
+				st.executeUpdate(query);
+				System.out.println("Creata tabella RIVISTA");
+				
+				query=	"Create table if not exists GIORNALE "
+						+ "	( titolo VARCHAR(200),tipologia Varchar(60),"
+						+ "	lingua varchar(10),"
+						+ "	editore varchar(200) ,"
+						+ "	dataPubblicazione date,"
+						+ " copiRim int, "
+						+ "	disp int,"
+						+ "	prezzo float,"
+						+ "	img longblob,"
+						+ "id int primary key not null auto_increment);";
+				st.executeUpdate(query);
+				System.out.println("Creata tabella GIORNALE");
+				
 				System.out.println("Tabelle create!");
-				// ibnserisco dei libri per il db
-				qInsert="INSERT INTO `ispw`.`libro`"
-						+ "(`titolo`,"
-						+ "`numeroPagine`,"
-						+ "`Cod_isbn`,"
-						+ "`editore`,"
-						+ "`autore`,"
-						+ "`lingua`,"
-						+ "`categoria`,"
-						+ "`dataPubblicazione`,"
-						+ "`recensione`,"
-						+ "`copieVendute`,"
-						+ "`breveDescrizione`,"
-						+ "`disp`,"
-						+ "`prezzo`,"
-						+ "`copieRimanenti`,"
-						+ "`img`)"
-						+ "  "
-						+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
-				prepQ = ConnToDb.conn.prepareStatement(qInsert);
+				// inserisco dei libri per il db
 
-						
 				qInsert="INSERT INTO `ispw`.`libro`"
 						+ "(`titolo`,"
 						+ "`numeroPagine`,"
