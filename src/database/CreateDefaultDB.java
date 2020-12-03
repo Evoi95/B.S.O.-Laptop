@@ -107,7 +107,7 @@ public class CreateDefaultDB
 						+ "	autore varchar(200), lingua varchar(10),"
 						+ "	 editore varchar(200) ,"
 						+ "	Descrizione text, dataPubblicazione date,"
-						+ " numPaganie int, disp int,"
+						+ " disp int,"
 						+ "	prezzo float,"
 						+ "	copieRimanenti int,img longblob,"
 						+ "id int primary key not null auto_increment);";
