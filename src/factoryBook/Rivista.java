@@ -131,7 +131,7 @@ public class Rivista implements Raccolta  {
 	}
 
 	public Rivista(String titolo, String tipologia, String autore, String lingua, String editore, String descrizione,
-			Date dataPubb, int numPag, float prezzo, Boolean disponibilita, Image foto) {
+			Date dataPubb, float prezzo, Boolean disponibilita, Image foto) {
 		this.titolo = titolo;
 		this.tipologia = tipologia;
 		this.autore = autore;
