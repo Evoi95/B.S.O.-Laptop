@@ -69,10 +69,7 @@ public class BuondaryCompravendita implements Initializable{
 	private Button buttonV;
 	@FXML
 	private Button buttonA;
-	@FXML
-	private Button buttonR;
-	@FXML
-	private Button buttonG;
+	
 	
 	
 	private ControllerCompravendita CCV;
@@ -126,17 +123,6 @@ public class BuondaryCompravendita implements Initializable{
 	 	   table.setItems(CCV.getLibri());   
 	 
 	}
-	@FXML
-	private void vediListaRiviste()
-	{
-		//table.setItems(CCV.getRiviste());
-	}
-	 @FXML
-	 private void vediListaGiornali()
-	 {
-			//table.setItems(CCV.getGiornali());
-
-	 }
 	
 	public BuondaryCompravendita()
 	{

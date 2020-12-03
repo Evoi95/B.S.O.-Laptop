@@ -21,10 +21,10 @@ public class Main extends Application {
 			// FXMLLoader loader =  FXMLLoader();
 		      //  loader.setLocation(new URL("file:///C:/Users/dani/eclipse-workspace/prova/src/application/Login.fxml"));
 			
-			Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
 
 		        Scene scene = new Scene(root);
-		        primaryStage.setTitle("Benvenuto nella schermata di login");	
+		        primaryStage.setTitle("Benvenuto nella homePage");	
 		        primaryStage.setScene(scene);
 		        primaryStage.show();
 		} catch(Exception e) {
