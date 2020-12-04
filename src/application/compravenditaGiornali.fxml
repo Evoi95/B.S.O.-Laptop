@@ -23,5 +23,6 @@
         </columns>
       </TableView>
       <Button fx:id="buttonG" layoutX="139.0" layoutY="386.0" mnemonicParsing="false" onAction="#prendiGiornali" text="Elenco giornali" textAlignment="CENTER" />
+      <Button fx:id="buttonI" layoutX="764.0" layoutY="386.0" mnemonicParsing="false" onAction="#torna" text="Home page" />
    </children>
 </Pane>

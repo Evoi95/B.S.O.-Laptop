@@ -2,7 +2,6 @@ package factoryBook;
 
 import java.sql.Date;
 import java.io.InputStream;
-import javafx.scene.image.Image;
 
 
 enum TipiRivista {
@@ -29,8 +28,8 @@ public class Rivista implements Raccolta  {
 	private String titolo,tipologia,autore,lingua,editore,descrizione;
 	private Date dataPubb;
 	private float prezzo;
-	private Boolean disponibilita;
-	private Image foto;
+	private int disponibilita;
+	private InputStream foto;
 	
 	public String getTitolo() {
 		return titolo;
@@ -96,19 +95,19 @@ public class Rivista implements Raccolta  {
 		this.prezzo = prezzo;
 	}
 
-	public Boolean getDisponibilita() {
-		return disponibilita;
+	public int getDisponibilita() {
+		return this.disponibilita;
 	}
 
-	public void setDisponibilita(Boolean disponibilita) {
+	public void setDisponibilita(int disponibilita) {
 		this.disponibilita = disponibilita;
 	}
 
-	public Image getFoto() {
-		return foto;
+	public InputStream getFoto() {
+		return this.foto;
 	}
 
-	public void setFoto(Image foto) {
+	public void setFoto(InputStream foto) {
 		this.foto = foto;
 	}
 
@@ -131,7 +130,7 @@ public class Rivista implements Raccolta  {
 	}
 
 	public Rivista(String titolo, String tipologia, String autore, String lingua, String editore, String descrizione,
-			Date dataPubb, float prezzo, Boolean disponibilita, Image foto) {
+			Date dataPubb, float prezzo, int disponibilita, InputStream foto) {
 		this.titolo = titolo;
 		this.tipologia = tipologia;
 		this.autore = autore;

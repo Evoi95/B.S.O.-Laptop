@@ -26,14 +26,14 @@ public class ControllerCompravenditaGiornali {
 		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
 		 
 		//ConnToDb.connection();
-        ResultSet rs=c.createStatement().executeQuery("SELECT * FROM giornali");
+        ResultSet rs=c.createStatement().executeQuery("SELECT * FROM giornale");
 
         while(rs.next())
         {
            // System.out.println("res :"+rs);
 
     		try {
-				catalogo.add(f.createLibro("libro",rs.getString(1),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getDate(8),rs.getString(9),rs.getInt(10),rs.getString(11),rs.getInt(12),rs.getFloat(13),rs.getInt(14),rs.getBinaryStream(15)));
+				catalogo.add(f.createGiornale("giornale",rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5),rs.getInt(6),rs.getInt(7),rs.getFloat(8),rs.getBinaryStream(9)));
 				//rs=rs.next();
     		} catch (Exception e) {
 				// TODO Auto-generated catch block

@@ -16,9 +16,9 @@ public class Factory {
 		{
 		case "libro": return new Libro(titolo,numPag,codIsbn,editore,autore,lingua,categoria,dataPubb,recensione,nrCopie,desc,disponibilita,prezzo,copieRim,img); 
 		
-		//case "giornale" :return new Giornale(tipologia,titolo,lingua,editore,dataPubb,copieRimanenti,prezzo,foto,disponibilita);
+		case "giornale" :return new Giornale(titolo,tipologia,lingua,editore,dataPubb,nrCopie,disponibilita,prezzo,img);
 		
-		//case "rivista": return new Rivista(tipologia,titolo,autore,lingua,editore,descrizione,dataPubb,numPag,prezzo,foto,disponibilita);//autore, dataPubb, dataPubb, dataPubb, dataPubb, dataPubb, prezzo, prezzo, foto, disponibilita);
+		case "rivista": return new Rivista(titolo,tipologia,autore,lingua,editore,desc,dataPubb,prezzo,disponibilita,img);//autore, dataPubb, dataPubb, dataPubb, dataPubb, dataPubb, prezzo, prezzo, foto, disponibilita);
 		
 		
 		default : throw new Exception();
@@ -34,17 +34,18 @@ public class Factory {
 	}
 	
 	
-	/*public Raccolta createRivista( String tipologia,String titolo,String autore, String lingua,String editore,String descrizione,String dataPubb,int numPag,int prezzo, Image foto, Boolean disponibilita)
+	public Raccolta createRivista(String Type, String tipologia,String titolo,String autore, String lingua,String editore,String descrizione,Date dataPubb,float prezzo,int disponibilita,InputStream foto)
 	{
-		return new Rivista(tipologia,titolo,autore,lingua,editore,descrizione,dataPubb,numPag,prezzo,foto,disponibilita);
+		return new Rivista(titolo,tipologia,autore,lingua,editore,descrizione,dataPubb,prezzo,disponibilita,foto);//autore, dataPubb, dataPubb, dataPubb, dataPubb, dataPubb, prezzo, prezzo, foto, disponibilita);
 	}
 	
-	public Raccolta creaGiornale(String tipologia,String titolo, String lingua, String editore, String dataPubb, int copieRimanenti, int prezzo,
-			Image foto, Boolean disponibilita)
+	
+	public Raccolta createGiornale(String type,String titolo,String tipologia, String lingua, String editore, Date dataPubb, int copieRimanenti, int disponibilita,
+			float prezzo,InputStream img)
 	{
-		return new Giornale(tipologia,titolo,lingua,editore,dataPubb,copieRimanenti,prezzo,foto,  disponibilita);
-	}
-	*/
+		return new Giornale(titolo,tipologia,lingua,editore,dataPubb,copieRimanenti,disponibilita,prezzo,img);
+			}
+	
 	
 
 }

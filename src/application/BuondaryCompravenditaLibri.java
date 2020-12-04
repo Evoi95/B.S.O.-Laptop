@@ -69,7 +69,8 @@ public class BuondaryCompravenditaLibri implements Initializable{
 	private Button buttonV;
 	@FXML
 	private Button buttonA;
-	
+	@FXML
+	private Button buttonI;
 	
 	
 	private ControllerCompravenditaLibri CCV;
@@ -151,6 +152,23 @@ public class BuondaryCompravenditaLibri implements Initializable{
 
 	    
 
+	}
+	@FXML
+	private void torna() throws IOException
+	{
+		Stage stage;
+		Parent root;
+		stage=(Stage)buttonA.getScene().getWindow();
+		root=FXMLLoader.load(getClass().getResource("homePage.fxml"));
+		stage.setTitle("Benvenuto nella schermata della home page");
+
+
+		
+		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		
+	        Scene scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
 	}
 	
 	

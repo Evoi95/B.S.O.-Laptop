@@ -24,6 +24,7 @@
         </columns>
       </TableView>
       <Label fx:id="header" layoutX="405.0" layoutY="36.0" text="Ecco la lista delle riviste presenti" textAlignment="CENTER" textFill="#41a9ab" />
-      <Button fx:id="buttonL" layoutX="59.0" layoutY="419.0" mnemonicParsing="false" onAction="#getLibri" text="ListaLibri" />
+      <Button fx:id="buttonL" layoutX="59.0" layoutY="419.0" mnemonicParsing="false" onAction="#getRiviste" text="ListaRiviste" />
+      <Button fx:id="buttonI" layoutX="766.0" layoutY="419.0" mnemonicParsing="false" onAction="#torna" text="HomePage" />
    </children>
 </Pane>

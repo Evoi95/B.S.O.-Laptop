@@ -1,17 +1,17 @@
 package factoryBook;
 
+import java.io.InputStream;
 import java.sql.Date;
 
-import javafx.scene.image.Image;
 
 public class Giornale implements Raccolta {
 	
 	private String  titolo,tipologia,lingua,editore;
 	private Date dataPubb;
 	private int copieRimanenti;
-	private Boolean disponibilita;
+	private int disponibilita;
 	private float prezzo;
-	private Image foto;
+	private InputStream foto;
 
 	
 
@@ -63,11 +63,11 @@ public class Giornale implements Raccolta {
 		this.copieRimanenti = copieRimanenti;
 	}
 
-	public Boolean getDisponibilita() {
-		return disponibilita;
+	public int getDisponibilita() {
+		return this.disponibilita;
 	}
 
-	public void setDisponibilita(Boolean disponibilita) {
+	public void setDisponibilita(int disponibilita) {
 		this.disponibilita = disponibilita;
 	}
 
@@ -79,11 +79,11 @@ public class Giornale implements Raccolta {
 		this.prezzo = prezzo;
 	}
 
-	public Image getFoto() {
-		return foto;
+	public InputStream getFoto() {
+		return this.foto;
 	}
 
-	public void setFoto(Image foto) {
+	public void setFoto(InputStream foto) {
 		this.foto = foto;
 	}
 
@@ -106,7 +106,7 @@ public class Giornale implements Raccolta {
 	}
 
 	public Giornale(String titolo, String tipologia, String lingua, String editore, Date dataPubb, int copieRimanenti,
-			Boolean disponibilita, float prezzo, Image foto) {
+			int disponibilita, float prezzo, InputStream foto) {
 	//	super();
 		this.titolo = titolo;
 		this.tipologia = tipologia;

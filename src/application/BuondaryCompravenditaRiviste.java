@@ -1,6 +1,8 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import factoryBook.Raccolta;
@@ -8,7 +10,10 @@ import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -16,8 +21,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class BuondaryCompravenditaRiviste implements Initializable{
+	private ControllerCompravenditaRiviste CCR;
 	@FXML
 	private Pane panel;
 	@FXML
@@ -49,9 +56,16 @@ public class BuondaryCompravenditaRiviste implements Initializable{
 	@FXML
 	private Button buttonL;
 	@FXML
-	private void getLibri()
+	private Button buttonI;
+	@FXML
+	private void getRiviste()
 	{
-		
+		try {
+			CCR.getLibri();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -74,6 +88,28 @@ public class BuondaryCompravenditaRiviste implements Initializable{
 	    disponibilita.setCellValueFactory(new PropertyValueFactory<>("disponibilita"));
 
 		
+	}
+	
+	public BuondaryCompravenditaRiviste()
+	{
+		CCR=new ControllerCompravenditaRiviste();
+	}
+	@FXML
+	private void torna() throws IOException
+	{
+		Stage stage;
+		Parent root;
+		stage=(Stage)buttonI.getScene().getWindow();
+		root=FXMLLoader.load(getClass().getResource("homePage.fxml"));
+		stage.setTitle("Benvenuto nella schermata della homePage");
+
+
+		
+		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		
+	        Scene scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
 	}
 	
 	
