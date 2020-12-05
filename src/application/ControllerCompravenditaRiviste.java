@@ -29,7 +29,7 @@ public class ControllerCompravenditaRiviste {
 		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
 		 
 			//ConnToDb.connection();
-            ResultSet rs=c.createStatement().executeQuery("SELECT * FROM riviste");
+            ResultSet rs=c.createStatement().executeQuery("SELECT * FROM rivista");
 
             while(rs.next())
             {
