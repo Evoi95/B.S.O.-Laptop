@@ -21,7 +21,7 @@
                </image>
             </ImageView>
             <Button fx:id="buttonI" layoutX="100.0" layoutY="288.0" mnemonicParsing="false" onAction="#scarica" text="Download" textFill="#00ff09" />
-            <Button layoutX="500.0" layoutY="288.0" mnemonicParsing="false" onAction="#pulisci" text="Annulla" textFill="RED" />
+            <Button fx:id="buttonA" layoutX="500.0" layoutY="288.0" mnemonicParsing="false" onAction="#pulisci" text="Annulla" textFill="RED" />
          </children></AnchorPane>
   </items>
 </SplitPane>

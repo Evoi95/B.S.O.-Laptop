@@ -77,10 +77,9 @@ public class BuondaryCompravenditaLibri implements Initializable{
 	
 	
 	@FXML
-	private boolean verifica()
+	private void verifica()
 	{
-		return false;
-		//verifico se libro e presente
+		CCV.disponibilitaLibro(entryText.getText());//verifico se libro e presente
 		//String libro=entryText.getText();
 		//return CCV.disponibilitaLibro( libro);
 	}

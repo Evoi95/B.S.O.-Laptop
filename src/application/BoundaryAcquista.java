@@ -26,17 +26,14 @@ public class BoundaryAcquista {
 	@FXML
 	private Label labelQ;
 	@FXML
-	private Label labelP;
-	@FXML
 	private Label labelT;
 	@FXML
-	private Label nome;
+	private TextField nome;
 	@FXML
 	private Label costo;
 	@FXML
 	private TextField quantita;
-	@FXML
-	private Label prezzo;
+	
 	@FXML
 	private Label totale;
 	@FXML
@@ -115,10 +112,9 @@ public class BoundaryAcquista {
 	@FXML 
 	private void initialize()
 	{
-		nome.setText("");
+		//nome.setText("");
 		costo.setText("");
 		quantita.setText("");
-		prezzo.setText("");
 		totale.setText("");
 	}
 	
@@ -127,7 +123,22 @@ public class BoundaryAcquista {
 	private void importo()
 	{
 		
-		CA.totale();
+		float x=CA.totale(nome.getText());
+		costo.setText(""+x);
+		//float x=Float.parseFloat(costo.getText());
+		//float y=Float.parseFloat(quantita.getText());
+		//System.out.println("x :"+x);
+
+		//System.out.println("y: "+y);
+		
+		if (!nome.getText().equals(""))
+		{
+			float tot;
+			tot=x*(Float.parseFloat(quantita.getText()));
+			totale.setText(""+tot);
+			
+		}
+		
 		//settare in label import 
 		//quantita * prezzo
 	}
@@ -142,7 +153,7 @@ public class BoundaryAcquista {
 		Stage stage;
 		Parent root;
 		stage=(Stage)link.getScene().getWindow();
-		root=FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		root=FXMLLoader.load(getClass().getResource("homePage.fxml"));
 		
 
 		

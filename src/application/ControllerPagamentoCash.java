@@ -1,16 +1,27 @@
 package application;
 
-import singletonPagamento.SingletonPagamento;
+
+import java.io.IOException;
+
+import database.PagamentoDao;
 
 public class ControllerPagamentoCash {
+	private PagamentoDao pD;
 	
-	public void controlla() {
-		
+	public void controlla(String nome,String cognome,String via,String com,int id) throws IOException {
+	pD.inserisciFattura(nome, cognome, via, com, id);
+	//state=true;
+	//state=true;
+
+	
+		//return state;
 	}
+	
 	public ControllerPagamentoCash() throws Exception
 	{
-		SingletonPagamento.getInstance().decidiPagemento(1);
-
+		pD=new PagamentoDao();
 	}
+	
+	
 
 }

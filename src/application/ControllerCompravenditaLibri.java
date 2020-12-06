@@ -5,18 +5,26 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import database.ConnToDb;
+import database.LibroDao;
 import factoryBook.Factory;
-
+import factoryBook.Libro;
 import factoryBook.Raccolta;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class ControllerCompravenditaLibri {
 	private Factory f;
+	private LibroDao lD;
 
 	
 	
-	//public boolean disponibilitaLibro(String libro) {
+	public void disponibilitaLibro(String isbn) {
+		lD.getDesc(isbn);
+		
+		//LibroDao.getLibro-->
+	      //  alert.setContentText("Nome libro:\t "+getTitolo()+"\n"+"Categoria :\t"+.getCategoria());
 		// TODO Auto-generated method stub
 	//	boolean state =false;
 		//disp=select quantita from libreo
@@ -24,11 +32,12 @@ public class ControllerCompravenditaLibri {
 			//state=true;
 		//else state=false;
 		//return state;
-	//}
+	}
 
 	public ControllerCompravenditaLibri()
 	{
 		f=new Factory();
+		lD=new LibroDao();
 	}
 	public void catalogo()
 	{

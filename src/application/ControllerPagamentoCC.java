@@ -1,6 +1,5 @@
 package application;
 
-import singletonPagamento.SingletonPagamento;
 
 public class ControllerPagamentoCC {
 	
@@ -16,7 +15,7 @@ public class ControllerPagamentoCC {
 	
 	public ControllerPagamentoCC() throws Exception
 	{
-		SingletonPagamento.getInstance().decidiPagemento(0);
+		//SingletonPagamento.getInstance().decidiPagemento(0);
 	}
 
 	public void aggiungiCartaDB() {

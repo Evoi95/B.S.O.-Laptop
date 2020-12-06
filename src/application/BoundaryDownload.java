@@ -40,7 +40,7 @@ public class BoundaryDownload {
 		Stage stage;
 		Parent root;
 		stage=(Stage)buttonI.getScene().getWindow();
-		root=FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		root=FXMLLoader.load(getClass().getResource("homePage.fxml"));
 		
 
 		//stage.setTitle("Schermata download");
@@ -57,7 +57,7 @@ public class BoundaryDownload {
 		Stage stage;
 		Parent root;
 		stage=(Stage)buttonA.getScene().getWindow();
-		root=FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		root=FXMLLoader.load(getClass().getResource("homePage.fxml"));
 		/*
 		 * TODO 
 		 * modificio alert
