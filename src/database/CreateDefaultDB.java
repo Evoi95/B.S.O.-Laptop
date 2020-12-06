@@ -22,7 +22,6 @@ public class CreateDefaultDB
 	//private static CallableStatement cStmt;
 
 	
-	
 	public static void createDefaultDB () throws SQLException, ClassNotFoundException, FileNotFoundException
 	{
 		try 
@@ -96,6 +95,7 @@ public class CreateDefaultDB
 				
 				query=	"Create table if not exists PAGAMENTO "
 						+ "	( id int primary key not null auto_increment,"
+						// metto un int perche psso avere 3 pagametni 0 carta di credito, 1 contanti, -1 errore
 						+ "	  Metodo_pagamento int, esito int,"
 						+ "      riepilogo text,"
 						+ "      idUtente int);";
@@ -105,7 +105,7 @@ public class CreateDefaultDB
 				query=	"Create table if not exists RIVISTA "
 						+ "	( titolo VARCHAR(200),tipologia Varchar(60),"
 						+ "	autore varchar(200), lingua varchar(10),"
-						+ "	editore varchar(200) ,"
+						+ "	 editore varchar(200) ,"
 						+ "	Descrizione text, dataPubblicazione date,"
 						+ " disp int,"
 						+ "	prezzo float,"
@@ -122,98 +122,19 @@ public class CreateDefaultDB
 						+ " copiRim int, "
 						+ "	disp int,"
 						+ "	prezzo float,"
-						+ "	img longblob,"
-						+ "id int primary key not null auto_increment);";
+						+ " img longblob,"
+						+ " id int primary key not null auto_increment);";
 				st.executeUpdate(query);
 				System.out.println("Creata tabella GIORNALE");
 				
+				
 				System.out.println("Tabelle create!");
-				// inserisco dei libri per il db
-
-				qInsert="INSERT INTO `ispw`.`libro`"
-						+ "(`titolo`,"
-						+ "`numeroPagine`,"
-						+ "`Cod_isbn`,"
-						+ "`editore`,"
-						+ "`autore`,"
-						+ "`lingua`,"
-						+ "`categoria`,"
-						+ "`dataPubblicazione`,"
-						+ "`recensione`,"
-						+ "`copieVendute`,"
-						+ "`breveDescrizione`,"
-						+ "`disp`,"
-						+ "`prezzo`,"
-						+ "`copieRimanenti`,"
-						+ "`img`)"
-						+ "  "
-						+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
-				prepQ = ConnToDb.conn.prepareStatement(qInsert);
-				prepQ.setString(1,"Kobane calling. Oggi"); // titolo varchar 
-				prepQ.setInt(2, 312); // numero pagine int
-				prepQ.setString(3,"8832734591"); // 
-				prepQ.setString(4, "Bao Publishing");
-				prepQ.setString(5,"Zerocalcare");
-				prepQ.setString(6,"Italiano");
-				prepQ.setString(7,"FumettiEManga");
-				//ps.setDate(2, new java.sql.Date(endDate.getTime());
-				prepQ.setDate(8, java.sql.Date.valueOf("2020-09-04"));  // date
-				prepQ.setString(9,"assurdo"); // recensione
-				prepQ.setInt(10, 2000); // copie vendute
-				prepQ.setString(11, "ciao"); // breve drescizione
-				prepQ.setInt(12,1);
-				prepQ.setFloat(13, 12);
-				prepQ.setInt (14, 15);
-				FileInputStream fin = new FileInputStream("imagesBook/icon.png");
-				prepQ.setBinaryStream(15, fin);
-				prepQ.executeUpdate();
-
-				//libro 2
-				prepQ = ConnToDb.conn.prepareStatement(qInsert);
-				prepQ.setString(1,"A babbo morto. Una storia di Natale "); // titolo varchar 
-				prepQ.setInt(2, 0); // numero pagine int
-				prepQ.setString(3,"8832735512"); // 
-				prepQ.setString(4, "Bao Publishing");
-				prepQ.setString(5,"Zerocalcare");
-				prepQ.setString(6,"Italiano");
-				prepQ.setString(7,"FumettiEManga");
-				//ps.setDate(2, new java.sql.Date(endDate.getTime());
-				prepQ.setDate(8, java.sql.Date.valueOf("2020-11-12"));  // date
-				prepQ.setString(9,"100"); // recensione
-				prepQ.setInt(10, 2000); // copie vendute
-				prepQ.setString(11, "ciao"); // breve drescizione
-				prepQ.setInt(12,1);
-				prepQ.setFloat(13, 12);
-				prepQ.setInt (14, 15);
-				fin = new FileInputStream("imagesBook/icon.png");
-				prepQ.setBinaryStream(15, fin);
-				prepQ.executeUpdate();
-				
-				
-				//libro 3
-				prepQ = ConnToDb.conn.prepareStatement(qInsert);
-				prepQ.setString(1,"Scheletri"); // titolo varchar 
-				prepQ.setInt(2, 240); // numero pagine int
-				prepQ.setString(3,"8832734893"); // 
-				prepQ.setString(4, "Bao Publishing");
-				prepQ.setString(5,"Zerocalcare");
-				prepQ.setString(6,"Italiano");
-				prepQ.setString(7,"FumettiEManga");
-				//ps.setDate(2, new java.sql.Date(endDate.getTime());
-				prepQ.setDate(8, java.sql.Date.valueOf("2020-11-12"));  // date
-				prepQ.setString(9,"vai ragazza"); // recensione
-				prepQ.setInt(10, 2000); // copie vendute
-				prepQ.setString(11, "aaer"); // breve drescizione
-				prepQ.setInt(12,11);
-				prepQ.setFloat(13, 121);
-				prepQ.setInt (14, 1522);
-				fin = new FileInputStream("imagesBook/icon.png");
-				prepQ.setBinaryStream(15, fin);
-				prepQ.executeUpdate();
-				// popolo il db con utenti e dati 
+				PopulateDefaultDb.populateDefaultDb();
 				System.out.println("Tabella populata con valori di default");
 				ConnToDb.conn.close();
 				System.out.println("Connesione chiusa col db");
+				
+				
 			}
 			else if (ConnToDb.InitailConnection() && ConnToDb.connection())
 			{
