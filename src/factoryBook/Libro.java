@@ -3,6 +3,8 @@ package factoryBook;
 import java.io.InputStream;
 import java.sql.Date;
 
+import database.PagamentoDao;
+
 
 public class Libro implements Raccolta {
 	
@@ -17,6 +19,7 @@ public class Libro implements Raccolta {
 	private float prezzo;
 	private int copieRim;
 	private InputStream Img;
+	//private PagamentoDao pD;
 	
 	
 	public String getTitolo() {
@@ -128,11 +131,14 @@ public class Libro implements Raccolta {
 		this.prezzo = prezzo;
 		this.copieRim = copieRim;
 		this.Img = img;
+		//pD=new PagamentoDao();
 	}
 	@Override
 	public void compra() {
+		//System.out.println("Compro e cambio disp");
 		// TODO Auto-generated method stub
-		
+		//pagamentoDao. aggiorna
+		//pD.aggiornaDisponibilita("Scheletri", 4);
 	}
 	@Override
 	public void scarica() {

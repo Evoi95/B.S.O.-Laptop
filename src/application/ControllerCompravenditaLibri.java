@@ -23,6 +23,7 @@ public class ControllerCompravenditaLibri {
 	public void disponibilitaLibro(String isbn) {
 		lD.getDesc(isbn);
 		
+		
 		//LibroDao.getLibro-->
 	      //  alert.setContentText("Nome libro:\t "+getTitolo()+"\n"+"Categoria :\t"+.getCategoria());
 		// TODO Auto-generated method stub

@@ -7,7 +7,7 @@ import java.sql.*;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
-public class LibroDao {
+public class LibroDao  {
 	
 	//getIstance 
 	//select * from libro where codice=isbn;
@@ -58,14 +58,14 @@ public class LibroDao {
 	        }
 	    }
 	
-	public float getCosto(String nome) throws SQLException
+	public float getCosto(String isbn) throws SQLException
 	{
 		float prezzo=(float) 0.0;
 		 Connection conn = ConnToDb.generalConnection();
          Statement stmt = conn.createStatement();
          ResultSet rs;
 
-         rs = stmt.executeQuery("select * from libro where titolo ='"+nome+"'");
+         rs = stmt.executeQuery("select * from libro where Cod_isbn ='"+isbn+"'");
          while ( rs.next() ) {
               prezzo=rs.getFloat("prezzo");
 
@@ -73,7 +73,65 @@ public class LibroDao {
 		return prezzo;
 		
 	}
+	
+	public void aggiornaDisponibilita(String isbn,int disp) throws SQLException
+	{
+		Connection conn=null;
+		PreparedStatement stmt=null;
+		Double d=(double) disp;
+
+		 try {
+			  conn = ConnToDb.generalConnection();
+						         stmt = conn.prepareStatement("update libro set copieRimanenti=copieRimanenti-'"+d+"' where Cod_isbn='"+isbn+"'");
+			         stmt.executeUpdate();
+
+	            
+	         }catch(SQLException e)
+	         {
+	        	// esito=false;
+	        	e.getMessage();
+
+	         }	
+		 finally {
+			 stmt.close();
+			 conn.close();
+			 System.out.println("Ho chiuso tutto");
+			 
+		 }
+
+		 System.out.println("LibroDao. questy");
+
+		}
+	public void daiPrivilegi() throws SQLException
+	{
+		Connection conn=null;
+		PreparedStatement stmt=null;
+	//	Double d=(double) disp;
+
+		 try {
+			  conn = ConnToDb.generalConnection();
+			  stmt = conn.prepareStatement(" SET SQL_SAFE_UPDATES=0");
+			         stmt.executeUpdate();
+
+	            
+	         }catch(SQLException e)
+	         {
+	        	// esito=false;
+	        	e.getMessage();
+
+	         }	
+		 finally {
+			 stmt.close();
+			 conn.close();
+			 System.out.println("Ho chiuso tutto");
+			 
+		 }
+
+		 System.out.println("LibroDao. privilegi");
+
 }
+
+	}
 	
 
 

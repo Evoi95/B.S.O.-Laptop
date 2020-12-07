@@ -1,16 +1,19 @@
 package application;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-public class BoundaryAcquista {
+public class BoundaryAcquista implements Initializable {
 	@FXML
 	private SplitPane split;
 	@FXML
@@ -65,18 +68,7 @@ public class BoundaryAcquista {
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.show();
-		/*
-		Parent root = FXMLLoader.load(getClass().getResource("pagamentoCC.fxml"));
-
-        Scene scene = new Scene(root);       
-       
-
-        Stage primaryStage = new Stage();
-		primaryStage.setScene(scene);
-        primaryStage.show();
-        buttonCash.setDisable(true);
-        */
-
+		
 		
 	}
 	@FXML
@@ -123,7 +115,7 @@ public class BoundaryAcquista {
 	private void importo()
 	{
 		
-		float x=CA.totale(nome.getText());
+		float x=CA.totale(nome.getText(),Integer.parseInt(quantita.getText()));
 		costo.setText(""+x);
 		//float x=Float.parseFloat(costo.getText());
 		//float y=Float.parseFloat(quantita.getText());
@@ -133,6 +125,8 @@ public class BoundaryAcquista {
 		
 		if (!nome.getText().equals(""))
 		{
+			buttonCC.setDisable(false);
+			buttonCash.setDisable(false);
 			float tot;
 			tot=x*(Float.parseFloat(quantita.getText()));
 			totale.setText(""+tot);
@@ -168,6 +162,13 @@ public class BoundaryAcquista {
 	       // primaryStage.show();
 
 		
+		
+	}
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		buttonCC.setDisable(true);
+		buttonCash.setDisable(true);
 		
 	}
 	

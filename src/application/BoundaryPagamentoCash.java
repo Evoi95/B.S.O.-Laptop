@@ -1,5 +1,6 @@
 package application;
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -47,6 +48,7 @@ public class BoundaryPagamentoCash {
 	@FXML
 	private void procediCash() throws IOException
 	{
+		try {
 	
 			n=nomeTF.getText();
 			c=cognomeTF.getText();
@@ -54,13 +56,15 @@ public class BoundaryPagamentoCash {
 			com=eventualiArea.getText();
 		if(n.equals("") || c.equals("")|| v.equals(""))
 		{
-			/*Alert alert = new Alert(AlertType.ERROR);
+			Alert alert = new Alert(AlertType.ERROR);
 	        alert.setTitle("  Riepilogo pagamento  ");
 	        alert.setHeaderText("Esito pagamento contanti:");
 	        alert.setContentText("Non eseguito");
 	        alert.showAndWait();
 	        
-	        */
+	        
+	        
+	        
 	        Stage stage;
 			Parent root;
 			stage=(Stage)buttonI.getScene().getWindow();
@@ -80,13 +84,14 @@ public class BoundaryPagamentoCash {
 		}
 		else {
 			
-			CPC.controlla(n, c, v, com, 0);
-			/*Alert alert = new Alert(AlertType.INFORMATION);
+			
+				CPC.controlla(n, c, v, com, 0);
+			Alert alert = new Alert(AlertType.INFORMATION);
 	        alert.setTitle("  Riepilogo pagamento  ");
 	        alert.setHeaderText("Esito pagamento contanti:");
 	        alert.setContentText("eseguito");
 	        alert.showAndWait();
-	        */
+	        
 	        Stage stage;
 			Parent root;
 			stage=(Stage)buttonI.getScene().getWindow();
@@ -101,86 +106,13 @@ public class BoundaryPagamentoCash {
 		        stage.setScene(scene);
 		        stage.show();
 		}
+		}catch(Exception e)
+		{
+			e.getCause();
+		}
 		
-		nomeTF.setText("");
-		cognomeTF.setText("");
-		viaTF.setText("");
-		eventualiArea.setText("");
+		
 	}
-		//boolean state =false;
-		
-			/*state=CPC.controlla(nomeTF.getText(), cognomeTF.getText(), viaTF.getText(),eventualiArea.getText(),0);
-			if (state.equals(true))
-			{
-				Alert alert = new Alert(AlertType.INFORMATION);
-		        alert.setTitle("  Riepilogo pagamento  ");
-		        alert.setHeaderText("Esito pagamento contanti:");
-		        alert.setContentText("eseguito");
-		        alert.showAndWait();
-		        
-		        Stage stage;
-				Parent root;
-				stage=(Stage)buttonI.getScene().getWindow();
-				root=FXMLLoader.load(getClass().getResource("download.fxml"));
-				stage.setTitle("Benvenuto nella schermata del download");
-
-
-				
-				// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
-				
-			        Scene scene = new Scene(root);
-			        stage.setScene(scene);
-			        stage.show();
-			}
-			else {
-				Alert alert = new Alert(AlertType.ERROR);
-		        alert.setTitle("  Riepilogo pagamento  ");
-		        alert.setHeaderText("Esito pagamento contanti:");
-		        alert.setContentText("Non eseguito");
-		        alert.showAndWait();
-		        
-		        Stage stage;
-				Parent root;
-				stage=(Stage)buttonI.getScene().getWindow();
-				root=FXMLLoader.load(getClass().getResource("pagamentoContrassegno.fxml"));
-				stage.setTitle("Benvenuto nella schermata del riepilogo ordine");
-
-
-				
-				// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
-				
-			        Scene scene = new Scene(root);
-			        stage.setScene(scene);
-			        stage.show();
-				
-			}
-			
-	       /* 
-	        Stage stage;
-			Parent root;
-			stage=(Stage)buttonI.getScene().getWindow();
-			root=FXMLLoader.load(getClass().getResource("download.fxml"));
-			stage.setTitle("Benvenuto nella schermata del riepilogo ordine");
-
-
-			
-			// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
-			
-		        Scene scene = new Scene(root);
-		        stage.setScene(scene);
-		        stage.show();
-	        */
-			
-			//state=true;
-		
-	        
-	       
-		
-			
-
-         
-		
-		
 
 	
 	@FXML
