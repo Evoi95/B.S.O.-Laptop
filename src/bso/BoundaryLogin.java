@@ -1,4 +1,4 @@
-package b.s.o;
+package bso;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

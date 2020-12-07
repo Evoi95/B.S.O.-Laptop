@@ -1,4 +1,4 @@
-package b.s.o;
+package bso;
 
 public class Admin {
 	protected String nome,cognome,email,pass;

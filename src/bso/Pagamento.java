@@ -1,4 +1,4 @@
-package b.s.o;
+package bso;
 
 public class Pagamento {
 	private int id,idUtente;
