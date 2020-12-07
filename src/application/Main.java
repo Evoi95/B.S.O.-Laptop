@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 
 import database.CreateDefaultDB;
+import factoryBook.Libro;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -13,6 +14,7 @@ import javafx.scene.Scene;
 
 
 public class Main extends Application {
+	//private static Libro l;
 	@Override
 	public void start(Stage primaryStage) {
 		
@@ -47,6 +49,8 @@ public class Main extends Application {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		//l=new Libro();
+		//l.scarica();
 
 		
 		launch(args);

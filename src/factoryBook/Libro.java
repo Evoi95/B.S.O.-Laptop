@@ -1,9 +1,14 @@
 package factoryBook;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Date;
 
-import database.PagamentoDao;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 
 
 public class Libro implements Raccolta {
@@ -139,17 +144,83 @@ public class Libro implements Raccolta {
 		// TODO Auto-generated method stub
 		//pagamentoDao. aggiorna
 		//pD.aggiornaDisponibilita("Scheletri", 4);
+		System.out.println("Libro acquistato");
 	}
 	@Override
 	public void scarica() {
+		
+		Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("  Riepilogo download  ");
+        alert.setHeaderText("RIsultato download:");
+        alert.setContentText("Scaricato nella cartella C:\\libriScaricati");
+        alert.showAndWait();
 		// TODO Auto-generated method stub
+		//alert1 -> libro download
+		//alert2 -> 
+      
+		
+		// String path = "C:\\";sc.next();
+	      //System.out.println("Enter the name of the desired a directory: ");
+	      //path = path+sc.next();
+	      //Creating a File object
+	      File file = new File("C:\\libriScaricati");
+	      //Creating the directory
+	      boolean bool = file.mkdir();
+	      if(bool){
+	         System.out.println("Directory created successfully");
+	      }else{
+	         System.out.println("Sorry couldn’t create specified directory");
+	      }
+	      
+	      
+	      
+		 Desktop desktop = Desktop.getDesktop();
+	        File dirToOpen = null;
+	        try {
+	        //	File folder=new File("C:\\");
+	            dirToOpen = new File("C:\\libriScaricati");
+	            try {
+					desktop.open(dirToOpen);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	        } catch (IllegalArgumentException iae) {
+	            System.out.println("File Not Found");
+	        }
+		/*
+		 * implements file.io -> file.pdf(?)
+		 */
 		
 	}
 	@Override
 	public void leggi() {
 		// TODO Auto-generated method stub
+		/*
+		 * apertutra file pdf(p.d.)
+		 */
 		
 	}
+	public Libro() {
+		//super();
+		this.titolo =null;
+		this.numPag = 0;
+		this.codIsbn = null;
+		this.editore = null;
+		this.autore = null;
+		this.lingua = null;
+		this.categoria = null;
+		this.dataPubb = null;
+		this.recensione = null;
+		this.nrCopie = 0;
+		this.desc = null;
+		this.disponibilita = 0;
+		this.prezzo = 0;
+		this.copieRim = 0;
+		this.Img = null;
+		//pD=new PagamentoDao();
+	}
+	
 	
 	
 	

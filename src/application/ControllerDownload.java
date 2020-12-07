@@ -4,10 +4,12 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
+import factoryBook.Libro;
 import javafx.scene.control.Alert;
 
 public class ControllerDownload {
 	private String nrOrdine;
+	private static Libro l;
 	
 	
 	public void scaricaLibro()
@@ -25,6 +27,8 @@ public class ControllerDownload {
 				"\n numero ordine : \t "+this.nrOrdine);
 		a.setHeaderText(null);
 		a.showAndWait();
+		
+		l.scarica();
 	}
 	
 	public void annullaOrdine()
@@ -41,6 +45,7 @@ public class ControllerDownload {
 	public ControllerDownload()
 	{
 		this.nrOrdine=UUID.randomUUID().toString();
+		l=new Libro();
 	}
 
 }
