@@ -1,6 +1,6 @@
 package application;
 import java.io.IOException;
-import java.sql.SQLException;
+import java.util.UUID;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -54,6 +54,7 @@ public class BoundaryPagamentoCash {
 			c=cognomeTF.getText();
 			v=viaTF.getText();
 			com=eventualiArea.getText();
+			
 		if(n.equals("") || c.equals("")|| v.equals(""))
 		{
 			Alert alert = new Alert(AlertType.ERROR);
@@ -83,9 +84,14 @@ public class BoundaryPagamentoCash {
 			
 		}
 		else {
+			// int x;
+			//String id=UUID.randomUUID().toString();
 			
 			
-				CPC.controlla(n, c, v, com, 0);
+			//System.out.println("n vale :"+n);
+
+
+			CPC.controlla(n, c, v, com);
 			Alert alert = new Alert(AlertType.INFORMATION);
 	        alert.setTitle("  Riepilogo pagamento  ");
 	        alert.setHeaderText("Esito pagamento contanti:");

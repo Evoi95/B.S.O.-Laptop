@@ -9,10 +9,13 @@ import database.PagamentoDao;
 public class ControllerPagamentoCash {
 	private PagamentoDao pD;
 	
-	public void controlla(String nome,String cognome,String via,String com,int id) throws IOException, SQLException {
+	public void controlla(String nome,String cognome,String via,String com) throws IOException, SQLException {
 	try {
 		pD.daiPrivilegi();
-	pD.inserisciFattura(nome, cognome, via, com, id);
+		
+		
+		System.out.println("\n\n");
+	pD.inserisciFattura(nome, cognome, via, com);
 	}catch(Exception e)
 	{
 		e.getCause();
