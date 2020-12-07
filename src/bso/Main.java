@@ -1,4 +1,4 @@
-package b.s.o;
+package bso;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

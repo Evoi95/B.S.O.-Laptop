@@ -1,4 +1,4 @@
-package b.s.o;
+package bso;
 import java.util.ArrayList;
 
 public class Editore {
