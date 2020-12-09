@@ -140,11 +140,11 @@ public class Libro implements Raccolta {
 	}
 	@Override
 	public void compra() {
-		//System.out.println("Compro e cambio disp");
-		// TODO Auto-generated method stub
-		//pagamentoDao. aggiorna
-		//pD.aggiornaDisponibilita("Scheletri", 4);
-		System.out.println("Libro acquistato");
+		Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("  Riepilogo download  ");
+        alert.setHeaderText("RIsultato download:");
+        alert.setContentText("Libro Acquistato");
+        alert.showAndWait();
 	}
 	@Override
 	public void scarica() {
@@ -154,17 +154,8 @@ public class Libro implements Raccolta {
         alert.setHeaderText("RIsultato download:");
         alert.setContentText("Scaricato nella cartella C:\\libriScaricati");
         alert.showAndWait();
-		// TODO Auto-generated method stub
-		//alert1 -> libro download
-		//alert2 -> 
-      
 		
-		// String path = "C:\\";sc.next();
-	      //System.out.println("Enter the name of the desired a directory: ");
-	      //path = path+sc.next();
-	      //Creating a File object
 	      File file = new File("C:\\libriScaricati");
-	      //Creating the directory
 	      boolean bool = file.mkdir();
 	      if(bool){
 	         System.out.println("Directory created successfully");

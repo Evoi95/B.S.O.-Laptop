@@ -16,8 +16,8 @@ public class ControllerDownload {
 	{
 		String titolo="prova";
 		 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-		    LocalDate localDate = LocalDate.now();
-		    //System.out.println(dtf.format(localDate)); //2016/11/16
+		 LocalDate localDate = LocalDate.now();
+		 //System.out.println(dtf.format(localDate)); //2016/11/16
 		Alert a=new Alert(Alert.AlertType.CONFIRMATION);
 		a.setTitle("Download effettuato");
 		//a.setContentText("Libro : titolo   scaricato con successo :"+titolo);

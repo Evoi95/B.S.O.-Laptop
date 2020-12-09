@@ -1,18 +1,25 @@
 package application;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
+import bso.CartaCredito;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 
 
-public class BoundaryPagamentoCC {
+public class BoundaryPagamentoCC implements Initializable {
 	
 	//private   Stage primaryStage;
 
@@ -49,7 +56,21 @@ public class BoundaryPagamentoCC {
 	private Button buttonReg;
 	
 	@FXML
+	private TextField nomeInput;
+	@FXML
+	private RadioButton buttonPrendi;
+	
+	@FXML
 	private PasswordField codiceTFCiv;
+	
+	@FXML
+	private TableView<CartaCredito> tableCC;
+	@FXML
+	private TableColumn<CartaCredito,SimpleStringProperty>nomeUtenteTF=new TableColumn<>("NomeUtente");
+	@FXML
+	private TableColumn<CartaCredito,SimpleStringProperty>cognomeUtenteTF=new TableColumn<>("CognomeUtente");
+	@FXML
+	private TableColumn<CartaCredito,SimpleStringProperty>codiceCC=new TableColumn<>("CodiceCarta");
 	
 	private ControllerPagamentoCC CPCC;
 	@FXML
@@ -112,6 +133,39 @@ public class BoundaryPagamentoCC {
 	public void registraCC()
 	{
 		CPCC.aggiungiCartaDB();
+	}
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+		nomeUtenteTF.setCellValueFactory(new PropertyValueFactory<>("nomeUser"));
+		cognomeUtenteTF.setCellValueFactory(new PropertyValueFactory<>("cognomeUser"));
+		codiceCC.setCellValueFactory(new PropertyValueFactory<>("numeroCC"));
+
+
+
+		//8832734893
+	}
+	@FXML
+	private void popolaTabella() throws SQLException
+	{try {
+		
+	
+		String nomeUt=nomeInput.getText();
+		if (nomeUt.equals("")|| nomeUt.equals(null))
+		{
+			buttonPrendi.setDisable(true);
+			throw new IOException();
+		}
+		else {
+			buttonPrendi.setDisable(false);
+			tableCC.setItems(CPCC.getCarteCredito(nomeUt));
+		}
+	}catch(IOException e)
+	{
+		e.getMessage();
+	}
+	buttonPrendi.setDisable(false);
 	}
 
 }
