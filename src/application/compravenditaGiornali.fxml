@@ -9,9 +9,8 @@
 <Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="878.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BuondaryCompravenditaGiornali">
    <children>
       <Label fx:id="header" layoutX="286.0" layoutY="43.0" text="Ecco elenco giornali presenti " textAlignment="CENTER" textFill="#6a52c3" />
-      <TableView fx:id="table" layoutX="139.0" layoutY="134.0" prefHeight="200.0" prefWidth="677.0">
+      <TableView fx:id="table" layoutX="139.0" layoutY="134.0" prefHeight="200.0" prefWidth="601.0">
         <columns>
-          <TableColumn fx:id="tipologia" prefWidth="75.0" text="Tipologia" />
           <TableColumn fx:id="titolo" prefWidth="75.0" text="Titolo" />
             <TableColumn fx:id="lingua" prefWidth="75.0" text="Lingua" />
             <TableColumn fx:id="editore" prefWidth="75.0" text="Editore" />

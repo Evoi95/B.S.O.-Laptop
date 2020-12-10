@@ -9,7 +9,7 @@ public class Factory {
 	
 	public  Raccolta createRaccolta(String tipologia,String titolo, int numPag, String codIsbn, String editore, String autore, String lingua,
 			String categoria, Date dataPubb, String recensione, int nrCopie, String desc, int disponibilita,
-			float prezzo, int copieRim, InputStream img) throws Exception
+			float prezzo, int copieRim, InputStream img,int id) throws Exception
 	{
 		
 		switch(tipologia)
@@ -18,7 +18,7 @@ public class Factory {
 		
 		case "giornale" :return new Giornale(titolo,tipologia,lingua,editore,dataPubb,nrCopie,disponibilita,prezzo,img);
 		
-		case "rivista": return new Rivista(titolo,tipologia,autore,lingua,editore,desc,dataPubb,prezzo,disponibilita,img);//autore, dataPubb, dataPubb, dataPubb, dataPubb, dataPubb, prezzo, prezzo, foto, disponibilita);
+		case "rivista": return new Rivista(titolo,tipologia,autore,lingua,editore,desc,dataPubb,disponibilita,prezzo,copieRim,img,id);//autore, dataPubb, dataPubb, dataPubb, dataPubb, dataPubb, prezzo, prezzo, foto, disponibilita);
 		
 		
 		default : throw new Exception();
@@ -34,9 +34,10 @@ public class Factory {
 	}
 	
 	
-	public Raccolta createRivista(String Type, String tipologia,String titolo,String autore, String lingua,String editore,String descrizione,Date dataPubb,float prezzo,int disponibilita,InputStream foto)
-	{
-		return new Rivista(titolo,tipologia,autore,lingua,editore,descrizione,dataPubb,prezzo,disponibilita,foto);//autore, dataPubb, dataPubb, dataPubb, dataPubb, dataPubb, prezzo, prezzo, foto, disponibilita);
+	public Raccolta createRivista(String titolo, String tipologia, String autore, String lingua, String editore, String descrizione,
+			Date dataPubb, int disp, float prezzo, int copieRim, InputStream foto, int id)
+			{
+		return new Rivista(titolo,tipologia,autore,lingua,editore,descrizione,dataPubb,disp,prezzo,copieRim,foto,id);//autore, dataPubb, dataPubb, dataPubb, dataPubb, dataPubb, prezzo, prezzo, foto, disponibilita);
 	}
 	
 	

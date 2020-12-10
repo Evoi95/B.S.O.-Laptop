@@ -33,8 +33,6 @@ public class BuondaryCompravenditaGiornali implements Initializable {
 	@FXML
 	private TableView<Raccolta> table;
 	@FXML
-	private TableColumn<Raccolta,SimpleStringProperty> tipologia=new TableColumn<>("Tipologia");
-	@FXML
 	private TableColumn<Raccolta,SimpleStringProperty> titolo=new TableColumn<>("Titolo");
 	@FXML
 	private TableColumn<Raccolta,SimpleStringProperty> lingua=new TableColumn<>("Lingua");

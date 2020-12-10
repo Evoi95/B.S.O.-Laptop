@@ -138,8 +138,8 @@ public class BoundaryPagamentoCC implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		
-		nomeUtenteTF.setCellValueFactory(new PropertyValueFactory<>("nomeUser"));
-		cognomeUtenteTF.setCellValueFactory(new PropertyValueFactory<>("cognomeUser"));
+		nomeUtenteTF.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		cognomeUtenteTF.setCellValueFactory(new PropertyValueFactory<>("cognome"));
 		codiceCC.setCellValueFactory(new PropertyValueFactory<>("numeroCC"));
 
 

@@ -27,110 +27,102 @@ public class Rivista implements Raccolta  {
 	
 	private String titolo,tipologia,autore,lingua,editore,descrizione;
 	private Date dataPubb;
+	private int disp;
 	private float prezzo;
-	private int disponibilita;
+	private int copieRim;
 	private InputStream foto;
+	private int id;
 	
 	public String getTitolo() {
-		return titolo;
+		return this.titolo;
 	}
-
-	public void setTitolo(String titolo) {
-		this.titolo = titolo;
-	}
-
 	public String getTipologia() {
-		return tipologia;
+		return this.tipologia;
 	}
-
-	public void setTipologia(String tipologia) {
-		this.tipologia = tipologia;
-	}
-
 	public String getAutore() {
-		return autore;
+		return this.autore;
 	}
-
-	public void setAutore(String autore) {
-		this.autore = autore;
-	}
-
 	public String getLingua() {
-		return lingua;
+		return this.lingua;
 	}
-
-	public void setLingua(String lingua) {
-		this.lingua = lingua;
-	}
-
 	public String getEditore() {
-		return editore;
+		return this.editore;
 	}
-
-	public void setEditore(String editore) {
-		this.editore = editore;
-	}
-
 	public String getDescrizione() {
-		return descrizione;
+		return this.descrizione;
 	}
-
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
-	}
-
 	public Date getDataPubb() {
-		return dataPubb;
+		return this.dataPubb;
 	}
-
-	public void setDataPubb(Date dataPubb) {
-		this.dataPubb = dataPubb;
+	public int getDisp() {
+		return this.disp;
 	}
-
 	public float getPrezzo() {
-		return prezzo;
+		return this.prezzo;
 	}
-
-	public void setPrezzo(float prezzo) {
-		this.prezzo = prezzo;
+	public int getCopieRim() {
+		return this.copieRim;
 	}
-
-	public int getDisponibilita() {
-		return this.disponibilita;
-	}
-
-	public void setDisponibilita(int disponibilita) {
-		this.disponibilita = disponibilita;
-	}
-
 	public InputStream getFoto() {
 		return this.foto;
 	}
-
+	public int getId() {
+		return this.id;
+	}
+	public void setTitolo(String titolo) {
+		this.titolo = titolo;
+	}
+	public void setTipologia(String tipologia) {
+		this.tipologia = tipologia;
+	}
+	public void setAutore(String autore) {
+		this.autore = autore;
+	}
+	public void setLingua(String lingua) {
+		this.lingua = lingua;
+	}
+	public void setEditore(String editore) {
+		this.editore = editore;
+	}
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
+	}
+	public void setDataPubb(Date dataPubb) {
+		this.dataPubb = dataPubb;
+	}
+	public void setDisp(int disp) {
+		this.disp = disp;
+	}
+	public void setPrezzo(float prezzo) {
+		this.prezzo = prezzo;
+	}
+	public void setCopieRim(int copieRim) {
+		this.copieRim = copieRim;
+	}
 	public void setFoto(InputStream foto) {
 		this.foto = foto;
 	}
-
+	public void setId(int id) {
+		this.id = id;
+	}
 	@Override
 	public void compra() {
 		// TODO Auto-generated method stub
 		
 	}
-
 	@Override
 	public void scarica() {
 		// TODO Auto-generated method stub
 		
 	}
-
 	@Override
 	public void leggi() {
 		// TODO Auto-generated method stub
 		
 	}
-
 	public Rivista(String titolo, String tipologia, String autore, String lingua, String editore, String descrizione,
-			Date dataPubb, float prezzo, int disponibilita, InputStream foto) {
+			Date dataPubb, int disp, float prezzo, int copieRim, InputStream foto, int id) {
+		//super();
 		this.titolo = titolo;
 		this.tipologia = tipologia;
 		this.autore = autore;
@@ -138,10 +130,13 @@ public class Rivista implements Raccolta  {
 		this.editore = editore;
 		this.descrizione = descrizione;
 		this.dataPubb = dataPubb;
+		this.disp = disp;
 		this.prezzo = prezzo;
-		this.disponibilita = disponibilita;
+		this.copieRim = copieRim;
 		this.foto = foto;
+		this.id = id;
 	}
+	
 	
 	
 }

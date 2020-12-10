@@ -32,9 +32,9 @@ public class BuondaryCompravenditaRiviste implements Initializable{
 	@FXML
 	private TableView<Raccolta> table;
 	@FXML
-	private TableColumn<Raccolta,SimpleStringProperty> tipologia=new TableColumn<>("Tipologia");
-	@FXML
 	private TableColumn<Raccolta,SimpleStringProperty> titolo=new TableColumn<>("Titolo");
+	@FXML
+	private TableColumn<Raccolta,SimpleStringProperty> tipologia=new TableColumn<>("Tipologia");
 	@FXML
 	private TableColumn<Raccolta,SimpleStringProperty> autore=new TableColumn<>("Autore");
 	@FXML
@@ -46,46 +46,42 @@ public class BuondaryCompravenditaRiviste implements Initializable{
 	@FXML	
 	private TableColumn<Raccolta,SimpleStringProperty> dataPubb=new TableColumn<>("DataPubblicazione");
 	@FXML
-	private TableColumn<Raccolta,SimpleIntegerProperty> pagine=new TableColumn<>("NumeroPagine");
+	private TableColumn<Raccolta,SimpleIntegerProperty> disponibilita=new TableColumn<>("Disponibilita");
 	@FXML	
 	private TableColumn<Raccolta,SimpleFloatProperty> prezzo=new TableColumn<>("Prezzo");
 	@FXML
+	private TableColumn<Raccolta,SimpleIntegerProperty> copieRim=new TableColumn<>("CopieRimanenti");
+	@FXML
 	private TableColumn<Raccolta,Image>foto=new TableColumn<>("Foto");
 	@FXML
-	private TableColumn<Raccolta,SimpleIntegerProperty> disponibilita=new TableColumn<>("Disponibilita");
+	private TableColumn<Raccolta,SimpleIntegerProperty>id=new TableColumn<>("ID");
 	@FXML
 	private Button buttonL;
 	@FXML
 	private Button buttonI;
 	@FXML
-	private void getRiviste()
+	private void getRiviste() throws SQLException
 	{
-		try {
-			CCR.getLibri();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		CCR.getRivisteE();
 	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		titolo.setCellValueFactory(new PropertyValueFactory<>("titolo"));
+	     autore.setCellValueFactory(new PropertyValueFactory<>("tipologia"));
+
 	     autore.setCellValueFactory(new PropertyValueFactory<>("autore"));
 	//    isbn.setCellValueFactory(new PropertyValueFactory<>("codIsbn"));
 	    lingua.setCellValueFactory(new PropertyValueFactory<>("lingua"));
 	    	 editore.setCellValueFactory(new PropertyValueFactory<>("editore"));
 	    descrizione.setCellValueFactory(new PropertyValueFactory<>("descrizione"));
 	    dataPubb.setCellValueFactory(new PropertyValueFactory<>("dataPubb"));
-	   pagine.setCellValueFactory(new PropertyValueFactory<>("numPag"));
-
-	    
-	  
-
-	    prezzo.setCellValueFactory(new PropertyValueFactory<>("prezzo"));
-	    
-	    foto.setCellValueFactory(new PropertyValueFactory<>("foto"));
 	    disponibilita.setCellValueFactory(new PropertyValueFactory<>("disponibilita"));
+	   prezzo.setCellValueFactory(new PropertyValueFactory<>("prezzo"));	    
+
+	   copieRim.setCellValueFactory(new PropertyValueFactory<>("copieRim"));
+	    foto.setCellValueFactory(new PropertyValueFactory<>("foto"));
+	    id.setCellValueFactory(new PropertyValueFactory<>("id"));
 
 		
 	}
