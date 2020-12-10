@@ -160,7 +160,7 @@ public class Libro implements Raccolta {
 	      if(bool){
 	         System.out.println("Directory created successfully");
 	      }else{
-	         System.out.println("Sorry couldn’t create specified directory");
+	         System.out.println("Sorry could not create specified directory");
 	      }
 	      
 	      
