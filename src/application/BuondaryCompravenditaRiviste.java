@@ -24,7 +24,9 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class BuondaryCompravenditaRiviste implements Initializable{
+	
 	private ControllerCompravenditaRiviste CCR;
+	
 	@FXML
 	private Pane panel;
 	@FXML
@@ -59,24 +61,25 @@ public class BuondaryCompravenditaRiviste implements Initializable{
 	private Button buttonL;
 	@FXML
 	private Button buttonI;
+	
 	@FXML
 	private void getRiviste() throws SQLException
 	{
-		CCR.getRivisteE();
+		//System.out.println(CCR.getRivisteE());
+		table.setItems(CCR.getRivisteE());
 	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		titolo.setCellValueFactory(new PropertyValueFactory<>("titolo"));
-	     autore.setCellValueFactory(new PropertyValueFactory<>("tipologia"));
+	     tipologia.setCellValueFactory(new PropertyValueFactory<>("tipologia"));
 
 	     autore.setCellValueFactory(new PropertyValueFactory<>("autore"));
-	//    isbn.setCellValueFactory(new PropertyValueFactory<>("codIsbn"));
 	    lingua.setCellValueFactory(new PropertyValueFactory<>("lingua"));
 	    	 editore.setCellValueFactory(new PropertyValueFactory<>("editore"));
 	    descrizione.setCellValueFactory(new PropertyValueFactory<>("descrizione"));
 	    dataPubb.setCellValueFactory(new PropertyValueFactory<>("dataPubb"));
-	    disponibilita.setCellValueFactory(new PropertyValueFactory<>("disponibilita"));
+	    disponibilita.setCellValueFactory(new PropertyValueFactory<>("disp"));
 	   prezzo.setCellValueFactory(new PropertyValueFactory<>("prezzo"));	    
 
 	   copieRim.setCellValueFactory(new PropertyValueFactory<>("copieRim"));

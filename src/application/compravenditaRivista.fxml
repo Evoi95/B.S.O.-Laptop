@@ -6,14 +6,14 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="985.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BuondaryCompravenditaRiviste">
+<Pane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="985.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BuondaryCompravenditaRiviste">
    <children>
-      <TableView layoutX="59.0" layoutY="110.0" prefHeight="263.0" prefWidth="850.0">
+      <TableView fx:id="table" layoutX="59.0" layoutY="110.0" prefHeight="263.0" prefWidth="850.0">
         <columns>
           <TableColumn fx:id="titolo" prefWidth="75.0" text="Titolo" />
             <TableColumn fx:id="tipologia" prefWidth="75.0" text="Tipologia" />
             <TableColumn fx:id="autore" prefWidth="75.0" text="Autore" />
-            <TableColumn fx:id="lngua" prefWidth="75.0" text="Lingua" />
+            <TableColumn fx:id="lingua" prefWidth="75.0" text="Lingua" />
             <TableColumn fx:id="editore" prefWidth="75.0" text="Editore" />
             <TableColumn fx:id="descrizione" prefWidth="75.0" text="Descrizione" />
             <TableColumn fx:id="dataPubb" prefWidth="75.0" text="DataPubblicazione" />

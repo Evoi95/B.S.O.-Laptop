@@ -2,7 +2,12 @@ package database;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import bso.CartaCredito;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class PagamentoDao {
 	//private boolean esito=false;
@@ -86,6 +91,8 @@ public class PagamentoDao {
 		 System.out.println("PagamentoDao. privilegi");
 
 		}
+	
+	
 	
 	
 	

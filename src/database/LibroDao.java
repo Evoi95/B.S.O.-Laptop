@@ -195,7 +195,7 @@ public class LibroDao  {
 	System.out.println(catalogo);
 	return catalogo;
 		}
-	public ObservableList<Raccolta> getRivisteE() throws SQLException
+	public ObservableList<Raccolta> getRiviste() throws SQLException
 	{
 		Connection c= ConnToDb.generalConnection();
 
@@ -204,7 +204,7 @@ public class LibroDao  {
 		 
 			//ConnToDb.connection();
             ResultSet rs=c.createStatement().executeQuery("SELECT * FROM rivista");
-
+           // int i=0;
             while(rs.next())
             {
                // System.out.println("res :"+rs);
@@ -212,6 +212,7 @@ public class LibroDao  {
         		try {
 					catalogo.add(f.createRivista("rivista",rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getDate(7),rs.getInt(8),rs.getFloat(9),rs.getInt(10),rs.getBinaryStream(11),rs.getInt(12)));
 					//rs=rs.next();
+					//System.out.println("res: "+rs[i]);
         		} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -219,9 +220,9 @@ public class LibroDao  {
         		//System.out.println("rivista nome"+rs.getString(1));
 
             }
-		
 		//catalogo.add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","avventura",100,11,11,5252020,18,null,true));
-		
+	
+			
 		System.out.println(catalogo);
 		return catalogo;
 		

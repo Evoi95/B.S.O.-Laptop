@@ -2,8 +2,13 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
+
+import com.sun.xml.internal.messaging.saaj.packaging.mime.internet.ParseException;
 
 import bso.CartaCredito;
 import javafx.beans.property.SimpleStringProperty;
@@ -66,10 +71,6 @@ public class BoundaryPagamentoCC implements Initializable {
 	@FXML
 	private TableView<CartaCredito> tableCC;
 	@FXML
-	private TableColumn<CartaCredito,SimpleStringProperty>nomeUtenteTF=new TableColumn<>("NomeUtente");
-	@FXML
-	private TableColumn<CartaCredito,SimpleStringProperty>cognomeUtenteTF=new TableColumn<>("CognomeUtente");
-	@FXML
 	private TableColumn<CartaCredito,SimpleStringProperty>codiceCC=new TableColumn<>("CodiceCarta");
 	
 	private ControllerPagamentoCC CPCC;
@@ -130,16 +131,37 @@ public class BoundaryPagamentoCC implements Initializable {
 	
 	}
 	@FXML
-	public void registraCC()
+	public void registraCC() throws java.text.ParseException
 	{
-		CPCC.aggiungiCartaDB();
+		//{try 
+		java.util.Date data=null;
+
+		String nome=nomeTF.getText();
+
+		String cognome=cognomeTF.getText();
+		String codice=codiceTF.getText();
+		String d=scadTF.getText();
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy/mm/dd");
+		data =  formatter.parse(d);
+		java.sql.Date sql=new java.sql.Date(data.getTime());
+		 
+		 System.out.println("data : "+data);
+
+
+
+		String civ=codiceTFCiv.getText();
+		
+		
+		try {
+			CPCC.aggiungiCartaDB(nome,cognome,codice,sql,civ);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		
-		nomeUtenteTF.setCellValueFactory(new PropertyValueFactory<>("nome"));
-		cognomeUtenteTF.setCellValueFactory(new PropertyValueFactory<>("cognome"));
 		codiceCC.setCellValueFactory(new PropertyValueFactory<>("numeroCC"));
 
 
@@ -159,7 +181,8 @@ public class BoundaryPagamentoCC implements Initializable {
 		}
 		else {
 			buttonPrendi.setDisable(false);
-			tableCC.setItems(CPCC.getCarteCredito(nomeUt));
+			//System.out.println("Entro nel false :"+CPCC.ritornaElencoCC(nomeUt));
+			tableCC.setItems(CPCC.ritornaElencoCC(nomeUt));
 		}
 	}catch(IOException e)
 	{

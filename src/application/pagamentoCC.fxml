@@ -34,28 +34,26 @@
          <children>
             <Label fx:id="header" prefHeight="134.0" prefWidth="318.0" text="Immettere credenziali carta credito" textAlignment="CENTER" GridPane.columnIndex="1" />
             <Label fx:id="labelN" prefHeight="62.0" prefWidth="203.0" text="Nome" textAlignment="CENTER" GridPane.rowIndex="2" />
-            <TextField fx:id="nomeTf" prefHeight="57.0" prefWidth="212.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="nomeTF" prefHeight="57.0" prefWidth="212.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <TextField fx:id="cognomeTF" prefHeight="75.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <TextField fx:id="codiceTF" prefHeight="67.0" prefWidth="229.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
             <Label fx:id="labelC" prefHeight="57.0" prefWidth="210.0" text="Cognome" GridPane.rowIndex="3" />
             <Label fx:id="cartaC" prefHeight="79.0" prefWidth="228.0" text="Codice carta " GridPane.rowIndex="4" />
             <Label fx:id="labelS" prefHeight="74.0" prefWidth="215.0" text="Data Scadenza" GridPane.rowIndex="5" />
             <TextField fx:id="scadTF" prefHeight="95.0" prefWidth="220.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Button fx:id="buttonI" layoutX="10.0" layoutY="50.0" mnemonicParsing="false" onAction="#procediCC" prefHeight="85.0" prefWidth="219.0" text="Invia (dati non salvati)" textFill="#00ff11" GridPane.rowIndex="8" />
-            <Button fx:id="buttonA" mnemonicParsing="false" onAction="#annullaCC" prefHeight="83.0" prefWidth="222.0" text="Annulla" textFill="#f20400" GridPane.columnIndex="2" GridPane.rowIndex="8" />
             <Label fx:id="labelCiv" text="Inserire codice" GridPane.rowIndex="6" />
             <PasswordField fx:id="codiceTFCiv" GridPane.columnIndex="2" GridPane.rowIndex="6" />
             <Button fx:id="buttonReg" mnemonicParsing="false" onAction="#registraCC" prefHeight="88.0" prefWidth="247.0" text="Registra carta credito e paga" textFill="#1100ff" GridPane.columnIndex="1" GridPane.rowIndex="8" />
          </children>
       </GridPane>
-      <TableView fx:id="tableCC" layoutX="24.0" layoutY="435.0" prefHeight="200.0" prefWidth="363.0">
+      <TableView fx:id="tableCC" layoutX="24.0" layoutY="435.0" prefHeight="200.0" prefWidth="164.0">
         <columns>
-          <TableColumn fx:id="nomeUtenteTF" prefWidth="90.0" text="NomeUtente" />
-          <TableColumn fx:id="cognomeUtenteTF" prefWidth="107.0" text="CognomeUtente" />
             <TableColumn fx:id="codiceCC" prefWidth="165.0" text="CodiceCarta" />
         </columns>
       </TableView>
       <TextField fx:id="nomeInput" layoutX="409.0" layoutY="435.0" />
       <RadioButton fx:id="buttonPrendi" layoutX="440.0" layoutY="496.0" mnemonicParsing="false" onAction="#popolaTabella" text="Prendi dati" textFill="#4c02f8" />
+      <Button fx:id="buttonI" layoutX="315.0" layoutY="576.0" mnemonicParsing="false" onAction="#procediCC" prefHeight="59.0" prefWidth="164.0" text="Invia (dati non salvati)" textFill="#00ff11" />
+      <Button fx:id="buttonA" layoutX="533.0" layoutY="568.0" mnemonicParsing="false" onAction="#annullaCC" prefHeight="59.0" prefWidth="187.0" text="Annulla" textFill="#f20400" />
    </children>
 </Pane>

@@ -9,7 +9,15 @@ public class CartaCredito {
 	private double ammontare;
 	private Date scadenza;
 	private String nomeUser; 
+	public String getCiv() {
+		return this.civ;
+	}
+	public void setCiv(String civ) {
+		this.civ = civ;
+	}
+
 	private String cognomeUser; 
+	private String civ;
 
 	private static final String[] types = {"No Card:Cash Only","DINER'S","JCB","MASTER","VISA"};
 
@@ -68,8 +76,9 @@ public class CartaCredito {
 		this.scadenza=null;
 		this.nomeUser=null;//tutto a null
 		this.cognomeUser=null;
+		this.civ=null;
 	}
-	public CartaCredito(int tipo,String numero,double lim,double amm,Date scad,String nU,String cU)
+	public CartaCredito(int tipo,String numero,double lim,double amm,Date scad,String nU,String cU,String civ)
 	{
 		this.tipo=tipo;
 		this.numeroCC=numero;
@@ -77,13 +86,27 @@ public class CartaCredito {
 		this.scadenza=scad;
 		this.nomeUser=nU;
 		this.cognomeUser=cU;
+		this.civ=civ;
 	}
 	
-	public CartaCredito(String nU,String cU ,String numero)
+	
+	public CartaCredito(String n,String c,String cod,Date data,String civ)
+			{
+				//String scadenza;
+				this.nomeUser=n;
+				this.cognomeUser=c;
+				this.numeroCC=cod;
+				this.ammontare=1000.0;
+				this.scadenza=data;//scadenza=data;
+				this.civ=civ;
+			}
+	public String getCodicePin() {
+		// TODO Auto-generated method stub
+		return this.civ;
+	}
+	public void setCodicePin(String pin)
 	{
-		this.nomeUser=nU;
-		this.cognomeUser=cU;
-		this.numeroCC=numero;
+		this.civ=pin;
 	}
 	
 }

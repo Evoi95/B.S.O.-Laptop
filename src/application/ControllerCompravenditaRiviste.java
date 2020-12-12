@@ -19,7 +19,8 @@ public class ControllerCompravenditaRiviste {
 	
 	public ObservableList<Raccolta> getRivisteE() throws SQLException
 	{
-		return lD.getRivisteE();
+		//System.out.println("Riviste"+lD.getRiviste());
+		return lD.getRiviste();
 	}
 
 }
