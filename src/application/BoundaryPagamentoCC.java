@@ -2,13 +2,10 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-import com.sun.xml.internal.messaging.saaj.packaging.mime.internet.ParseException;
 
 import bso.CartaCredito;
 import javafx.beans.property.SimpleStringProperty;
@@ -74,11 +71,16 @@ public class BoundaryPagamentoCC implements Initializable {
 	private TableColumn<CartaCredito,SimpleStringProperty>codiceCC=new TableColumn<>("CodiceCarta");
 	
 	private ControllerPagamentoCC CPCC;
+	private Boolean esito;
 	@FXML
 	private void procediCC() throws IOException
 	{
 		
-		CPCC.controllaPag(/* codice,dataScad*/);
+		String cod=codiceTF.getText();
+		
+		 esito=CPCC.controllaPag(scadTF.getText(),cod);
+		if (esito.equals(true))
+		{
 		Stage stage;
 		Parent root;
 		stage=(Stage)buttonI.getScene().getWindow();
@@ -91,6 +93,22 @@ public class BoundaryPagamentoCC implements Initializable {
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.show();
+		}
+		else {
+			System.out.println("riprovare");
+			Stage stage;
+			Parent root;
+			stage=(Stage)buttonI.getScene().getWindow();
+			root=FXMLLoader.load(getClass().getResource("PagamentoCC.fxml"));
+			
+			stage.setTitle("Benvenuto nella schermata per il pagamento");
+			
+			// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+			
+		        Scene scene = new Scene(root);
+		        stage.setScene(scene);
+		        stage.show();
+		}
 		
 		/*
 		

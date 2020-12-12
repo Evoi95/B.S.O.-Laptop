@@ -3,18 +3,62 @@ package application;
 import java.sql.Date;
 import java.sql.SQLException;
 
+
 import bso.CartaCredito;
 import database.CartaCreditoDao;
 import javafx.collections.ObservableList;
 public class ControllerPagamentoCC {
 	private CartaCreditoDao cDao;
-	
+	private String appoggio = "";
+	private Boolean state;
 	//private SingletonPagamento sP;
 
 	
 
-	public boolean controllaPag() {
-		return false;
+	public boolean controllaPag(String d,String c) {
+		//System.out.println(d.getDay());
+		//System.out.println("data :"+d.getTime());
+		
+		appoggio=appoggio+d;
+		System.out.println("appoggio : "+appoggio);
+		int anno=Integer.parseInt((String) appoggio.subSequence(0,4));
+		int mese=Integer.parseInt((String) appoggio.subSequence(5,7));
+		int giorno=Integer.parseInt((String) appoggio.subSequence(8,10));
+		
+		System.out.println("anno : \t"+anno +"\n mese : \t"+mese+"\ngiorno : \t"+giorno);
+
+		if(anno>2020 && (mese >=1 && mese<=12) && (giorno>=1 && giorno<=31) && c.length()<=20)
+			{
+				System.out.println("datta corretta");
+				System.out.println("anno-mese-giorno :" +anno +mese +giorno);
+				state=true;
+
+			}
+		else {
+			System.out.println("data incorretta");
+			state=false;
+			
+		}
+		return state;
+		
+		
+		
+		
+				//System.out.println(appoggio[4]);
+
+		
+		//8832734893
+		
+		//String date = "2015-04-12";
+		//java.sql.Date dat = java.sql.Date.valueOf("2020-08-15");
+/*
+		LocalDate localDate = dat.toLocalDate();
+		System.out.println(localDate.getMonthValue());
+		System.out.println(localDate.getYear());
+		/*
+		 * implementare qui 
+		 */
+		//return false;
 		// TODO Auto-generated method stub
 		
 	}
