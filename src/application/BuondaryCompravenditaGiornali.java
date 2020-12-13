@@ -61,6 +61,8 @@ public class BuondaryCompravenditaGiornali implements Initializable {
 	private Button buttonV;
 	@FXML
 	private Button buttonI;
+	@FXML
+	private Button buttonA;
 	
 	
 	
@@ -112,6 +114,30 @@ public class BuondaryCompravenditaGiornali implements Initializable {
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.show();
+	}
+	@FXML
+	public void verifica()
+	{
+		CCG.disponibilitaGiornale(entryText.getText());
+	}
+	
+	@FXML
+	public void procedi() throws IOException
+	{
+		Stage stage;
+		Parent root;
+		stage=(Stage)buttonA.getScene().getWindow();
+		root=FXMLLoader.load(getClass().getResource("acquista.fxml"));
+		stage.setTitle("Benvenuto nella schermata del riepilogo ordine");
+
+
+		
+		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		
+	        Scene scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
+
 	}
 	
 	

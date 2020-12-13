@@ -136,6 +136,21 @@ public class Rivista implements Raccolta  {
 		this.foto = foto;
 		this.id = id;
 	}
+	public Rivista() {
+		this.titolo = null;
+		this.tipologia = null;
+		this.autore = null;
+		this.lingua = null;
+		this.editore = null;
+		this.descrizione = null;
+		this.dataPubb = null;
+		this.disp = 0;
+		this.prezzo =0;
+		this.copieRim = 0;
+		this.foto = null;
+		this.id = 0;
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	

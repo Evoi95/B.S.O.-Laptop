@@ -4,10 +4,12 @@ package application;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import database.PagamentoDao;
+import bso.Fattura;
+import database.ContrassegnoDao;
 
 public class ControllerPagamentoCash {
-	private PagamentoDao pD;
+	private ContrassegnoDao pD;
+	private Fattura f;
 	
 	public void controlla(String nome,String cognome,String via,String com) throws IOException, SQLException {
 	try {
@@ -15,7 +17,11 @@ public class ControllerPagamentoCash {
 		
 		
 		System.out.println("\n\n");
-	pD.inserisciFattura(nome, cognome, via, com);
+		f.setNome(nome);
+		f.setCognome(cognome);
+		f.setVia(via);
+		f.setCom(com);
+	pD.inserisciFattura(f);
 	}catch(Exception e)
 	{
 		e.getCause();
@@ -29,7 +35,8 @@ public class ControllerPagamentoCash {
 	
 	public ControllerPagamentoCash() throws Exception
 	{
-		pD=new PagamentoDao();
+		pD=new ContrassegnoDao();
+		f=new Fattura();
 	}
 	
 	

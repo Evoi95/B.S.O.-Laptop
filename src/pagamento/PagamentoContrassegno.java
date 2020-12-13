@@ -1,10 +1,10 @@
 package pagamento;
 
-import database.PagamentoDao;
+import database.ContrassegnoDao;
 
 public class PagamentoContrassegno extends Pagamento implements Runnable
 {
-	private PagamentoDao pD;
+	private ContrassegnoDao pD;
 	
 
 	public Boolean inserisciFattura(String nome,String cognome,String via,String com,int id){

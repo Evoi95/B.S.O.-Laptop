@@ -1,23 +1,26 @@
 package database;
 
 import java.io.InputStream;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import factoryBook.Factory;
-import factoryBook.Libro;
 import factoryBook.Raccolta;
+import factoryBook.Rivista;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
-public class LibroDao  {
+public class RivistaDao {
 	private Factory f;
 	
-	//getIstance 
-	//select * from libro where codice=isbn;
 	
-	public void getDesc(Libro l)
+	public void getDesc(Rivista r)
 	{
 		 try {
 	            //String url = "jdbc:msql://200.210.220.1:1114/Demo";
@@ -25,19 +28,17 @@ public class LibroDao  {
 	            Statement stmt = conn.createStatement();
 	            ResultSet rs;
 	 
-	            rs = stmt.executeQuery("select * from libro where Cod_isbn ='"+l.getCodIsbn()+"'");
+	            rs = stmt.executeQuery("select * from rivista where titolo ='"+r.getTitolo()+"'");
 	            while ( rs.next() ) {
 	                String titolo = rs.getString("titolo");
-	                int pagine=rs.getInt("numeroPagine");
-	                String codice=rs.getString("Cod_isbn");
-	                String editore=rs.getString("editore");
+	                String tipologia=rs.getString("tipologia");
 	                String autore=rs.getString("autore");
-	                String lingua=rs.getString("lingua");
-	                String categoria=rs.getString("categoria");
+	                String lingua=rs.getString("lingua");	   
+	                String editore=rs.getString("editore");
+	                String desc=rs.getString("Descrizione");
+
 	                Date data=rs.getDate("dataPubblicazione");
-	                String recensione=rs.getString("recensione");
-	                int copie=rs.getInt("copieVendute");
-	                String desc=rs.getString("breveDescrizione");
+	               
 	                int disp=rs.getInt("disp");
 	                float prezzo=rs.getFloat("prezzo");
 	                int copieR=rs.getInt("copieRimanenti");
@@ -48,11 +49,9 @@ public class LibroDao  {
 	                Alert alert = new Alert(AlertType.INFORMATION);
 	    	        alert.setTitle("  Riepilogo  ");
 	    	        alert.setHeaderText("Ecco il riepigolo del libro");
-	    	        alert.setContentText("  Titolo : "+titolo+"\n"+"numero pagine : "+pagine+"\n"+"codice isbn :"+codice
-	    	        		+"\n"+"editore : "+editore+ "\n"+"autore :"+autore+"\n"+"lingua :"+lingua+"\n"+"categoria :"+categoria+
-	    	        		"\n"+"data pubblicazione : "+data+"\n"+"recensione :"+recensione+"\n"+"numero copie vendute :"+copie
-	    	        		+"\n"+"descrizione :"+desc+"\n"+"copie disponibili :"+disp+"\n"+"prezzo :"+prezzo
-	    	        		+"\n"+"copieRimanenti : "+copieR+"\n"+"foto copertina : "+img);
+	    	        alert.setContentText("  Titolo : "+titolo+"\n"+"tipologia : "+tipologia+"\n"+"codice isbn :"+ "\n"+"autore :"+autore+"\n"+"lingua :"+lingua+"\n"+
+	    	        "\n"+"editore : "+editore+"\n"+"descrizione :"+desc+"\n"+"data pubblicazione : "+data+"\n"+"disponibilita :"+ disp
+	    	        		+"\n"+"prezzo :"+prezzo+"\n"+"copieRimanenti : "+copieR+"\n"+"foto copertina : "+img);
 	    	        alert.showAndWait();
 	    	        
 	            }
@@ -63,14 +62,14 @@ public class LibroDao  {
 	        }
 	    }
 	
-	public float getCosto(Libro l) throws SQLException
+	public float getCosto(Rivista r) throws SQLException
 	{
 		float prezzo=(float) 0.0;
 		 Connection conn = ConnToDb.generalConnection();
          Statement stmt = conn.createStatement();
          ResultSet rs;
 
-         rs = stmt.executeQuery("select * from libro where Cod_isbn ='"+l.getCodIsbn()+"'");
+         rs = stmt.executeQuery("select * from rivista  where titolo='"+r.getTitolo()+"'");
          while ( rs.next() ) {
               prezzo=rs.getFloat("prezzo");
 
@@ -79,15 +78,15 @@ public class LibroDao  {
 		
 	}
 	
-	public void aggiornaDisponibilita(Libro l) throws SQLException
+	public void aggiornaDisponibilita(Rivista r) throws SQLException
 	{
 		Connection conn=null;
 		PreparedStatement stmt=null;
-		Double d=(double)l.getDisponibilita();
+		int d=r.getCopieRim();
 
 		 try {
 			  conn = ConnToDb.generalConnection();
-		      stmt = conn.prepareStatement("update libro set copieRimanenti=copieRimanenti-'"+d+"' where Cod_isbn='"+l.getAutore()+"'");
+		      stmt = conn.prepareStatement("update rivista set copieRimanenti=copieRimanenti-'"+d+"' where titolo='"+r.getTitolo()+"'");
 			  stmt.executeUpdate();
 
 	            
@@ -135,44 +134,44 @@ public class LibroDao  {
 		 System.out.println("LibroDao. privilegi");
 
 }
-	public ObservableList<Raccolta> getLibri() throws SQLException
+
+	
+	public ObservableList<Raccolta> getRiviste() throws SQLException
 	{
 		Connection c= ConnToDb.generalConnection();
-		/*
-		 * uare funzione internet
-		 */
+
+		
 		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
 		 
 			//ConnToDb.connection();
-            ResultSet rs=c.createStatement().executeQuery("SELECT * FROM libro");
-
+            ResultSet rs=c.createStatement().executeQuery("SELECT * FROM rivista");
+           // int i=0;
             while(rs.next())
             {
                // System.out.println("res :"+rs);
 
         		try {
-					catalogo.add(f.createLibro("libro",rs.getString(1),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getDate(8),rs.getString(9),rs.getInt(10),rs.getString(11),rs.getInt(12),rs.getFloat(13),rs.getInt(14),rs.getBinaryStream(15)));
+					catalogo.add(f.createRivista("rivista",rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getDate(7),rs.getInt(8),rs.getFloat(9),rs.getInt(10),rs.getBinaryStream(11),rs.getInt(12)));
 					//rs=rs.next();
+					//System.out.println("res: "+rs[i]);
         		} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+        		//System.out.println("rivista nome"+rs.getString(1));
 
             }
-		
 		//catalogo.add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","avventura",100,11,11,5252020,18,null,true));
-		
+	
+			
 		System.out.println(catalogo);
 		return catalogo;
 		
 	}
-	
-			public LibroDao()
+
+	public RivistaDao()
 	{
 		f=new Factory();
 	}
 
-	}
-	
-
-
+}

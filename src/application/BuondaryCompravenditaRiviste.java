@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
@@ -61,6 +62,12 @@ public class BuondaryCompravenditaRiviste implements Initializable{
 	private Button buttonL;
 	@FXML
 	private Button buttonI;
+	@FXML
+	private Button buttonA;
+	@FXML
+	private Button buttonV;
+	@FXML
+	private TextField dataTF;
 	
 	@FXML
 	private void getRiviste() throws SQLException
@@ -72,11 +79,11 @@ public class BuondaryCompravenditaRiviste implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		titolo.setCellValueFactory(new PropertyValueFactory<>("titolo"));
-	     tipologia.setCellValueFactory(new PropertyValueFactory<>("tipologia"));
+	    tipologia.setCellValueFactory(new PropertyValueFactory<>("tipologia"));
 
-	     autore.setCellValueFactory(new PropertyValueFactory<>("autore"));
+	     autore.setCellValueFactory(new PropertyValueFactory<>("autore"));	
+	     editore.setCellValueFactory(new PropertyValueFactory<>("editore"));
 	    lingua.setCellValueFactory(new PropertyValueFactory<>("lingua"));
-	    	 editore.setCellValueFactory(new PropertyValueFactory<>("editore"));
 	    descrizione.setCellValueFactory(new PropertyValueFactory<>("descrizione"));
 	    dataPubb.setCellValueFactory(new PropertyValueFactory<>("dataPubb"));
 	    disponibilita.setCellValueFactory(new PropertyValueFactory<>("disp"));
@@ -109,6 +116,45 @@ public class BuondaryCompravenditaRiviste implements Initializable{
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.show();
+	}
+	
+	@FXML
+	private void verifica()
+	{
+		CCR.disponibilitaRiviste(dataTF.getText());//verifico se libro e presente
+
+	}
+	@FXML
+	private void procedi() throws IOException
+	{
+		Stage stage;
+		Parent root;
+		stage=(Stage)buttonA.getScene().getWindow();
+		root=FXMLLoader.load(getClass().getResource("acquista.fxml"));
+		stage.setTitle("Benvenuto nella schermata del riepilogo ordine");
+
+
+		
+		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+		
+	        Scene scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
+		
+		/*
+		Parent root = FXMLLoader.load(getClass().getResource("acquista.fxml"));
+
+        Scene scene = new Scene(root);       
+       
+
+        Stage primaryStage = new Stage();
+		primaryStage.setScene(scene);
+        primaryStage.show();
+        */
+
+        
+        
+
 	}
 	
 	

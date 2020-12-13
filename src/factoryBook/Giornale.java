@@ -118,6 +118,21 @@ public class Giornale implements Raccolta {
 		this.prezzo = prezzo;
 		this.foto = foto;
 	}
+	
+	public Giornale()
+	{
+		this.titolo=null;
+		this.tipologia=null;
+		this.lingua=null;
+		this.editore=null;
+		this.dataPubb=null;
+		this.copieRimanenti=0;
+		this.disponibilita=0;
+		this.prezzo=0;
+		this.foto=null;
+		
+		
+	}
 
 	
 	

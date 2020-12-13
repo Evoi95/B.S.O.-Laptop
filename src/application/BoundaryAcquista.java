@@ -117,6 +117,12 @@ public class BoundaryAcquista implements Initializable {
 		
 		float x=CA.totale(nome.getText(),Integer.parseInt(quantita.getText()));
 		costo.setText(""+x);
+		
+		float y=CA.totaleG(nome.getText(),Integer.parseInt(quantita.getText()));
+		costo.setText(""+y);
+		
+		float z=CA.totaleR(nome.getText(),Integer.parseInt(quantita.getText()));
+		costo.setText(""+z);
 		//float x=Float.parseFloat(costo.getText());
 		//float y=Float.parseFloat(quantita.getText());
 		//System.out.println("x :"+x);
@@ -127,9 +133,18 @@ public class BoundaryAcquista implements Initializable {
 		{
 			buttonCC.setDisable(false);
 			buttonCash.setDisable(false);
+			
 			float tot;
 			tot=x*(Float.parseFloat(quantita.getText()));
 			totale.setText(""+tot);
+			
+			float tot1;
+			tot1=y*(Float.parseFloat(quantita.getText()));
+			totale.setText(""+tot1);
+			
+			float tot2;
+			tot2=z*(Float.parseFloat(quantita.getText()));
+			totale.setText(""+tot2);
 			
 		}
 		

@@ -4,16 +4,20 @@ package application;
 import java.sql.SQLException;
 
 import database.LibroDao;
+import factoryBook.Libro;
 import factoryBook.Raccolta;
 import javafx.collections.ObservableList;
 
 public class ControllerCompravenditaLibri {
 	private LibroDao lD;
+	private Libro l;
 
 	
 	
 	public void disponibilitaLibro(String isbn) {
-		lD.getDesc(isbn);
+		l.setCodIsbn(isbn);
+		
+		lD.getDesc(l);
 		
 		
 		
@@ -22,10 +26,8 @@ public class ControllerCompravenditaLibri {
 	public ControllerCompravenditaLibri()
 	{
 		lD=new LibroDao();
-	}
-	public void catalogo()
-	{
-		
+	     l=new Libro();
+
 	}
 	
 	public ObservableList<Raccolta> getLibri() throws SQLException

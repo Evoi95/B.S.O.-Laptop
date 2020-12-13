@@ -4,24 +4,28 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="878.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BuondaryCompravenditaGiornali">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="896.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BuondaryCompravenditaGiornali">
    <children>
       <Label fx:id="header" layoutX="286.0" layoutY="43.0" text="Ecco elenco giornali presenti " textAlignment="CENTER" textFill="#6a52c3" />
-      <TableView fx:id="table" layoutX="139.0" layoutY="134.0" prefHeight="200.0" prefWidth="601.0">
+      <TableView fx:id="table" layoutX="139.0" layoutY="134.0" prefHeight="200.0" prefWidth="723.0">
         <columns>
           <TableColumn fx:id="titolo" prefWidth="75.0" text="Titolo" />
             <TableColumn fx:id="lingua" prefWidth="75.0" text="Lingua" />
             <TableColumn fx:id="editore" prefWidth="75.0" text="Editore" />
-            <TableColumn fx:id="dataPubb" prefWidth="75.0" text="DataPubblicazione" />
-            <TableColumn fx:id="copie" prefWidth="75.0" text="CopieRimanenti" />
-            <TableColumn fx:id="prezzo" prefWidth="75.0" text="Prezzo" />
-            <TableColumn fx:id="foto" prefWidth="75.0" text="Foto" />
-            <TableColumn fx:id="disponibilita" prefWidth="75.0" text="Disponibilita" />
+            <TableColumn fx:id="dataPubb" prefWidth="119.0" text="DataPubblicazione" />
+            <TableColumn fx:id="copie" prefWidth="114.0" text="CopieRimanenti" />
+            <TableColumn fx:id="prezzo" prefWidth="53.0" text="Prezzo" />
+            <TableColumn fx:id="foto" prefWidth="95.0" text="Foto" />
+            <TableColumn fx:id="disponibilita" prefWidth="116.0" text="Disponibilita" />
         </columns>
       </TableView>
       <Button fx:id="buttonG" layoutX="139.0" layoutY="386.0" mnemonicParsing="false" onAction="#prendiGiornali" text="Elenco giornali" textAlignment="CENTER" />
-      <Button fx:id="buttonI" layoutX="764.0" layoutY="386.0" mnemonicParsing="false" onAction="#torna" text="Home page" />
+      <Button fx:id="buttonI" layoutX="784.0" layoutY="386.0" mnemonicParsing="false" onAction="#torna" text="Home page" />
+      <Button fx:id="buttonV" layoutX="279.0" layoutY="386.0" mnemonicParsing="false" onAction="#verifica" text="Verifica disponibilita su titolo" />
+      <TextField fx:id="entryText" layoutX="466.0" layoutY="386.0" />
+      <Button fx:id="buttonA" layoutX="683.0" layoutY="386.0" mnemonicParsing="false" onAction="#procedi" text="Acquista" />
    </children>
 </Pane>

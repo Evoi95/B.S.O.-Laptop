@@ -30,9 +30,9 @@
         </columns>
       </TableView>
       <Button fx:id="buttonL" layoutX="45.0" layoutY="335.0" mnemonicParsing="false" onAction="#vediListaLibri" text="Lista libri" />
-      <TextField fx:id="entryText" layoutX="337.0" layoutY="335.0" prefHeight="25.0" prefWidth="135.0" />
-      <Button fx:id="buttonV" layoutX="178.0" layoutY="335.0" mnemonicParsing="false" onAction="#verifica" text="Verifica Disponibilita" />
+      <TextField fx:id="entryText" layoutX="372.0" layoutY="335.0" prefHeight="25.0" prefWidth="135.0" />
+      <Button fx:id="buttonV" layoutX="178.0" layoutY="335.0" mnemonicParsing="false" onAction="#verifica" text="Verifica Disponibilita su id" />
       <Button fx:id="buttonA" layoutX="595.0" layoutY="335.0" mnemonicParsing="false" onAction="#procedi" text="Acquista" />
-      <Button fx:id="buttonI" layoutX="727.0" layoutY="335.0" mnemonicParsing="false" onAction="#torna" text="Indietro" />
+      <Button fx:id="buttonI" layoutX="727.0" layoutY="335.0" mnemonicParsing="false" onAction="#torna" text="Home Page" />
    </children>
 </Pane>

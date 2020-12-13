@@ -127,6 +127,22 @@ public class CreateDefaultDB
 				st.executeUpdate(query);
 				System.out.println("Creata tabella GIORNALE");
 				
+				query=	"Create table if not exists CARTACREDITO "
+						+ "	( nomeP VARCHAR(10),cognomeP  Varchar(20),"
+						+ "	codiceCarta varchar(20),"
+						+ "	scad date ,"
+						+ "	codicePin varchar(5));";
+				st.executeUpdate(query);
+				System.out.println("Creata tabella CARTACREDITO");
+				
+				query=	"Create table if not exists FATTURA "
+						+ "	( nome varchar(10),cognome varchar(10),"
+						+ "	via varchar(50),"
+						+ "	comunicazoni text,"
+						+ " id int auto_increment not null  primary key);";
+				st.executeUpdate(query);
+				System.out.println("Creata tabella FATTURA");
+				
 				
 				System.out.println("Tabelle create!");
 				PopulateDefaultDb.populateDefaultDb();
