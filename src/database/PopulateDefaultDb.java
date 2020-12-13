@@ -19,6 +19,7 @@ public class PopulateDefaultDb {
 		createLibri();
 		createGiornale();
 		createRivista();
+		createUser();
 	}
 	
 	private static void createLibri() throws FileNotFoundException
@@ -183,6 +184,7 @@ public class PopulateDefaultDb {
 	}
 
 	private static void createRivista() throws FileNotFoundException
+	
 	{
 		try 
 		{
@@ -220,5 +222,33 @@ public class PopulateDefaultDb {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	private static void createUser()
+	{
+		try {qInsert = "INSERT INTO `ispw`.`user`"
+				+ "(`Nome`,"
+				+ "`Cognome`,"
+				+ "`email`,"
+				+ "`password`,"
+				+ "`nickName`,"
+				+ "`descrizione`,"
+				+ "`dataDiNascita`,"
+				+ "VALUES"
+				+ "(?,?,?,?,?,?,?);";
+			prepQ = ConnToDb.conn.prepareStatement(qInsert);
+			prepQ.setString(1,"Gianni"); // nome
+			prepQ.setString(2, "Morandi"); // cognome
+			prepQ.setString(3, "bigHand@gmail.com"); // email 
+			prepQ.setString(4,"bigHand"); // password
+			prepQ.setString(5,"bigHand"); // 
+			prepQ.setString(6,"Grande uomo grandi mani grande cuore");
+			prepQ.setDate(7, java.sql.Date.valueOf("1944-12-11"));  // date
+			prepQ.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 }
