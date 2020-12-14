@@ -37,8 +37,6 @@ public class BuondaryCompravenditaRiviste implements Initializable{
 	@FXML
 	private TableColumn<Raccolta,SimpleStringProperty> titolo=new TableColumn<>("Titolo");
 	@FXML
-	private TableColumn<Raccolta,SimpleStringProperty> tipologia=new TableColumn<>("Tipologia");
-	@FXML
 	private TableColumn<Raccolta,SimpleStringProperty> autore=new TableColumn<>("Autore");
 	@FXML
 	private TableColumn<Raccolta,SimpleStringProperty> lingua=new TableColumn<>("Lingua");	
@@ -79,7 +77,7 @@ public class BuondaryCompravenditaRiviste implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		titolo.setCellValueFactory(new PropertyValueFactory<>("titolo"));
-	    tipologia.setCellValueFactory(new PropertyValueFactory<>("tipologia"));
+	   // tipologia.setCellValueFactory(new PropertyValueFactory<>("tipologia"));
 
 	     autore.setCellValueFactory(new PropertyValueFactory<>("autore"));	
 	     editore.setCellValueFactory(new PropertyValueFactory<>("editore"));

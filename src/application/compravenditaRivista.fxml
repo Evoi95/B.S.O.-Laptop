@@ -11,18 +11,16 @@
    <children>
       <TableView fx:id="table" layoutX="59.0" layoutY="110.0" prefHeight="263.0" prefWidth="850.0">
         <columns>
-            <TableColumn fx:id="tipologia" prefWidth="75.0" text="Tipologia" />
             <TableColumn fx:id="titolo" prefWidth="75.0" text="Titolo" />
             <TableColumn fx:id="autore" prefWidth="75.0" text="Autore" />
             <TableColumn fx:id="lingua" prefWidth="75.0" text="Lingua" />
             <TableColumn fx:id="editore" prefWidth="75.0" text="Editore" />
             <TableColumn fx:id="descrizione" prefWidth="75.0" text="Descrizione" />
-            <TableColumn fx:id="dataPubb" prefWidth="75.0" text="DataPubblicazione" />
-            <TableColumn fx:id="disponibilita" prefWidth="101.0" text="Disponibilita" />
-            <TableColumn fx:id="prezzo" prefWidth="75.0" text="Prezzo" />
-            <TableColumn fx:id="copieRim" prefWidth="75.0" text="CopieRimanenti" />
-            <TableColumn fx:id="foto" prefWidth="75.0" text="Foto" />
-            <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="dataPubb" prefWidth="124.0" text="DataPubblicazione" />
+            <TableColumn fx:id="disponibilita" prefWidth="105.0" text="Disponibilita" />
+            <TableColumn fx:id="prezzo" prefWidth="59.0" text="Prezzo" />
+            <TableColumn fx:id="copieRim" prefWidth="107.0" text="CopieRimanenti" />
+            <TableColumn fx:id="foto" prefWidth="79.0" text="Foto" />
         </columns>
       </TableView>
       <Label fx:id="header" layoutX="405.0" layoutY="36.0" text="Ecco la lista delle riviste presenti" textAlignment="CENTER" textFill="#41a9ab" />

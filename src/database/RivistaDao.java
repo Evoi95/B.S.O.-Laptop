@@ -151,8 +151,9 @@ public class RivistaDao {
                // System.out.println("res :"+rs);
 
         		try {
-					catalogo.add(f.createRivista("rivista",rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getDate(7),rs.getInt(8),rs.getFloat(9),rs.getInt(10),rs.getBinaryStream(11),rs.getInt(12)));
-					//rs=rs.next();
+					catalogo.add(f.createRivista("rivista",rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getDate(7), rs.getInt(8),rs.getFloat(9),rs.getInt(10),rs.getBinaryStream(11),rs.getInt(12)));
+					
+					//titolo,tipo,autore,lingua,editore,descrizione,dataPubb,disp,prezzo,copieRim,foto,id//rs=rs.next();
 					//System.out.println("res: "+rs[i]);
         		} catch (Exception e) {
 					// TODO Auto-generated catch block
