@@ -11,8 +11,8 @@
    <children>
       <TableView fx:id="table" layoutX="59.0" layoutY="110.0" prefHeight="263.0" prefWidth="850.0">
         <columns>
-            <TableColumn fx:id="titolo" prefWidth="75.0" text="Titolo" />
             <TableColumn fx:id="tipologia" prefWidth="75.0" text="Tipologia" />
+            <TableColumn fx:id="titolo" prefWidth="75.0" text="Titolo" />
             <TableColumn fx:id="autore" prefWidth="75.0" text="Autore" />
             <TableColumn fx:id="lingua" prefWidth="75.0" text="Lingua" />
             <TableColumn fx:id="editore" prefWidth="75.0" text="Editore" />

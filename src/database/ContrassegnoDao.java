@@ -32,11 +32,12 @@ public class ContrassegnoDao {
 
 			 conn = ConnToDb.generalConnection();
          
-             stmt = conn.prepareStatement("insert into fattura  values (?,?,?,?);");
+             stmt = conn.prepareStatement("insert into fattura  values (?,?,?,?,?);");
              stmt.setString(1,par1);
              stmt.setString(2, par2);
              stmt.setString(3,par3);
              stmt.setString(4,par4 );
+             stmt.setInt(5, 0);
              stmt.executeUpdate();
              
 

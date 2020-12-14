@@ -3,6 +3,8 @@ package application;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
+
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,6 +54,8 @@ public class BoundaryAcquista implements Initializable {
 	
 	
 	private ControllerAcquista CA;
+	private Scanner input;
+	private String scelta;
 	
 	
 	@FXML
@@ -112,39 +116,51 @@ public class BoundaryAcquista implements Initializable {
 	
 	@FXML
 	//prendere importo in query
-	private void importo()
+	private void importo() throws IOException
 	{
-		
-		float x=CA.totale(nome.getText(),Integer.parseInt(quantita.getText()));
-		costo.setText(""+x);
-		
-		float y=CA.totaleG(nome.getText(),Integer.parseInt(quantita.getText()));
-		costo.setText(""+y);
-		
-		float z=CA.totaleR(nome.getText(),Integer.parseInt(quantita.getText()));
-		costo.setText(""+z);
-		//float x=Float.parseFloat(costo.getText());
-		//float y=Float.parseFloat(quantita.getText());
-		//System.out.println("x :"+x);
-
-		//System.out.println("y: "+y);
-		
 		if (!nome.getText().equals(""))
 		{
 			buttonCC.setDisable(false);
 			buttonCash.setDisable(false);
 			
-			float tot;
+		if (scelta.equals("libro")) {
+			float x=CA.totale(nome.getText(),Integer.parseInt(quantita.getText()));
+		costo.setText(""+x);
+		float tot;
 			tot=x*(Float.parseFloat(quantita.getText()));
 			totale.setText(""+tot);
-			
-			float tot1;
-			tot1=y*(Float.parseFloat(quantita.getText()));
-			totale.setText(""+tot1);
-			
+		}
+		else if(scelta.equals("giornale"))
+		{
+			float y=CA.totaleG(nome.getText(),Integer.parseInt(quantita.getText()));
+		costo.setText(""+y);
+
+		float tot1;
+		tot1=y*(Float.parseFloat(quantita.getText()));
+		totale.setText(""+tot1);
+		
+		}
+		else if(scelta.equals("rivista"))
+		{
+			float z=CA.totaleR(nome.getText(),Integer.parseInt(quantita.getText()));
+			costo.setText(""+z);
 			float tot2;
 			tot2=z*(Float.parseFloat(quantita.getText()));
 			totale.setText(""+tot2);
+		
+		}
+		else {
+			throw new IOException();
+		}
+						
+		
+		
+				
+		
+		
+			
+			
+			
 			
 		}
 		
@@ -185,6 +201,19 @@ public class BoundaryAcquista implements Initializable {
 		buttonCC.setDisable(true);
 		buttonCash.setDisable(true);
 		
+		Alert a=new Alert(Alert.AlertType.INFORMATION);
+		a.setTitle("Leggere input correttoDownload effettuato");
+		//a.setContentText("Libro : titolo   scaricato con successo :"+titolo);
+		//a.setContentText("nr odine acquito :"+this.nrOrdine);
+		a.setContentText("Leggere da tastiera il tipo di rivista precedetemente scelta : "
+				+ "\n scelte possibili:"
+				+ "\n giornale - libro - rivista");
+		a.setHeaderText(null);
+		a.showAndWait();
+		
+		System.out.println("Leggi tipologia tra giornale - rivista - libro");
+		 input = new Scanner(System.in);
+		scelta= input.nextLine();
 	}
 	
 	

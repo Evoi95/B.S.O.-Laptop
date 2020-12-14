@@ -97,6 +97,8 @@ public class ControllerAcquista  {
 		//t=new Thread();
 		
 	}
+	
+	
 	/*
 	@Override
 	public void run() {
