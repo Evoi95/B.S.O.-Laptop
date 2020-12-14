@@ -34,10 +34,10 @@ public class Factory {
 	}
 	
 	
-	public Raccolta createRivista(String titolo, String tipologia, String autore, String lingua, String editore, String descrizione,
+	public Raccolta createRivista(String titolo, String tipo, String autore, String lingua, String editore, String descrizione,
 			Date dataPubb, int disp, float prezzo, int copieRim, InputStream foto, int id)
 			{
-		return new Rivista(titolo,tipologia,autore,lingua,editore,descrizione,dataPubb,disp,prezzo,copieRim,foto,id);//autore, dataPubb, dataPubb, dataPubb, dataPubb, dataPubb, prezzo, prezzo, foto, disponibilita);
+		return new Rivista(titolo,tipo,autore,lingua,editore,descrizione,dataPubb,disp,prezzo,copieRim,foto,id);//autore, dataPubb, dataPubb, dataPubb, dataPubb, dataPubb, prezzo, prezzo, foto, disponibilita);
 	}
 	
 	
