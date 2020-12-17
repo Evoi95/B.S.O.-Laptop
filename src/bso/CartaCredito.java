@@ -9,6 +9,19 @@ public class CartaCredito {
 	private double ammontare;
 	private Date scadenza;
 	private String nomeUser; 
+	private float prezzoTransazine;
+	public float getPrezzoTransazine() {
+		return this.prezzoTransazine;
+	}
+	public void setNomeUser(String nomeUser) {
+		this.nomeUser = nomeUser;
+	}
+	public void setPrezzoTransazine(float prezzoTransazine) {
+		this.prezzoTransazine = prezzoTransazine;
+	}
+	public void setCognomeUser(String cognomeUser) {
+		this.cognomeUser = cognomeUser;
+	}
 	public String getCiv() {
 		return this.civ;
 	}
@@ -77,6 +90,7 @@ public class CartaCredito {
 		this.nomeUser=null;//tutto a null
 		this.cognomeUser=null;
 		this.civ=null;
+		this.prezzoTransazine=0;
 	}
 	public CartaCredito(int tipo,String numero,double lim,double amm,Date scad,String nU,String cU,String civ)
 	{
@@ -90,7 +104,7 @@ public class CartaCredito {
 	}
 	
 	
-	public CartaCredito(String n,String c,String cod,Date data,String civ)
+	public CartaCredito(String n,String c,String cod,Date data,String civ,float prezzo)
 			{
 				//String scadenza;
 				this.nomeUser=n;
@@ -99,6 +113,7 @@ public class CartaCredito {
 				this.ammontare=1000.0;
 				this.scadenza=data;//scadenza=data;
 				this.civ=civ;
+				this.prezzoTransazine=prezzo;
 			}
 	public String getCodicePin() {
 		// TODO Auto-generated method stub

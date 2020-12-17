@@ -38,8 +38,8 @@
             <TextField fx:id="cognomeTF" prefHeight="75.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <TextField fx:id="codiceTF" prefHeight="67.0" prefWidth="229.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
             <Label fx:id="labelC" prefHeight="57.0" prefWidth="210.0" text="Cognome" GridPane.rowIndex="3" />
-            <Label fx:id="cartaC" prefHeight="79.0" prefWidth="228.0" text="Codice carta " GridPane.rowIndex="4" />
-            <Label fx:id="labelS" prefHeight="74.0" prefWidth="215.0" text="Data Scadenza" GridPane.rowIndex="5" />
+            <Label fx:id="cartaC" prefHeight="79.0" prefWidth="228.0" text="Codice carta  xxxx-xxxx-xxxx-xxxx" GridPane.rowIndex="4" />
+            <Label fx:id="labelS" prefHeight="74.0" prefWidth="215.0" text="Data Scadenza yyyy/mm/gg" GridPane.rowIndex="5" />
             <TextField fx:id="scadTF" prefHeight="95.0" prefWidth="220.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
             <Label fx:id="labelCiv" text="Inserire codice" GridPane.rowIndex="6" />
             <PasswordField fx:id="codiceTFCiv" GridPane.columnIndex="2" GridPane.rowIndex="6" />

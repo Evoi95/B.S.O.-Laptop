@@ -56,15 +56,21 @@ public class BoundaryAcquista implements Initializable {
 	private ControllerAcquista CA;
 	private Scanner input;
 	private String scelta;
+	//private String 
 	
 	
 	@FXML
 	private void pagaCC() throws IOException {
+		
+		CA.retAmmontare(totale.getText()); // mette nel pagamento;
+
+	        
 		Stage stage;
 		Parent root;
 		stage=(Stage)buttonCC.getScene().getWindow();
 		root=FXMLLoader.load(getClass().getResource("pagamentoCC.fxml"));
 		stage.setTitle("Benvenuto nella schermata dell'acquisto con carta credito");
+
 
 		
 		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
@@ -78,6 +84,9 @@ public class BoundaryAcquista implements Initializable {
 	@FXML
 	private void pagaCash() throws IOException
 	{
+		 String tot=totale.getText();
+	        System.out.println("totale :"+tot);
+		
 		Stage stage;
 		Parent root;
 		stage=(Stage)buttonCash.getScene().getWindow();
@@ -91,7 +100,8 @@ public class BoundaryAcquista implements Initializable {
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.show();
-		/*
+	        
+	       /*
 		Parent root = FXMLLoader.load(getClass().getResource("pagamentoContrassegno.fxml"));
 
         Scene scene = new Scene(root);       

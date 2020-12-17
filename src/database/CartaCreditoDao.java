@@ -37,7 +37,7 @@ public class CartaCreditoDao {
         			System.out.println("Stringhe : "+n+cog+cod);
         			// System.out.println("res :"+rs.getString(1));
 
-					catalogo.add(new CartaCredito(n,cog,cod, null, cod));
+					catalogo.add(new CartaCredito(n,cog,cod, null, cod,0));
 					//rs=rs.next();
         		} catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -79,6 +79,30 @@ public class CartaCreditoDao {
 		 System.out.println("LibroDao. privilegi");
 
 }
+	//prenere float da pagamento;
+	
+	public float getAmmontare() throws SQLException {
+		Connection conn=ConnToDb.generalConnection();
+        			//Statement stmt = conn.createStatement();
+	        // ResultSet rs;
+	         
+	         float prezzo = 0;
+
+	 		//float prezzo;
+	            ResultSet rs=conn.createStatement().executeQuery("select spesaTotale from pagamentov1 where last_insert_id() order by id_op desc limit 1");
+	         while ( rs.next() ) {
+	        	 double p=rs.getDouble("spesaTotale");
+	        	 prezzo=(float) p;
+	              //prezzo=(float)rs.getDouble("spesaTotale");
+
+	         }
+			return prezzo;
+
+		
+
+		
+	}
+	
 	
 	public void insCC(CartaCredito cc) throws SQLException
 	{
@@ -86,23 +110,18 @@ public class CartaCreditoDao {
 		Connection conn=null;
 		PreparedStatement stmt=null;
 		
-		//String nome=cc.getUserNome();
 		 try {
 			 
-			// System.out.println("nome in insCC :"+cc.getUserNome());
 			  conn = ConnToDb.generalConnection();
 			  
 			  
-			 // stmt = conn.prepareStatement("insert into cartaCredito values(?,?,?,?,?)");
-				stmt = conn.prepareStatement("insert into cartaCredito values(?,?,?,?,?)");
+				stmt = conn.prepareStatement("insert into cartaCredito values(?,?,?,?,?,?)");
 				stmt.setString(1, cc.getUserNome());
 				stmt.setString(2, cc.getUserCognome());
 				stmt.setString(3, cc.getNumeroCC());
-				//String sc=cc.getScadenza().toString();
-				//Date d=new SimpleDateFormat("yyyy/mm").parse(cc.getScadenza());
-
 				stmt.setDate(4,cc.getScadenza());
 				stmt.setString(5,cc.getCodicePin());
+				stmt.setFloat(6, cc.getPrezzoTransazine());
 			    stmt.executeUpdate();
 			    
 			   

@@ -172,7 +172,7 @@ public class BoundaryPagamentoCC implements Initializable {
 		
 		
 		try {
-			CPCC.aggiungiCartaDB(nome,cognome,codice,sql,civ);
+			CPCC.aggiungiCartaDB(nome,cognome,codice,sql,civ,0);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
