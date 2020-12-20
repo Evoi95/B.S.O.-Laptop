@@ -1,4 +1,4 @@
-package bso;
+package factoryUser;
 
 public class Utente {
 	private String nome,cognome,email,user,pass,descr,listaPref;
