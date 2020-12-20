@@ -56,15 +56,20 @@ public class BoundaryAcquista implements Initializable {
 	private ControllerAcquista CA;
 	private Scanner input;
 	private String scelta;
+	//private String 
 	
 	
 	@FXML
 	private void pagaCC() throws IOException {
+		
+
+	        
 		Stage stage;
 		Parent root;
 		stage=(Stage)buttonCC.getScene().getWindow();
 		root=FXMLLoader.load(getClass().getResource("pagamentoCC.fxml"));
 		stage.setTitle("Benvenuto nella schermata dell'acquisto con carta credito");
+
 
 		
 		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
@@ -78,6 +83,9 @@ public class BoundaryAcquista implements Initializable {
 	@FXML
 	private void pagaCash() throws IOException
 	{
+		 String tot=totale.getText();
+	        System.out.println("totale :"+tot);
+		
 		Stage stage;
 		Parent root;
 		stage=(Stage)buttonCash.getScene().getWindow();
@@ -91,7 +99,8 @@ public class BoundaryAcquista implements Initializable {
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.show();
-		/*
+	        
+	       /*
 		Parent root = FXMLLoader.load(getClass().getResource("pagamentoContrassegno.fxml"));
 
         Scene scene = new Scene(root);       
@@ -129,6 +138,8 @@ public class BoundaryAcquista implements Initializable {
 		float tot;
 			tot=x*(Float.parseFloat(quantita.getText()));
 			totale.setText(""+tot);
+			CA.retAmmontare(totale.getText()); // mette nel pagamento;
+
 		}
 		else if(scelta.equals("giornale"))
 		{
@@ -138,6 +149,8 @@ public class BoundaryAcquista implements Initializable {
 		float tot1;
 		tot1=y*(Float.parseFloat(quantita.getText()));
 		totale.setText(""+tot1);
+		CA.retAmmontare(totale.getText()); // mette nel pagamento;
+
 		
 		}
 		else if(scelta.equals("rivista"))
@@ -147,11 +160,14 @@ public class BoundaryAcquista implements Initializable {
 			float tot2;
 			tot2=z*(Float.parseFloat(quantita.getText()));
 			totale.setText(""+tot2);
+			CA.retAmmontare(totale.getText()); // mette nel pagamento;
+
 		
 		}
 		else {
 			throw new IOException();
 		}
+
 						
 		
 		

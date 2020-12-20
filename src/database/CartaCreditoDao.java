@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.*;
 
 import bso.CartaCredito;
 import javafx.collections.FXCollections;
@@ -12,6 +13,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 public class CartaCreditoDao {
+	private PreparedStatement stmt=null;
+	private String query;
+	private Connection conn;
 	
 	
 	public ObservableList<CartaCredito> getCarteCredito(String nome) throws SQLException
@@ -23,7 +27,7 @@ public class CartaCreditoDao {
 		ObservableList<CartaCredito> catalogo=FXCollections.observableArrayList();
 		 
 			//ConnToDb.connection();
-            ResultSet rs=c.createStatement().executeQuery("select nomeP,cognomeP,codiceCarta from cartaCredito where nomeP='"+nome+"'");
+            ResultSet rs=c.createStatement().executeQuery("select nomeP,cognomeP,codiceCarta from cartacredito where nomeP='"+nome+"'");
 
             while(rs.next())
             {
@@ -37,7 +41,7 @@ public class CartaCreditoDao {
         			System.out.println("Stringhe : "+n+cog+cod);
         			// System.out.println("res :"+rs.getString(1));
 
-					catalogo.add(new CartaCredito(n,cog,cod, null, cod));
+					catalogo.add(new CartaCredito(n,cog,cod, null, cod,0));
 					//rs=rs.next();
         		} catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -79,33 +83,67 @@ public class CartaCreditoDao {
 		 System.out.println("LibroDao. privilegi");
 
 }
+	//prenere float da pagamento;
+	
+	public float getAmmontare() throws SQLException {
+		Connection conn=ConnToDb.generalConnection();
+        			//Statement stmt = conn.createStatement();
+	        // ResultSet rs;
+	         
+	         float prezzo = 0;
+
+	 		//float prezzo;
+	            ResultSet rs=conn.createStatement().executeQuery("select spesaTotale from pagamento where last_insert_id() order by id_op desc limit 1");
+	         while ( rs.next() ) {
+	        	 double p=rs.getDouble("spesaTotale");
+	        	 prezzo=(float) p;
+	              //prezzo=(float)rs.getDouble("spesaTotale");
+
+	         }
+			return prezzo;
+
+		
+
+		
+	}
+	
 	
 	public void insCC(CartaCredito cc) throws SQLException
 	{
 		
-		Connection conn=null;
-		PreparedStatement stmt=null;
+		//PreparedStatement stmt=null;
+		//Connection conn = null;
 		
-		//String nome=cc.getUserNome();
+		String n=cc.getUserCognome();
+		 String c=cc.getUserCognome();
+		 String num=cc.getNumeroCC();
+		 Date d=cc.getScadenza();
+		 String pin=cc.getCiv();
+		 Float amm=(float) cc.getAmmontare();
+		 
+		 
+		// System.out.println("Entro in ins cc"+cc.getUserNome());
 		 try {
-			 
-			// System.out.println("nome in insCC :"+cc.getUserNome());
-			  conn = ConnToDb.generalConnection();
-			  
-			  
-			 // stmt = conn.prepareStatement("insert into cartaCredito values(?,?,?,?,?)");
-				stmt = conn.prepareStatement("insert into cartaCredito values(?,?,?,?,?)");
-				stmt.setString(1, cc.getUserNome());
-				stmt.setString(2, cc.getUserCognome());
-				stmt.setString(3, cc.getNumeroCC());
-				//String sc=cc.getScadenza().toString();
-				//Date d=new SimpleDateFormat("yyyy/mm").parse(cc.getScadenza());
+			 conn=ConnToDb.generalConnection();
+			 query="insert into cartacredito (nomeP,cognomeP,codiceCarta,scad,codicePin,ammontare)  values(?,?,?,?,?,?)";
+			 stmt=conn.prepareStatement(query);
+			
 
-				stmt.setDate(4,cc.getScadenza());
-				stmt.setString(5,cc.getCodicePin());
+				stmt.setString(1,n);
+				stmt.setString(2, c);
+				stmt.setString(3, num);
+				stmt.setDate(4,d);
+				stmt.setString(5,pin);
+				stmt.setFloat(6, amm);
 			    stmt.executeUpdate();
 			    
 			   
+			    Alert alert = new Alert(AlertType.INFORMATION);
+    	        alert.setTitle("  Riepilogo inserimento carta ");
+    	        alert.setHeaderText("Risultato ");
+    	        alert.setContentText(" Inserimento avvenuto con successo!!\n\n Digitare nome utente in apposito spazio sottostante ");
+    	        alert.showAndWait();
+
     	       
 
 	            
@@ -114,18 +152,9 @@ public class CartaCreditoDao {
 	        	// esito=false;
 	        	e.getMessage();
 
-	         }	
-		 finally {
-			 stmt.close();
-			 conn.close();
-			 System.out.println("Ho chiuso tutto");
-			 
-		 } Alert alert = new Alert(AlertType.INFORMATION);
-    	        alert.setTitle("  Riepilogo inserimento carta ");
-    	        alert.setHeaderText("Risultato ");
-    	        alert.setContentText(" Inserimento avvenuto con successo!!\n\n Digitare nome utente in apposito spazio sottostante ");
-    	        alert.showAndWait();
-
+	         }
+		
+		
 		 System.out.println("LibroDao. questy");
 
 		}

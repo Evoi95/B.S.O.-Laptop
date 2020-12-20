@@ -2,8 +2,10 @@ package application;
 
 import java.sql.SQLException;
 
+import bso.Pagamento;
 import database.GiornaleDao;
 import database.LibroDao;
+import database.PagamentoDao;
 import database.RivistaDao;
 import factoryBook.Giornale;
 import factoryBook.Libro;
@@ -18,9 +20,11 @@ public class ControllerAcquista  {
 	private LibroDao lD;
 	private GiornaleDao gD;
 	private RivistaDao rD;
+	private PagamentoDao pagD;
 	private Libro l;
 	private Giornale  g;
 	private Rivista r;
+	private Pagamento p;
 	public float totale(String isbn,int disp)
 	{
 		float x=(float) 0.0;
@@ -94,10 +98,23 @@ public class ControllerAcquista  {
 		l=new Libro();
 		g=new Giornale();
 		r=new Rivista();
+		p=new Pagamento(0);
+		pagD=new PagamentoDao();
 		//t=new Thread();
 		
 	}
-	
+	public void retAmmontare(String amm)
+	{
+		System.out.println("\n\n\n\n Pagamento settato : "+amm);
+		p.setAmmontare(Float.parseFloat(amm));
+		try {
+			pagD.daiPrivilegi();
+			pagD.inserisciPagamento(p);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}//pagamentoDAo.ad();
+	}
 	
 	/*
 	@Override

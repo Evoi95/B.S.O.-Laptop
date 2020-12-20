@@ -70,10 +70,12 @@ public class ControllerPagamentoCC {
 		//cDao.daiPrivilegi();//SingletonPagamento.getInstance().decidiPagemento(0);
 	}
 
-	public void aggiungiCartaDB(String n,String c,String cod,java.util.Date data,String civ) throws SQLException {
-		CartaCredito cc=new CartaCredito(n,c,cod,(Date) data,civ);
-		//System.out.println("cc :"+cc);
+	public void aggiungiCartaDB(String n,String c,String cod,java.util.Date data,String civ,float prezzo) throws SQLException {
+		CartaCredito cc=new CartaCredito(n,c,cod,(Date) data,civ,0);
+		//System.out.println("carta db :"+cc);
+		//cDao.insCC(new CartaCredito(n,c,cod,(Date) data,civ,(float) 0.0));
 		cDao.insCC(cc);
+		
 		
 		//Alert
 		/*

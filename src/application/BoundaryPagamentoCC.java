@@ -149,7 +149,7 @@ public class BoundaryPagamentoCC implements Initializable {
 	
 	}
 	@FXML
-	public void registraCC() throws java.text.ParseException
+	public void registraCC() throws java.text.ParseException, SQLException
 	{
 		//{try 
 		java.util.Date data=null;
@@ -164,19 +164,15 @@ public class BoundaryPagamentoCC implements Initializable {
 		data =  formatter.parse(d);
 		java.sql.Date sql=new java.sql.Date(data.getTime());
 		 
-		 System.out.println("data : "+data);
+		 //System.out.println("data : "+data);
 
 
 
 		String civ=codiceTFCiv.getText();
 		
 		
-		try {
-			CPCC.aggiungiCartaDB(nome,cognome,codice,sql,civ);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+			CPCC.aggiungiCartaDB(nome,cognome,codice,sql,civ,(float) 0.0);
 	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -192,6 +188,7 @@ public class BoundaryPagamentoCC implements Initializable {
 		
 	
 		String nomeUt=nomeInput.getText();
+		System.out.println("Nome utemte :"+nomeUt);
 		if (nomeUt.equals("")|| nomeUt.equals(null))
 		{
 			buttonPrendi.setDisable(true);
