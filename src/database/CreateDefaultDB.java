@@ -93,13 +93,8 @@ public class CreateDefaultDB
 				st.executeUpdate(query);
 				System.out.println("Creata tabella User");
 				
-				query=	"Create table if not exists PAGAMENTO "
-						+ "	( id int primary key not null auto_increment,"
-						// metto un int perche psso avere 3 pagametni 0 carta di credito, 1 contanti, -1 errore
-						+ "	  Metodo_pagamento int, esito int,"
-						+ "      riepilogo text,"
-						+ "      idUtente int);";
-				st.executeUpdate(query);
+				query=	"create table if not exists pagamento(id_op int primary key auto_increment,metodo varchar(10),esito int ,nomeUtente varchar(10),spesaTotale float ) ";
+						st.executeUpdate(query);
 				System.out.println("Creata tabella Pagamento");
 				
 				query=	"Create table if not exists RIVISTA "
@@ -127,11 +122,12 @@ public class CreateDefaultDB
 				st.executeUpdate(query);
 				System.out.println("Creata tabella GIORNALE");
 				
-				query=	"Create table if not exists CARTACREDITO "
+				query=	"Create table if not exists cartacredito "
 						+ "	( nomeP VARCHAR(10),cognomeP  Varchar(20),"
 						+ "	codiceCarta varchar(20),"
 						+ "	scad date ,"
-						+ "	codicePin varchar(5));";
+						+ "	codicePin varchar(5) ,"
+						+ " ammontare float );";
 				st.executeUpdate(query);
 				System.out.println("Creata tabella CARTACREDITO");
 				

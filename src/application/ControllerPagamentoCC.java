@@ -71,11 +71,9 @@ public class ControllerPagamentoCC {
 	}
 
 	public void aggiungiCartaDB(String n,String c,String cod,java.util.Date data,String civ,float prezzo) throws SQLException {
-		//float l=cDao.getAmmontare();
-		//System.out.println(" l vale : "+l);
 		CartaCredito cc=new CartaCredito(n,c,cod,(Date) data,civ,0);
-		//System.out.println("cc :"+cc);
-		cc.setPrezzoTransazine(cDao.getAmmontare());
+		//System.out.println("carta db :"+cc);
+		//cDao.insCC(new CartaCredito(n,c,cod,(Date) data,civ,(float) 0.0));
 		cDao.insCC(cc);
 		
 		

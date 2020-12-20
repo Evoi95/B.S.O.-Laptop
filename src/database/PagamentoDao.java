@@ -15,17 +15,18 @@ public class PagamentoDao {
 	public void inserisciPagamento(Pagamento p) throws SQLException {
 		
 		System.out.println("VAlore ammontare in pagDAo : "+p.getAmmontare());
-		conn=ConnToDb.generalConnection();
 		try {
-			
+					conn=ConnToDb.generalConnection();
+
 			//p.setMetodo("CC");
 		// TODO Auto-generated method stub
-		 qInsert="INSERT INTO pagamentov1 (metodo,esito,nomeUtente,spesaTotale) values (?,?,?,?)";
+		 qInsert="INSERT INTO pagamento (id_op,metodo,esito,nomeUtente,spesaTotale) values (?,?,?,?,?)";
 		prepQ = conn.prepareStatement(qInsert);
-		prepQ.setString(1,null); // numero pagine int
-		prepQ.setInt(2,0); // 
-		prepQ.setString(3,null);
-		prepQ.setFloat(4,p.getAmmontare());
+		//prepQ.setString(1,null); // numero pagine int
+		prepQ.setString(2,null); // 
+		prepQ.setInt(3,-1);
+		prepQ.setString(4, null);
+		prepQ.setFloat(5,p.getAmmontare());
 		prepQ.executeUpdate();
 		}catch(SQLException s)
 		{

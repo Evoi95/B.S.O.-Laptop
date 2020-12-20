@@ -62,7 +62,6 @@ public class BoundaryAcquista implements Initializable {
 	@FXML
 	private void pagaCC() throws IOException {
 		
-		CA.retAmmontare(totale.getText()); // mette nel pagamento;
 
 	        
 		Stage stage;
@@ -139,6 +138,8 @@ public class BoundaryAcquista implements Initializable {
 		float tot;
 			tot=x*(Float.parseFloat(quantita.getText()));
 			totale.setText(""+tot);
+			CA.retAmmontare(totale.getText()); // mette nel pagamento;
+
 		}
 		else if(scelta.equals("giornale"))
 		{
@@ -148,6 +149,8 @@ public class BoundaryAcquista implements Initializable {
 		float tot1;
 		tot1=y*(Float.parseFloat(quantita.getText()));
 		totale.setText(""+tot1);
+		CA.retAmmontare(totale.getText()); // mette nel pagamento;
+
 		
 		}
 		else if(scelta.equals("rivista"))
@@ -157,11 +160,14 @@ public class BoundaryAcquista implements Initializable {
 			float tot2;
 			tot2=z*(Float.parseFloat(quantita.getText()));
 			totale.setText(""+tot2);
+			CA.retAmmontare(totale.getText()); // mette nel pagamento;
+
 		
 		}
 		else {
 			throw new IOException();
 		}
+
 						
 		
 		

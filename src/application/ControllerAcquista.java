@@ -105,6 +105,7 @@ public class ControllerAcquista  {
 	}
 	public void retAmmontare(String amm)
 	{
+		System.out.println("\n\n\n\n Pagamento settato : "+amm);
 		p.setAmmontare(Float.parseFloat(amm));
 		try {
 			pagD.daiPrivilegi();
