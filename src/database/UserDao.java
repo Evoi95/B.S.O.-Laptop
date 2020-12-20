@@ -20,6 +20,8 @@ public class UserDao {
 	private static PreparedStatement prepQ = null;
     private BufferedImage slate;
     
+    //public boolean 
+    
     // add an user on db afret registration
     public boolean createUser()
     {
