@@ -158,9 +158,6 @@ public class BoundaryAcquista implements Initializable {
 			throw new IOException();
 		}
 		
-		/*
-		 * ins pagamento
-		 */
 			
 		}	
 		CA.returnSpesa(totale.getText());

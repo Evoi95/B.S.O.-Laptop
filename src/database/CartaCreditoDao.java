@@ -16,6 +16,7 @@ public class CartaCreditoDao {
 	private PreparedStatement stmt=null;
 	private String query;
 	private Connection conn;
+	private ResultSet rs;
 	
 	
 	public ObservableList<CartaCredito> getCarteCredito(String nome) throws SQLException
@@ -27,7 +28,7 @@ public class CartaCreditoDao {
 		ObservableList<CartaCredito> catalogo=FXCollections.observableArrayList();
 		 
 			//ConnToDb.connection();
-            ResultSet rs=conn.createStatement().executeQuery("select nomeP,cognomeP,codiceCarta from cartacredito where nomeP='"+nome+"'");
+            rs=conn.createStatement().executeQuery("select nomeP,cognomeP,codiceCarta from cartacredito where nomeP='"+nome+"'");
 
             while(rs.next())
             {
@@ -51,14 +52,12 @@ public class CartaCreditoDao {
             }
            
             conn.close();
-		        		return catalogo;
+		   return catalogo;
 
-		//catalogo.add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","avventura",100,11,11,5252020,18,null,true));
 		
-		//System.out.println(catalogo);
-		//return catalogo;
-		
-	}	public void daiPrivilegi() throws SQLException
+	}	
+	
+	public void daiPrivilegi() throws SQLException
 	{
 		//Connection conn=null;
 		//PreparedStatement stmt=null;
@@ -86,39 +85,6 @@ public class CartaCreditoDao {
 		 System.out.println("LibroDao. privilegi");
 
 }
-	//prenere float da pagamento;
-	
-	public float getAmmontare() throws SQLException {	   
-		float prezzo = 0;
-		ResultSet rs = null;
-
-		try {
-		 conn=ConnToDb.generalConnection();
-          rs=conn.createStatement().executeQuery("select spesaTotale from pagamento where last_insert_id() order by id_op desc limit 1");
-	         while ( rs.next() ) {
-	        	 double p=rs.getDouble("spesaTotale");
-	        	 prezzo=(float) p;
-
-	         }
-			}
-	         catch(SQLException s)
-	         {
-	        	 s.getCause();
-	         }
-	         finally {
-	        	 rs.close();
-	        	 conn.close();
-	         }
-			//return prezzo;
-		return prezzo;
-			
-
-		
-
-		
-	}
-	
-	
 	public void insCC(CartaCredito cc) throws SQLException
 	{
 		
@@ -130,9 +96,7 @@ public class CartaCreditoDao {
 		 String num=cc.getNumeroCC();
 		 Date d=cc.getScadenza();
 		 String pin=cc.getCiv();
-		 Float amm=(float) cc.getAmmontare();
-		 
-		 
+		 Float amm=(float) cc.getPrezzoTransazine();		 
 		// System.out.println("Entro in ins cc"+cc.getUserNome());
 		 try {
 			 conn=ConnToDb.generalConnection();
@@ -171,14 +135,31 @@ public class CartaCreditoDao {
 
 		}
 	
+	public float prendiSpesa() throws SQLException
+	{
+		float spesa=0;
+		try {
+			conn=ConnToDb.generalConnection();
+	          rs=conn.createStatement().executeQuery("select spesaTotale from pagamento  where 1+last_insert_id(id_op) order by id_op desc limit 1");
+	          while (rs.next())
+	          {
+	        	  spesa=rs.getFloat("spesaTotale");
+	          }
+		}catch(SQLException e)
+		{
+			e.getCause();
+		}
+		finally
+		{
+			conn.close();
+		}
+		
+		System.out.println("\n\n Spesa in cDao :"+spesa);
+		return spesa;
+	}
 	  
 
 		
-	//	System.out.println(cc.getAmmontare());
-		/*todo
-		 * ins 
-		 */
-		//System.out.println("cc in dao"+cc.getNumeroCC());
 	
 
 }

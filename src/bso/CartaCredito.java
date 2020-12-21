@@ -92,7 +92,7 @@ public class CartaCredito {
 		this.civ=null;
 		this.prezzoTransazine=0;
 	}
-	public CartaCredito(int tipo,String numero,double lim,double amm,Date scad,String nU,String cU,String civ)
+	public CartaCredito(int tipo,String numero,double lim,float amm,Date scad,String nU,String cU,String civ)
 	{
 		this.tipo=tipo;
 		this.numeroCC=numero;

@@ -50,7 +50,10 @@ public class ControllerPagamentoCC {
 	public void aggiungiCartaDB(String n,String c,String cod,java.util.Date data,String civ,float prezzo) throws SQLException {
 		try {
 		CartaCredito cc=new CartaCredito(n,c,cod,(Date) data,civ,0);
+		
+		cc.setPrezzoTransazine(cDao.prendiSpesa());
 		cDao.insCC(cc);
+		
 		}catch(SQLException e)
 		{
 			e.getCause();
