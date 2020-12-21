@@ -14,7 +14,7 @@ public class ControllerCompravenditaLibri {
 
 	
 	
-	public void disponibilitaLibro(String isbn) {
+	public void disponibilitaLibro(String isbn) throws SQLException {
 		l.setCodIsbn(isbn);
 		
 		lD.getDesc(l);

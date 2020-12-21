@@ -9,24 +9,27 @@ import bso.Pagamento;
 public class PagamentoDao {
 	private static String qInsert ;
 	private static PreparedStatement prepQ = null;
-	private Connection conn;
+	private Connection connPag;
     
 
 	public void inserisciPagamento(Pagamento p) throws SQLException {
 		
-		System.out.println("VAlore ammontare in pagDAo : "+p.getAmmontare());
+		String m=p.getMetodo();
+		int esito=p.getEsito();
+		String nomeU=p.getNomeUtente();
+		float amm=p.getAmmontare();
+		
 		try {
-					conn=ConnToDb.generalConnection();
+					connPag=ConnToDb.generalConnection();
 
-			//p.setMetodo("CC");
 		// TODO Auto-generated method stub
-		 qInsert="INSERT INTO pagamento (id_op,metodo,esito,nomeUtente,spesaTotale) values (?,?,?,?,?)";
-		prepQ = conn.prepareStatement(qInsert);
-		//prepQ.setString(1,null); // numero pagine int
-		prepQ.setString(2,null); // 
-		prepQ.setInt(3,-1);
-		prepQ.setString(4, null);
-		prepQ.setFloat(5,p.getAmmontare());
+		 qInsert="INSERT INTO pagamento (metodo,esito,nomeUtente,spesaTotale) values (?,?,?,?)";
+		prepQ = connPag.prepareStatement(qInsert);
+		//prepQ.setInt(1,p.getEsito()); // numero pagine int
+		prepQ.setString(1,m); // 
+		prepQ.setInt(2,esito);
+		prepQ.setString(3, nomeU);
+		prepQ.setFloat(4,amm);
 		prepQ.executeUpdate();
 		}catch(SQLException s)
 		{
@@ -52,13 +55,7 @@ public class PagamentoDao {
 	        	e.getMessage();
 
 	         }	
-		 finally {
-			 stmt.close();
-			 conn.close();
-			 System.out.println("Ho chiuso tutto");
-			 
-		 }
-
+		
 		 System.out.println("LibroDao. privilegi");
 
 }

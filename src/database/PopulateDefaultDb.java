@@ -233,7 +233,7 @@ public class PopulateDefaultDb {
 				+ "`password`,"
 				+ "`nickName`,"
 				+ "`descrizione`,"
-				+ "`dataDiNascita`,"
+				+ "`dataDiNascita`)"
 				+ "VALUES"
 				+ "(?,?,?,?,?,?,?);";
 			prepQ = ConnToDb.conn.prepareStatement(qInsert);

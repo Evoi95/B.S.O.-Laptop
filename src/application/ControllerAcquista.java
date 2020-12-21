@@ -12,11 +12,7 @@ import factoryBook.Libro;
 import factoryBook.Rivista;
 
 public class ControllerAcquista  {
-	//private Thread t;
-	/**
-	 * 
-	 */
-	//private static final long serialVersionUID = 1L;
+	
 	private LibroDao lD;
 	private GiornaleDao gD;
 	private RivistaDao rD;
@@ -28,8 +24,6 @@ public class ControllerAcquista  {
 	public float totale(String isbn,int disp)
 	{
 		float x=(float) 0.0;
-		//lD.
-		//calcolo qui il toatale
 		try {			
 			lD.daiPrivilegi();
 
@@ -37,16 +31,12 @@ public class ControllerAcquista  {
 			l.setDisponibilita(disp);
 			x=lD.getCosto(l);
 			
-			//Thread t=new Thread();
 			System.out.println("ControllerAcquist");
 			lD.aggiornaDisponibilita(l);
 			
 
-		//t.start();
-		//	t.run();
 
 			
-			//l.compra();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -90,7 +80,7 @@ public class ControllerAcquista  {
 		
 	}
 	
-	public ControllerAcquista()
+	public ControllerAcquista() throws SQLException
 	{
 		lD=new LibroDao();
 		gD=new GiornaleDao();
@@ -98,34 +88,24 @@ public class ControllerAcquista  {
 		l=new Libro();
 		g=new Giornale();
 		r=new Rivista();
-		p=new Pagamento(0);
 		pagD=new PagamentoDao();
-		//t=new Thread();
+		pagD.daiPrivilegi();
+		p=new Pagamento(0);
 		
 	}
-	public void retAmmontare(String amm)
+	
+	
+	public void  returnSpesa(String amm) throws SQLException
 	{
-		System.out.println("\n\n\n\n Pagamento settato : "+amm);
-		p.setAmmontare(Float.parseFloat(amm));
-		try {
-			pagD.daiPrivilegi();
-			pagD.inserisciPagamento(p);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}//pagamentoDAo.ad();
+		float totale=Float.parseFloat(amm);
+		p.setMetodo(null);
+		p.setEsito(-1);
+		p.setNomeUtente(null);
+		p.setAmmontare(totale);
+		
+		pagD.inserisciPagamento(p);
 	}
 	
-	/*
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		//Thread t=new Thread();
-		
-		lD.aggiornaDisponibilita("8832734591",4);
-		System.out.println("run del thread");
-		//t.start();
-		
-	}*/
 	
+		
 }

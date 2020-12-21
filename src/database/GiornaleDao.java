@@ -19,11 +19,12 @@ import javafx.scene.control.Alert.AlertType;
 public class GiornaleDao {
 	private Factory f;
 	
-	public void getDesc(Giornale g)
-	{
+	public void getDesc(Giornale g) throws SQLException
+	{	           
+		Connection conn = ConnToDb.generalConnection();
+
 		 try {
 	            //String url = "jdbc:msql://200.210.220.1:1114/Demo";
-	            Connection conn = ConnToDb.generalConnection();
 	            Statement stmt = conn.createStatement();
 	            ResultSet rs;
 	 
@@ -54,17 +55,21 @@ public class GiornaleDao {
 	    	       
 	    	        
 	            }
-	            conn.close();
 	        } catch (Exception e) {
 	            System.err.println("Got an exception! ");
 	            System.err.println(e.getMessage());
 	        }
+		 finally {
+			 conn.close();
+		 }
 	    }
 	
 	public float getCosto(Giornale g) throws SQLException
-	{
-		float prezzo=(float) 0.0;
-		 Connection conn = ConnToDb.generalConnection();
+	{		 Connection conn = ConnToDb.generalConnection();	
+	float prezzo=(float) 0.0;
+
+
+		try {
          Statement stmt = conn.createStatement();
          ResultSet rs;
 
@@ -73,6 +78,13 @@ public class GiornaleDao {
               prezzo=rs.getFloat("prezzo");
 
          }
+		}catch(SQLException e)
+		{
+			e.getCause();
+		}
+		finally {
+			conn.close();
+		}
 		return prezzo;
 		
 	}
@@ -97,7 +109,7 @@ public class GiornaleDao {
 
 	         }	
 		 finally {
-			 stmt.close();
+			// stmt.close();
 			 conn.close();
 			 System.out.println("Ho chiuso tutto");
 			 
@@ -125,7 +137,7 @@ public class GiornaleDao {
 
 	         }	
 		 finally {
-			 stmt.close();
+			// stmt.close();
 			 conn.close();
 			 System.out.println("Ho chiuso tutto");
 			 
@@ -139,12 +151,12 @@ public class GiornaleDao {
 	public ObservableList<Raccolta> getGiornali() throws SQLException {
 		// TODO Auto-generated method stub
 		
-		Connection c= ConnToDb.generalConnection();
+		Connection conn= ConnToDb.generalConnection();
 
 		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
 		 
 		//ConnToDb.connection();
-        ResultSet rs=c.createStatement().executeQuery("SELECT * FROM giornale");
+        ResultSet rs=conn.createStatement().executeQuery("SELECT * FROM giornale");
 
         while(rs.next())
         {
@@ -159,6 +171,7 @@ public class GiornaleDao {
 			}
 
         }
+        conn.close();
 	
 	//catalogo.add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","avventura",100,11,11,5252020,18,null,true));
 	

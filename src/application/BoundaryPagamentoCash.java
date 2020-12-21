@@ -43,7 +43,6 @@ public class BoundaryPagamentoCash {
 	
 	private String n,c,v,com;
 	
-	//private Boolean state;
 	@FXML
 	private void procediCash() throws IOException
 	{
@@ -83,13 +82,7 @@ public class BoundaryPagamentoCash {
 			
 		}
 		else {
-			// int x;
-			//String id=UUID.randomUUID().toString();
 			
-			
-			//System.out.println("n vale :"+n);
-
-
 			CPC.controlla(n, c, v, com);
 			Alert alert = new Alert(AlertType.INFORMATION);
 	        alert.setTitle("  Riepilogo pagamento  ");
@@ -105,7 +98,6 @@ public class BoundaryPagamentoCash {
 
 
 			
-			// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 			
 		        Scene scene = new Scene(root);
 		        stage.setScene(scene);
@@ -131,7 +123,6 @@ public class BoundaryPagamentoCash {
 
 
 		
-		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 		
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);

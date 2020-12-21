@@ -25,7 +25,7 @@ public class ControllerCompravenditaGiornali {
 		
 		
 	}
-	public void disponibilitaGiornale(String titolo) {
+	public void disponibilitaGiornale(String titolo) throws SQLException {
 		g.setTitolo(titolo);
 		
 		gD.getDesc(g);

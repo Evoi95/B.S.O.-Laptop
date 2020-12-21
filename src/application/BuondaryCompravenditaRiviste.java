@@ -77,7 +77,6 @@ public class BuondaryCompravenditaRiviste implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		titolo.setCellValueFactory(new PropertyValueFactory<>("titolo"));
-	   // tipologia.setCellValueFactory(new PropertyValueFactory<>("tipologia"));
 
 	     autore.setCellValueFactory(new PropertyValueFactory<>("autore"));	
 	     editore.setCellValueFactory(new PropertyValueFactory<>("editore"));
@@ -109,7 +108,6 @@ public class BuondaryCompravenditaRiviste implements Initializable{
 
 
 		
-		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 		
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
@@ -133,22 +131,12 @@ public class BuondaryCompravenditaRiviste implements Initializable{
 
 
 		
-		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 		
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.show();
 		
-		/*
-		Parent root = FXMLLoader.load(getClass().getResource("acquista.fxml"));
-
-        Scene scene = new Scene(root);       
-       
-
-        Stage primaryStage = new Stage();
-		primaryStage.setScene(scene);
-        primaryStage.show();
-        */
+		
 
         
         

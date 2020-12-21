@@ -77,7 +77,7 @@ public class BuondaryCompravenditaLibri implements Initializable{
 	
 	
 	@FXML
-	private void verifica()
+	private void verifica() throws SQLException
 	{
 		CCV.disponibilitaLibro(entryText.getText());//verifico se libro e presente
 		//String libro=entryText.getText();
@@ -94,22 +94,12 @@ public class BuondaryCompravenditaLibri implements Initializable{
 
 
 		
-		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 		
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.show();
 		
-		/*
-		Parent root = FXMLLoader.load(getClass().getResource("acquista.fxml"));
-
-        Scene scene = new Scene(root);       
-       
-
-        Stage primaryStage = new Stage();
-		primaryStage.setScene(scene);
-        primaryStage.show();
-        */
+		
 
         
         
@@ -163,7 +153,6 @@ public class BuondaryCompravenditaLibri implements Initializable{
 
 
 		
-		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 		
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);

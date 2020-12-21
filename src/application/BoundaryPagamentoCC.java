@@ -88,7 +88,6 @@ public class BoundaryPagamentoCC implements Initializable {
 		
 		stage.setTitle("Benvenuto nella schermata per il download");
 		
-		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 		
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
@@ -103,26 +102,13 @@ public class BoundaryPagamentoCC implements Initializable {
 			
 			stage.setTitle("Benvenuto nella schermata per il pagamento");
 			
-			// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 			
 		        Scene scene = new Scene(root);
 		        stage.setScene(scene);
 		        stage.show();
 		}
 		
-		/*
 		
-		Parent root = FXMLLoader.load(getClass().getResource("download.fxml"));
-
-        Scene scene = new Scene(root);       
-       
-
-         Stage primaryStage = new Stage();
-		primaryStage.setScene(scene);
-        primaryStage.show();
-       // buttonCC.setDisable(true);
-        
-        */
 
 	}
 	@FXML
@@ -136,12 +122,10 @@ public class BoundaryPagamentoCC implements Initializable {
 		
 
 		
-		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 		
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.show();
-	//	this.primaryStage.close();
 	}
 	public BoundaryPagamentoCC() throws Exception
 	{
@@ -151,7 +135,6 @@ public class BoundaryPagamentoCC implements Initializable {
 	@FXML
 	public void registraCC() throws java.text.ParseException, SQLException
 	{
-		//{try 
 		java.util.Date data=null;
 
 		String nome=nomeTF.getText();
@@ -164,7 +147,6 @@ public class BoundaryPagamentoCC implements Initializable {
 		data =  formatter.parse(d);
 		java.sql.Date sql=new java.sql.Date(data.getTime());
 		 
-		 //System.out.println("data : "+data);
 
 
 
@@ -180,7 +162,6 @@ public class BoundaryPagamentoCC implements Initializable {
 
 
 
-		//8832734893
 	}
 	@FXML
 	private void popolaTabella() throws SQLException
@@ -196,7 +177,6 @@ public class BoundaryPagamentoCC implements Initializable {
 		}
 		else {
 			buttonPrendi.setDisable(false);
-			//System.out.println("Entro nel false :"+CPCC.ritornaElencoCC(nomeUt));
 			tableCC.setItems(CPCC.ritornaElencoCC(nomeUt));
 		}
 	}catch(IOException e)

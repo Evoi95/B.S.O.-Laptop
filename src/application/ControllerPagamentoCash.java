@@ -26,11 +26,7 @@ public class ControllerPagamentoCash {
 	{
 		e.getCause();
 	}
-	//state=true;
-	//state=true;
-
 	
-		//return state;
 	}
 	
 	public ControllerPagamentoCash() throws Exception

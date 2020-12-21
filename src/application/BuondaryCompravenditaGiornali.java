@@ -109,14 +109,13 @@ public class BuondaryCompravenditaGiornali implements Initializable {
 
 
 		
-		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 		
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.show();
 	}
 	@FXML
-	public void verifica()
+	public void verifica() throws SQLException
 	{
 		CCG.disponibilitaGiornale(entryText.getText());
 	}
@@ -132,7 +131,6 @@ public class BuondaryCompravenditaGiornali implements Initializable {
 
 
 		
-		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 		
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);

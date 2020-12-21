@@ -17,11 +17,12 @@ public class LibroDao  {
 	//getIstance 
 	//select * from libro where codice=isbn;
 	
-	public void getDesc(Libro l)
-	{
+	public void getDesc(Libro l) throws SQLException
+	{	           
+		Connection conn = ConnToDb.generalConnection();
+
 		 try {
 	            //String url = "jdbc:msql://200.210.220.1:1114/Demo";
-	            Connection conn = ConnToDb.generalConnection();
 	            Statement stmt = conn.createStatement();
 	            ResultSet rs;
 	 
@@ -61,12 +62,16 @@ public class LibroDao  {
 	            System.err.println("Got an exception! ");
 	            System.err.println(e.getMessage());
 	        }
+		 finally {
+			 conn.close();
+		 }
 	    }
 	
 	public float getCosto(Libro l) throws SQLException
 	{
 		float prezzo=(float) 0.0;
 		 Connection conn = ConnToDb.generalConnection();
+		 try {
          Statement stmt = conn.createStatement();
          ResultSet rs;
 
@@ -75,6 +80,13 @@ public class LibroDao  {
               prezzo=rs.getFloat("prezzo");
 
          }
+		 }catch(SQLException e)
+		 {
+			 e.getCause();
+		 }
+		 finally {
+			 conn.close();
+		 }
 		return prezzo;
 		
 	}

@@ -44,13 +44,13 @@ public class Pagamento {
 		this.nomeUtente = nomeUtente;
 		this.ammontare = ammontare;
 	}
-	public Pagamento(float ammontare)
+	public Pagamento(float totale)
 	{
 		this.id=0;
 		this.metodo=null;
-		this.esito=0;
+		this.esito=-1;
 		this.nomeUtente=null;
-		this.ammontare=ammontare;
+		this.ammontare=totale;
 		
 	}
 	

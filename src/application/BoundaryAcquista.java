@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -56,7 +57,6 @@ public class BoundaryAcquista implements Initializable {
 	private ControllerAcquista CA;
 	private Scanner input;
 	private String scelta;
-	//private String 
 	
 	
 	@FXML
@@ -72,7 +72,6 @@ public class BoundaryAcquista implements Initializable {
 
 
 		
-		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 		
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
@@ -81,10 +80,12 @@ public class BoundaryAcquista implements Initializable {
 		
 	}
 	@FXML
-	private void pagaCash() throws IOException
+	private void pagaCash() throws IOException, SQLException
 	{
-		 String tot=totale.getText();
-	        System.out.println("totale :"+tot);
+		// String tot=totale.getText();
+	       // System.out.println("totale :"+tot);
+		
+
 		
 		Stage stage;
 		Parent root;
@@ -94,38 +95,25 @@ public class BoundaryAcquista implements Initializable {
 
 
 		
-		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 		
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.show();
 	        
-	       /*
-		Parent root = FXMLLoader.load(getClass().getResource("pagamentoContrassegno.fxml"));
-
-        Scene scene = new Scene(root);       
-       
-
-        Stage primaryStage = new Stage();
-		primaryStage.setScene(scene);
-        primaryStage.show();
-        buttonCC.setDisable(true);
-        */
+	 
 
 		
 	}
 	@FXML 
 	private void initialize()
 	{
-		//nome.setText("");
 		costo.setText("");
 		quantita.setText("");
 		totale.setText("");
 	}
 	
 	@FXML
-	//prendere importo in query
-	private void importo() throws IOException
+	private void importo() throws IOException, SQLException
 	{
 		if (!nome.getText().equals(""))
 		{
@@ -133,57 +121,53 @@ public class BoundaryAcquista implements Initializable {
 			buttonCash.setDisable(false);
 			
 		if (scelta.equals("libro")) {
+			labelN.setText("Leggere id del libro");
 			float x=CA.totale(nome.getText(),Integer.parseInt(quantita.getText()));
 		costo.setText(""+x);
 		float tot;
 			tot=x*(Float.parseFloat(quantita.getText()));
 			totale.setText(""+tot);
-			CA.retAmmontare(totale.getText()); // mette nel pagamento;
+			//CA.retAmmontare(totale.getText()); 
 
 		}
 		else if(scelta.equals("giornale"))
 		{
+			labelN.setText("Leggere nome giornale");
 			float y=CA.totaleG(nome.getText(),Integer.parseInt(quantita.getText()));
 		costo.setText(""+y);
 
 		float tot1;
 		tot1=y*(Float.parseFloat(quantita.getText()));
 		totale.setText(""+tot1);
-		CA.retAmmontare(totale.getText()); // mette nel pagamento;
+		//CA.retAmmontare(totale.getText()); 
 
 		
 		}
 		else if(scelta.equals("rivista"))
 		{
+			labelN.setText("Leggere nome rivista");
 			float z=CA.totaleR(nome.getText(),Integer.parseInt(quantita.getText()));
 			costo.setText(""+z);
 			float tot2;
 			tot2=z*(Float.parseFloat(quantita.getText()));
 			totale.setText(""+tot2);
-			CA.retAmmontare(totale.getText()); // mette nel pagamento;
 
 		
 		}
 		else {
 			throw new IOException();
 		}
-
-						
 		
-		
-				
-		
-		
+		/*
+		 * ins pagamento
+		 */
 			
-			
-			
-			
-		}
+		}	
+		CA.returnSpesa(totale.getText());
 		
-		//settare in label import 
-		//quantita * prezzo
+		
 	}
-	public BoundaryAcquista()
+	public BoundaryAcquista() throws SQLException
 	{
 		CA=new ControllerAcquista();
 	}
@@ -198,16 +182,11 @@ public class BoundaryAcquista implements Initializable {
 		
 
 		
-		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 		
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.show();
-	        
-	       // primaryStage.setTitle("Benvenuto nella schermata di login");	
-	       // primaryStage.setScene(newScene);
-	       // primaryStage.show();
-
+	    
 		
 		
 	}
@@ -219,8 +198,6 @@ public class BoundaryAcquista implements Initializable {
 		
 		Alert a=new Alert(Alert.AlertType.INFORMATION);
 		a.setTitle("Leggere input correttoDownload effettuato");
-		//a.setContentText("Libro : titolo   scaricato con successo :"+titolo);
-		//a.setContentText("nr odine acquito :"+this.nrOrdine);
 		a.setContentText("Leggere da tastiera il tipo di rivista precedetemente scelta : "
 				+ "\n scelte possibili:"
 				+ "\n giornale - libro - rivista");

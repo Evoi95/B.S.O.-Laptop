@@ -52,7 +52,7 @@ public class ContrassegnoDao {
 		 finally {
 
 
-             stmt.close();
+             //stmt.close();
              conn.close();
 
 		 }
@@ -82,7 +82,7 @@ public class ContrassegnoDao {
 
 	         }	
 		 finally {
-			 stmt.close();
+			// stmt.close();
 			 conn.close();
 			 System.out.println("Ho chiuso tutto");
 			 
