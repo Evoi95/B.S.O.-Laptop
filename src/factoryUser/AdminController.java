@@ -1,4 +1,4 @@
-package bso;
+package factoryUser;
 
 public class AdminController {
 	

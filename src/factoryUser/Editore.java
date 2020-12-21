@@ -1,4 +1,4 @@
-package bso;
+package factoryUser;
 import java.util.ArrayList;
 
 public class Editore {

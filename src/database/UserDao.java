@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import bso.User;
+import factoryUser.User;
 
 public class UserDao {
 	
@@ -19,6 +19,8 @@ public class UserDao {
 	private static String qInsert ;
 	private static PreparedStatement prepQ = null;
     private BufferedImage slate;
+    
+    //public boolean 
     
     // add an user on db afret registration
     public boolean createUser()
