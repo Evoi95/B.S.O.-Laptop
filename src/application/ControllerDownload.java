@@ -1,8 +1,11 @@
 package application;
 
+import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
+
+import com.itextpdf.text.DocumentException;
 
 import factoryBook.Libro;
 import javafx.scene.control.Alert;
@@ -12,7 +15,7 @@ public class ControllerDownload {
 	private static Libro l;
 	
 	
-	public void scaricaLibro()
+	public void scaricaLibro() throws FileNotFoundException, DocumentException
 	{
 		//String titolo="prova";
 		 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
@@ -28,6 +31,7 @@ public class ControllerDownload {
 		a.showAndWait();
 		
 		l.scarica();
+		l.leggi();
 	}
 	
 	public void annullaOrdine()

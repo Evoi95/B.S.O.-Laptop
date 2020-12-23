@@ -2,6 +2,8 @@ package application;
 
 import java.io.IOException;
 
+import com.itextpdf.text.DocumentException;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,7 +32,7 @@ public class BoundaryDownload {
 	private ControllerDownload CD;
 	
 	@FXML
-	private void scarica() throws IOException
+	private void scarica() throws IOException, DocumentException
 	{
 		CD.scaricaLibro();
 		/*
