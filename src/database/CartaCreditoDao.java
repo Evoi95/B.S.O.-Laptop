@@ -1,16 +1,16 @@
 package database;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.*;
 
-import bso.CartaCredito;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import src.bso.CartaCredito;
 
 public class CartaCreditoDao {
 	private PreparedStatement stmt=null;

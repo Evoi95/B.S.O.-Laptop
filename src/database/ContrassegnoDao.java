@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import bso.Fattura;
+import src.bso.Fattura;
 
 public class ContrassegnoDao {
 	//private boolean esito=false;

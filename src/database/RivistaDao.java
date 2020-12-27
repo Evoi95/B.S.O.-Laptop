@@ -8,13 +8,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import factoryBook.Factory;
-import factoryBook.Raccolta;
-import factoryBook.Rivista;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import src.factoryBook.Raccolta;
+import src.factoryBook.Rivista;
 
 public class RivistaDao {
 	private Factory f;

@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Date;
 
-import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;

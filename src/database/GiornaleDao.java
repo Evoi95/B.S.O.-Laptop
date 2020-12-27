@@ -8,13 +8,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import factoryBook.Factory;
-import factoryBook.Giornale;
-import factoryBook.Raccolta;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import src.factoryBook.Giornale;
+import src.factoryBook.Raccolta;
 
 public class GiornaleDao {
 	private Factory f;
