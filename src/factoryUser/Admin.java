@@ -12,7 +12,7 @@ public class Admin {
 		pass = null;
 		idAmm = -1;
 	}
-
+// commento di prova
 	public Admin(String nome, String cognome, String email, String pass, int idAmm) {
 		
 		this.nome = nome;
