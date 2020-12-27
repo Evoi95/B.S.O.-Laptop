@@ -4,12 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import src.bso.Fattura;
+import bso.Fattura;
 
 public class ContrassegnoDao {
 	//private boolean esito=false;
 	
-	public void inserisciFattura(Fattura f) throws SQLException
+	public void inserisciFattura(bso.Fattura f) throws SQLException
 	{
 		Connection conn=null;
 		PreparedStatement stmt=null;

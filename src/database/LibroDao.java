@@ -8,12 +8,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import factoryBook.Factory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import src.factoryBook.Libro;
-import src.factoryBook.Raccolta;
+import factoryBook.Libro;
+import factoryBook.Raccolta;
 
 public class LibroDao  {
 	private Factory f;
@@ -21,7 +22,7 @@ public class LibroDao  {
 	//getIstance 
 	//select * from libro where codice=isbn;
 	
-	public void getDesc(Libro l) throws SQLException
+	public void getDesc(factoryBook.Libro l) throws SQLException
 	{	           
 		Connection conn = ConnToDb.generalConnection();
 

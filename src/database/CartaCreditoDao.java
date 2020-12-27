@@ -10,7 +10,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import src.bso.CartaCredito;
+import bso.CartaCredito;
 
 public class CartaCreditoDao {
 	private PreparedStatement stmt=null;
@@ -19,7 +19,7 @@ public class CartaCreditoDao {
 	private ResultSet rs;
 	
 	
-	public ObservableList<CartaCredito> getCarteCredito(String nome) throws SQLException
+	public ObservableList<bso.CartaCredito> getCarteCredito(String nome) throws SQLException
 	{
 		Connection conn= ConnToDb.generalConnection();
 		/*

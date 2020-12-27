@@ -3,7 +3,7 @@ package factoryUser;
 import java.sql.Date;
 import java.util.List;
 
-import src.factoryBook.Libro;
+import factoryBook.Libro;
 
 public class User {
 	
