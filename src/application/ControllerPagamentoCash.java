@@ -10,7 +10,7 @@ public class ControllerPagamentoCash {
 	private ContrassegnoDao pD;
 	private Fattura f;
 
-	public void controlla(String nome, String cognome, String via, String com) throws IOException, SQLException {
+	public void controlla(String nome, String cognome, String via, String com,float ammontare) throws IOException, SQLException {
 		try {
 			pD.daiPrivilegi();
 
@@ -19,6 +19,7 @@ public class ControllerPagamentoCash {
 			f.setCognome(cognome);
 			f.setVia(via);
 			f.setCom(com);
+			f.setAmmontare(pD.prendiSpesa());
 			pD.inserisciFattura(f);
 		} catch (Exception e) {
 			e.getCause();

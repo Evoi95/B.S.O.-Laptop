@@ -134,7 +134,8 @@ public class CreateDefaultDB
 						+ "	( nome varchar(10),cognome varchar(10),"
 						+ "	via varchar(50),"
 						+ "	comunicazoni text,"
-						+ " id int auto_increment not null  primary key);";
+						+ " id int auto_increment not null  primary key,"
+						+ " ammontare float);";
 				st.executeUpdate(query);
 				System.out.println("Creata tabella FATTURA");
 				

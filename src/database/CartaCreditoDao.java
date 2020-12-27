@@ -19,7 +19,7 @@ public class CartaCreditoDao {
 	private ResultSet rs;
 	
 	
-	public ObservableList<bso.CartaCredito> getCarteCredito(String nome) throws SQLException
+	public ObservableList<CartaCredito> getCarteCredito(String nome) throws SQLException
 	{
 		Connection conn= ConnToDb.generalConnection();
 		/*

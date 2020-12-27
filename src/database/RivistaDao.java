@@ -20,7 +20,7 @@ public class RivistaDao {
 	private Factory f;
 	
 	
-	public void getDesc(factoryBook.Rivista r)
+	public void getDesc(Rivista r)
 	{
 		 try {
 	            //String url = "jdbc:msql://200.210.220.1:1114/Demo";
@@ -62,7 +62,7 @@ public class RivistaDao {
 	        }
 	    }
 	
-	public float getCosto(factoryBook.Rivista r) throws SQLException
+	public float getCosto(Rivista r) throws SQLException
 	{
 		float prezzo=(float) 0.0;
 		 Connection conn = ConnToDb.generalConnection();
