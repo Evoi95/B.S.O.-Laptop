@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+<<<<<<< HEAD
 	<classpathentry excluding="imagesBook/|src/|extjar/" kind="src" path=""/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="extjar"/>
@@ -7,5 +8,9 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="extjar/itextpdf-5.5.9.jar"/>
 	<classpathentry kind="lib" path="extjar/mysql-connector-java-8.0.22.jar"/>
+=======
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+>>>>>>> branch 'main' of https://github.com/Evoi95/B.S.O.-Laptop.git
 	<classpathentry kind="output" path="bin"/>
 </classpath>
