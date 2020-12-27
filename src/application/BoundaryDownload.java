@@ -28,56 +28,48 @@ public class BoundaryDownload {
 	private Button buttonI;
 	@FXML
 	private Button buttonA;
-	
+
 	private ControllerDownload CD;
-	
+
 	@FXML
-	private void scarica() throws IOException, DocumentException
-	{
+	private void scarica() throws IOException, DocumentException {
 		CD.scaricaLibro();
 		/*
-		 * TODO
-		 * modifico alert
+		 * TODO modifico alert
 		 */
 		Stage stage;
 		Parent root;
-		stage=(Stage)buttonI.getScene().getWindow();
-		root=FXMLLoader.load(getClass().getResource("homePage.fxml"));
-		
+		stage = (Stage) buttonI.getScene().getWindow();
+		root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
 
-		//stage.setTitle("Schermata download");
+		// stage.setTitle("Schermata download");
 		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
-		
-	        Scene scene = new Scene(root);
-	        stage.setScene(scene);
-	        stage.show();
+
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
+
 	@FXML
-	private void pulisci() throws IOException
-	{
+	private void pulisci() throws IOException {
 		CD.annullaOrdine();
 		Stage stage;
 		Parent root;
-		stage=(Stage)buttonA.getScene().getWindow();
-		root=FXMLLoader.load(getClass().getResource("homePage.fxml"));
+		stage = (Stage) buttonA.getScene().getWindow();
+		root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
 		/*
-		 * TODO 
-		 * modificio alert
+		 * TODO modificio alert
 		 */
-		
 
-		
 		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
-		
-	        Scene scene = new Scene(root);
-	        stage.setScene(scene);
-	        stage.show();
+
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
-	
-	public BoundaryDownload()
-	{
-		CD=new ControllerDownload();
+
+	public BoundaryDownload() {
+		CD = new ControllerDownload();
 	}
-	
 
 }

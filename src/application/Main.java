@@ -1,5 +1,4 @@
 package application;
-	
 
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
@@ -12,31 +11,30 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-
 public class Main extends Application {
-	//private static Libro l;
+	// private static Libro l;
 	@Override
 	public void start(Stage primaryStage) {
-		
-		
+
 		try {
-			// FXMLLoader loader =  FXMLLoader();
-		      //  loader.setLocation(new URL("file:///C:/Users/dani/eclipse-workspace/prova/src/application/Login.fxml"));
-			
+			// FXMLLoader loader = FXMLLoader();
+			// loader.setLocation(new
+			// URL("file:///C:/Users/dani/eclipse-workspace/prova/src/application/Login.fxml"));
+
 			Parent root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
 
-		        Scene scene = new Scene(root);
-		        primaryStage.setTitle("Benvenuto nella homePage");	
-		        primaryStage.setScene(scene);
-		        primaryStage.show();
-		} catch(Exception e) {
+			Scene scene = new Scene(root);
+			primaryStage.setTitle("Benvenuto nella homePage");
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	public static void main(String[] args) {
-		
+
 		try {
 			CreateDefaultDB.createDefaultDB();
 		} catch (ClassNotFoundException e) {
@@ -49,12 +47,10 @@ public class Main extends Application {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//l=new Libro();
-		//l.scarica();
+		// l=new Libro();
+		// l.scarica();
 
-		
 		launch(args);
-		
-		
+
 	}
 }

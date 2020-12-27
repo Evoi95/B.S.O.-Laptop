@@ -33,25 +33,24 @@ public class BuondaryCompravenditaGiornali implements Initializable {
 	@FXML
 	private TableView<Raccolta> table;
 	@FXML
-	private TableColumn<Raccolta,SimpleStringProperty> titolo=new TableColumn<>("Titolo");
+	private TableColumn<Raccolta, SimpleStringProperty> titolo = new TableColumn<>("Titolo");
 	@FXML
-	private TableColumn<Raccolta,SimpleStringProperty> lingua=new TableColumn<>("Lingua");
+	private TableColumn<Raccolta, SimpleStringProperty> lingua = new TableColumn<>("Lingua");
 	@FXML
-	private TableColumn<Raccolta,SimpleStringProperty> editore=new TableColumn<>("Editore");	
-	@FXML	
-	private TableColumn<Raccolta,SimpleStringProperty> dataPubb=new TableColumn<>("DataPubblicazione");
+	private TableColumn<Raccolta, SimpleStringProperty> editore = new TableColumn<>("Editore");
 	@FXML
-	private TableColumn<Raccolta,SimpleIntegerProperty> copie=new TableColumn<>("CopieRimanenti");
-	@FXML	
-	private TableColumn<Raccolta,SimpleFloatProperty> prezzo=new TableColumn<>("Prezzo");
+	private TableColumn<Raccolta, SimpleStringProperty> dataPubb = new TableColumn<>("DataPubblicazione");
 	@FXML
-	private TableColumn<Raccolta,Image>foto=new TableColumn<>("Foto");
-	
+	private TableColumn<Raccolta, SimpleIntegerProperty> copie = new TableColumn<>("CopieRimanenti");
 	@FXML
-	private TableColumn<Raccolta,SimpleIntegerProperty> disponibilita=new TableColumn<>("Disponibilita");
+	private TableColumn<Raccolta, SimpleFloatProperty> prezzo = new TableColumn<>("Prezzo");
+	@FXML
+	private TableColumn<Raccolta, Image> foto = new TableColumn<>("Foto");
+
+	@FXML
+	private TableColumn<Raccolta, SimpleIntegerProperty> disponibilita = new TableColumn<>("Disponibilita");
 	/*
-	 * TODO
-	 * sistemare altre righe tabella dal db
+	 * TODO sistemare altre righe tabella dal db
 	 */
 	@FXML
 	private Button buttonL;
@@ -63,81 +62,64 @@ public class BuondaryCompravenditaGiornali implements Initializable {
 	private Button buttonI;
 	@FXML
 	private Button buttonA;
-	
-	
-	
+
 	private ControllerCompravenditaGiornali CCG;
-	
-	
-	
+
 	@FXML
-	private void prendiGiornali() throws SQLException
-	{
-	   
-	   
-	 	   table.setItems(CCG.getGiornali());   
-	 
+	private void prendiGiornali() throws SQLException {
+
+		table.setItems(CCG.getGiornali());
+
 	}
-	
-	public BuondaryCompravenditaGiornali()
-	{
-		CCG=new ControllerCompravenditaGiornali();
+
+	public BuondaryCompravenditaGiornali() {
+		CCG = new ControllerCompravenditaGiornali();
 	}
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		titolo.setCellValueFactory(new PropertyValueFactory<>("titolo"));
-	    lingua.setCellValueFactory(new PropertyValueFactory<>("lingua"));
-	    editore.setCellValueFactory(new PropertyValueFactory<>("editore"));
-	    dataPubb.setCellValueFactory(new PropertyValueFactory<>("dataPubb"));
-	    copie.setCellValueFactory(new PropertyValueFactory<>("copieRimanenti"));
-	    prezzo.setCellValueFactory(new PropertyValueFactory<>("prezzo"));
-	    foto.setCellValueFactory(new PropertyValueFactory<>("foto"));
-	    disponibilita.setCellValueFactory(new PropertyValueFactory<>("disponibilita"));
-
-	    	
+		lingua.setCellValueFactory(new PropertyValueFactory<>("lingua"));
+		editore.setCellValueFactory(new PropertyValueFactory<>("editore"));
+		dataPubb.setCellValueFactory(new PropertyValueFactory<>("dataPubb"));
+		copie.setCellValueFactory(new PropertyValueFactory<>("copieRimanenti"));
+		prezzo.setCellValueFactory(new PropertyValueFactory<>("prezzo"));
+		foto.setCellValueFactory(new PropertyValueFactory<>("foto"));
+		disponibilita.setCellValueFactory(new PropertyValueFactory<>("disponibilita"));
 
 	}
+
 	@FXML
-	private void torna() throws IOException
-	{
+	private void torna() throws IOException {
 		Stage stage;
 		Parent root;
-		stage=(Stage)buttonI.getScene().getWindow();
-		root=FXMLLoader.load(getClass().getResource("homePage.fxml"));
+		stage = (Stage) buttonI.getScene().getWindow();
+		root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
 		stage.setTitle("Benvenuto nella schermata del riepilogo ordine");
 
-
-		
-		
-	        Scene scene = new Scene(root);
-	        stage.setScene(scene);
-	        stage.show();
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
+
 	@FXML
-	public void verifica() throws SQLException
-	{
+	public void verifica() throws SQLException {
 		CCG.disponibilitaGiornale(entryText.getText());
 	}
-	
+
 	@FXML
-	public void procedi() throws IOException
-	{
+	public void procedi() throws IOException {
 		Stage stage;
 		Parent root;
-		stage=(Stage)buttonA.getScene().getWindow();
-		root=FXMLLoader.load(getClass().getResource("acquista.fxml"));
+		stage = (Stage) buttonA.getScene().getWindow();
+		root = FXMLLoader.load(getClass().getResource("acquista.fxml"));
 		stage.setTitle("Benvenuto nella schermata del riepilogo ordine");
 
-
-		
-		
-	        Scene scene = new Scene(root);
-	        stage.setScene(scene);
-	        stage.show();
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 
 	}
-	
-	
 
 }

@@ -20,81 +20,66 @@ import javafx.stage.Stage;
 
 public class BuondaryLogin implements Initializable {
 	@FXML
-	private Label labelUser,labelPwd,labelB;
-	@FXML 
+	private Label labelUser, labelPwd, labelB;
+	@FXML
 	private javafx.scene.layout.GridPane grid;
 	@FXML
 	private TextField textFieldusername;
 	@FXML
 	private PasswordField pwdField;
 	@FXML
-	private Button buttonI,buttonA;
+	private Button buttonI, buttonA;
 	@FXML
 	private Pane panel;
 	@FXML
 	private ImageView image;
 	private ControllerLogin cL;
-	
-	//private Stage stage;
-	
-	
+
+	// private Stage stage;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		cL=new ControllerLogin();
-		
+		cL = new ControllerLogin();
+
 	}
-	
+
 	@FXML
-	private void controlla() throws IOException
-	{
-		
+	private void controlla() throws IOException {
+
 		System.out.println("Controllo button");
 		String u;
-		 String p;
-		 Boolean v;//validazone
-		u=textFieldusername.getText();
-		p=pwdField.getText();
-		
-		v=cL.controlla(u, p);
-		
-		if(v)
-		{		
+		String p;
+		Boolean v;// validazone
+		u = textFieldusername.getText();
+		p = pwdField.getText();
+
+		v = cL.controlla(u, p);
+
+		if (v) {
 			Stage stage;
 			Parent root;
-			stage=(Stage)buttonI.getScene().getWindow();
-			root=FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+			stage = (Stage) buttonI.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 			stage.setTitle("Benvenuto nella schermata del catalogo libri ");
 
-			
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
 
-			
-			
-		        Scene scene = new Scene(root);
-		        stage.setScene(scene);
-		        stage.show();
-
-			
-
-		}
-		else {
-			Alert a=new Alert(Alert.AlertType.ERROR);
+		} else {
+			Alert a = new Alert(Alert.AlertType.ERROR);
 			a.setTitle("Errore nelle credenziali");
 			a.setContentText("Credenizali immesse sbagliate");
 			a.setHeaderText(null);
 			a.showAndWait();
 		}
-		
-		
-		
-	
-		
-				
+
 	}
+
 	@FXML
-	private void annulla()
-	{
+	private void annulla() {
 		textFieldusername.setText("");
-		pwdField.setText("");}
+		pwdField.setText("");
 	}
+}
