@@ -4,15 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import bso.Pagamento;
-
 public class PagamentoDao {
 	private static String qInsert ;
 	private static PreparedStatement prepQ = null;
 	private Connection connPag;
     
 
-	public void inserisciPagamento(Pagamento p) throws SQLException {
+	public void inserisciPagamento(bso.Pagamento p) throws SQLException {
 		
 		String m=p.getMetodo();
 		int esito=p.getEsito();

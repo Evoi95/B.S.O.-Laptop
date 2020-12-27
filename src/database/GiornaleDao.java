@@ -9,17 +9,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import factoryBook.Factory;
-import factoryBook.Giornale;
-import factoryBook.Raccolta;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import factoryBook.Giornale;
+import factoryBook.Raccolta;
 
 public class GiornaleDao {
 	private Factory f;
 	
-	public void getDesc(Giornale g) throws SQLException
+	public void getDesc(factoryBook.Giornale g) throws SQLException
 	{	           
 		Connection conn = ConnToDb.generalConnection();
 

@@ -9,7 +9,7 @@ import bso.Fattura;
 public class ContrassegnoDao {
 	//private boolean esito=false;
 	
-	public void inserisciFattura(Fattura f) throws SQLException
+	public void inserisciFattura(bso.Fattura f) throws SQLException
 	{
 		Connection conn=null;
 		PreparedStatement stmt=null;

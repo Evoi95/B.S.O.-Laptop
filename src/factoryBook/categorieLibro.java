@@ -1,7 +1,5 @@
 package factoryBook;
 
-import java.lang.Enum;
-
 enum BookCategory{
 	AdolescentiEragazzi, Arte, CinemaEFotografia, Biografie,diariEMemorie, CalendariAgende, Diritto,
 	DizionariEOpere, Economia, Famiglia, SaluteEBenessere, FantascienzaEFantasy, FumettiEManga,	GialliEThriller,SelfHelp,ComputerEgiochi,
