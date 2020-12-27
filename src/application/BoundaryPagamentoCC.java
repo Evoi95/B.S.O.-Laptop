@@ -69,6 +69,8 @@ public class BoundaryPagamentoCC implements Initializable {
 	private TableView<CartaCredito> tableCC;
 	@FXML
 	private TableColumn<CartaCredito,SimpleStringProperty>codiceCC=new TableColumn<>("CodiceCarta");
+	@FXML
+	private Label labelNU;
 	
 	private ControllerPagamentoCC CPCC;
 	private Boolean esito;

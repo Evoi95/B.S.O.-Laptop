@@ -55,5 +55,6 @@
       <RadioButton fx:id="buttonPrendi" layoutX="440.0" layoutY="496.0" mnemonicParsing="false" onAction="#popolaTabella" text="Prendi dati" textFill="#4c02f8" />
       <Button fx:id="buttonI" layoutX="315.0" layoutY="576.0" mnemonicParsing="false" onAction="#procediCC" prefHeight="59.0" prefWidth="164.0" text="Invia (dati non salvati)" textFill="#00ff11" />
       <Button fx:id="buttonA" layoutX="533.0" layoutY="568.0" mnemonicParsing="false" onAction="#annullaCC" prefHeight="59.0" prefWidth="187.0" text="Annulla" textFill="#f20400" />
+      <Label fx:id="labelNU" layoutX="273.0" layoutY="439.0" text="Inserire nome utente" />
    </children>
 </Pane>
