@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 
 public class BuondaryLogin implements Initializable {
 	@FXML
-	private Label labelUser, labelPwd, labelB;
+	private Label labelUser, labelPwd,labelB;
 	@FXML
 	private javafx.scene.layout.GridPane grid;
 	@FXML
@@ -33,6 +33,10 @@ public class BuondaryLogin implements Initializable {
 	private Pane panel;
 	@FXML
 	private ImageView image;
+	@FXML
+	private Button buttonReg;
+	@FXML
+	private Button buttonReset;
 	private ControllerLogin cL;
 
 	// private Stage stage;
@@ -45,8 +49,8 @@ public class BuondaryLogin implements Initializable {
 	}
 
 	@FXML
-	private void controlla() throws IOException {
-
+	private void controllaCredenziali() throws IOException {
+/*
 		System.out.println("Controllo button");
 		String u;
 		String p;
@@ -57,9 +61,13 @@ public class BuondaryLogin implements Initializable {
 		v = cL.controlla(u, p);
 
 		if (v) {
+		*/
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonI.getScene().getWindow();
+			/*
+			 * modificare schermata
+			 */
 			root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
 			stage.setTitle("Benvenuto nella schermata del catalogo libri ");
 
@@ -67,19 +75,54 @@ public class BuondaryLogin implements Initializable {
 			stage.setScene(scene);
 			stage.show();
 
-		} else {
+		} /*else {
 			Alert a = new Alert(Alert.AlertType.ERROR);
 			a.setTitle("Errore nelle credenziali");
 			a.setContentText("Credenizali immesse sbagliate");
 			a.setHeaderText(null);
 			a.showAndWait();
 		}
+		*/
 
-	}
+	//}
 
 	@FXML
-	private void annulla() {
-		textFieldusername.setText("");
-		pwdField.setText("");
+	private void annullaCredenziali() throws IOException {
+		Stage stage;
+		Parent root;
+		stage = (Stage) buttonA.getScene().getWindow();
+		/*
+		 * modificare schermata
+		 */
+		root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
+		stage.setTitle("Benvenuto nella schermata del catalogo libri ");
+
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+
+	}
+	@FXML
+	private void register() throws IOException
+	{
+		/*
+		 * carico scehrmata register
+		 */
+		Stage stage;
+		Parent root;
+		stage = (Stage) buttonReg.getScene().getWindow();
+		root = FXMLLoader.load(getClass().getResource("bsoRegister.fxml"));
+		stage.setTitle("Benvenuto nella schermata del login");
+
+		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+
+	}
+	@FXML
+	private void azzeraPwd()
+	{
+		//caricare nuocva schermata eccecc
 	}
 }

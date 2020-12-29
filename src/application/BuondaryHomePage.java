@@ -94,7 +94,7 @@ public class BuondaryHomePage {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+		root = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
 		stage.setTitle("Benvenuto nella schermata del login");
 
 		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
