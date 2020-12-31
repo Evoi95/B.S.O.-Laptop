@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path=".settings"/>
-	<classpathentry excluding=".settings/|src/|imagesBook/" kind="src" path=""/>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding=".settings/|src/|imagesBook/|src/image/" kind="src" path=""/>
+	<classpathentry excluding="image/" kind="src" path="src"/>
 	<classpathentry kind="src" path="imagesBook"/>
+	<classpathentry kind="src" path="src/image"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="lib" path="C:/Program Files/Java/jdk1.8.0_271/lib/itextpdf-5.5.9.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/Program Files/Java/jdk1.8.0_271/lib/mysql-connector-java-8.0.22.jar"/>
