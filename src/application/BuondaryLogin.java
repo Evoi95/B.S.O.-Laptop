@@ -68,7 +68,7 @@ public class BuondaryLogin implements Initializable {
 			/*
 			 * modificare schermata
 			 */
-			root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+			root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
 			stage.setTitle("Benvenuto nella schermata del catalogo libri ");
 
 			Scene scene = new Scene(root);
@@ -121,8 +121,18 @@ public class BuondaryLogin implements Initializable {
 
 	}
 	@FXML
-	private void azzeraPwd()
+	private void azzeraPwd() throws IOException
 	{
-		//caricare nuocva schermata eccecc
+		Stage stage;
+		Parent root;
+		stage = (Stage) buttonReg.getScene().getWindow();
+		root = FXMLLoader.load(getClass().getResource("resetPwd.fxml"));
+		stage.setTitle("Benvenuto nella schermata del login");
+
+		// Parent root = FXMLLoader.load(getClass().getResource("compravendita.fxml"));
+
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+//caricare nuocva schermata eccecc
 	}
 }
